@@ -1,9 +1,10 @@
-import { Fan } from "@phosphor-icons/react/dist/ssr";
+import { Fan } from "@/ui/icons";
 
 export default function Home() {
   return (
-    <div>
-      <Fan color="yellow" size={64} weight="duotone" />
+    <div className="text-9xl h-screen flex justify-center items-center font-bold">
+      Hello world
+      <Fan size={100} color="red" weight="duotone" />
     </div>
   );
 }

@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 :root {
-  font-feature-settings: "cv01", "cv03", "cv04", "cv05", "cv06", "cv09", "cv11", "ss08";
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1,
+    "cv01",
+    "cv03",
+    "cv04",
+    "cv06",
+    "cv09",
+    "cv11",
+    "ss08";
 }
 
 body {
-  @apply bg-black;
+  @apply bg-black text-white;
 }
