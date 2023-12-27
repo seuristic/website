@@ -15,6 +15,10 @@
     "ss08";
 }
 
-body {
-  @apply bg-black text-white;
+a {
+  @apply hover:text-accent-500;
+}
+
+button {
+  @apply w-fit rounded-md bg-default-800 px-4 py-2 font-medium hover:bg-accent-500;
 }

@@ -1,3 +1,3 @@
-import { Fan } from "@phosphor-icons/react/dist/ssr";
+import { DownloadSimple, FileArrowDown } from "@phosphor-icons/react/dist/ssr";
 
-export { Fan };
+export { DownloadSimple, FileArrowDown };
