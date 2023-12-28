@@ -2,19 +2,20 @@ import Navbar from "@/app/components/Navbar";
 import Button from "@/ui/components/Button";
 import Image from "next/image";
 import { DownloadSimple } from "@/ui/icons";
+import luffy from "@/assets/luffy.jpeg";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-default-950 text-default-50">
       <Navbar />
       <main className="mx-auto w-full max-w-3xl space-y-16 px-4 py-32">
-        <section className="flex flex-col justify-between gap-8 md:flex-row">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <div className="flex flex-col gap-8">
             <h1 className="inline-flex flex-col text-5xl font-bold">
               <span>M.</span>
               <span>Shahanwaz</span>
             </h1>
-            <p className="text-default-400">
+            <p className="max-w-[400px] text-default-400">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Provident modi, unde quidem numquam nemo reprehenderit alias eius
               repellendus odio quas temporibus.
@@ -23,16 +24,18 @@ export default function Home() {
               Resume <DownloadSimple size={20} />
             </Button>
           </div>
-          <div className="relative">
+          <div className="relative aspect-square w-full shrink-0 bg-green-300 md:h-[288px] md:w-[unset]">
             <Image
-              src="https://preview.redd.it/honestly-wouldnt-gear-5-luffy-be-close-to-impossible-to-v0-695vdh5dliib1.jpg?width=640&crop=smart&auto=webp&s=9a1bf2aaabdf601efdd886fe71efb042315d7fae"
+              src={luffy}
               alt="M. Shahanwaz"
-              width={1000}
-              height={1000}
+              className="object-contain"
+              fill
+              placeholder="blur"
+              quality={100}
               priority
             />
           </div>
-        </section>
+        </div>
       </main>
     </div>
   );
