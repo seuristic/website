@@ -27,7 +27,7 @@ export default function Hero() {
           </Button>
         </Link>
       </div>
-      <div className="relative aspect-square w-full shrink-0 bg-green-300 md:h-[288px] md:w-[unset]">
+      <div className="relative aspect-square w-full shrink-0 md:h-[288px] md:w-[unset]">
         <Image
           src={profile_image}
           alt="M. Shahanwaz"

@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-default-950 text-default-50">
       <Navbar />
