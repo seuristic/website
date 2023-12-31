@@ -1,0 +1,25 @@
+Design system:
+-------------
+NOTE - Dark mode only
+
+* Buttons
+-   Normal
+        bg = default-800
+        color = default-50
+-   Hover
+        bg = accent-600
+        color = default-50
+
+* Border
+-   Normal
+        color = default-800
+
+* Anchor
+-   Normal
+        color = default-50
+-   Hover
+        color = accent-500
+
+* Paragraph
+-   Normal
+        color = default-400

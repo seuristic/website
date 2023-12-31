@@ -15,10 +15,25 @@
     "ss08";
 }
 
-a {
-  @apply hover:text-accent-500;
+@layer base {
+  a {
+    @apply transition-colors hover:text-accent-500;
+  }
+
+  button {
+    @apply w-fit rounded-md bg-default-800 px-4 py-2 font-medium transition-colors hover:bg-accent-600 hover:text-default-50;
+  }
+
+  p {
+    @apply text-default-400;
+  }
 }
 
-button {
-  @apply w-fit rounded-md bg-default-800 px-4 py-2 font-medium hover:bg-accent-500;
+@layer utilities {
+  .w-inherit {
+    width: inherit;
+  }
+  .h-inherit {
+    height: inherit;
+  }
 }

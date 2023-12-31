@@ -1,3 +1,7 @@
-import { DownloadSimple, FileArrowDown } from "@phosphor-icons/react/dist/ssr";
+import {
+  DownloadSimple,
+  FileArrowDown,
+  ArrowUpRight,
+} from "@phosphor-icons/react/dist/ssr";
 
-export { DownloadSimple, FileArrowDown };
+export { DownloadSimple, FileArrowDown, ArrowUpRight };
