@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "atropos/css";
 import { inter } from "@/ui/fonts";
 
 export const metadata: Metadata = {

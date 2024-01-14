@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "qph.cf2.quoracdn.net",
       },
+      {
+        protocol: "https",
+        hostname: "www.simplilearn.com"
+      }
     ],
   },
 };
