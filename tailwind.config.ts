@@ -6,7 +6,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        default: colors.slate,
+        base: colors.slate,
         accent: colors.blue,
       },
     },

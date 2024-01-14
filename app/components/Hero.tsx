@@ -30,7 +30,22 @@ export default function Hero() {
           </Button>
         </Link>
       </div>
-      <Atropos>
+      <div className="hidden md:block">
+        <Atropos>
+          <div className="relative aspect-square w-full shrink-0 md:h-[288px]">
+            <Image
+              src={profile_image}
+              alt="M. Shahanwaz"
+              className="object-contain"
+              fill
+              placeholder="blur"
+              quality={100}
+              priority
+            />
+          </div>
+        </Atropos>
+      </div>
+      <div className="md:hidden">
         <div className="relative aspect-square w-full shrink-0 md:h-[288px]">
           <Image
             src={profile_image}
@@ -42,7 +57,7 @@ export default function Hero() {
             priority
           />
         </div>
-      </Atropos>
+      </div>
     </div>
   );
 }

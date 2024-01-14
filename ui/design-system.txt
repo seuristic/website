@@ -4,23 +4,23 @@ NOTE - Dark mode only
 
 * Buttons
 -   Normal
-        bg =    default-800
-        color = default-50
+        bg =    base-800
+        color = base-100
 -   Hover
         bg =    accent-600
-        color = default-50
+        color = base-100
 
 * Anchor Link
 -   Normal
-        color = default-50
+        color = base-100
 -   Hover
         color = accent-500
 
 * Paragraph
 -   Normal
-        color = default-400
+        color = base-400
         
 * Border
 -   Normal
-        color = default-800
+        color = base-800
 
