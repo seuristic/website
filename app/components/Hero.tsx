@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
       <div className="flex flex-col gap-8">
-        <h1 className="inline-flex flex-col text-5xl font-bold">
+        <h1 className="inline-flex flex-col">
           <span>M.</span>
           <span>Shahanwaz</span>
         </h1>
