@@ -18,8 +18,11 @@ export default function Card() {
         />
       </div>
       <div className="rounded-lg bg-base-900 px-3 py-2 text-sm transition-colors group-hover:bg-base-800">
-        <h3 className="flex items-center gap-2 text-sm text-base-300 transition-colors group-hover:text-base-100">
-          Some Project Title <ArrowUpRight size={16} weight="bold" />
+        <h3 className="inline-flex items-center gap-1 text-sm text-base-300 transition-colors group-hover:text-base-100">
+          Some Project Title{" "}
+          <span className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
+            <ArrowUpRight size={16} weight="bold" />
+          </span>
         </h3>
         <p className="line-clamp-1 text-base-500 transition-colors group-hover:text-base-400">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium

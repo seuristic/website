@@ -9,14 +9,6 @@ export default function Navbar() {
       name: "Projects",
       path: "/projects",
     },
-    {
-      name: "Experiments",
-      path: "/experiments",
-    },
-    {
-      name: "Blogs",
-      path: "/blogs",
-    },
   ];
 
   return (

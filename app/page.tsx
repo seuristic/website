@@ -1,5 +1,3 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Card from "./components/Project/Card";
 import Link from "next/link";
@@ -18,8 +16,14 @@ export default function Page() {
           ))}
         </div>
         <div className="mt-8 flex justify-center">
-          <Link href="projects" className="hover:underline underline-offset-2 text-center text-sm font-semibold">
-            View all projects -->
+          <Link
+            href="projects"
+            className="group inline-flex items-center gap-1 text-center text-sm font-semibold underline-offset-2 hover:underline"
+          >
+            View all projects
+            <span className="transition-transform group-hover:translate-x-1 ">
+              <ArrowRight size={16} weight="bold" />
+            </span>
           </Link>
         </div>
       </section>

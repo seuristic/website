@@ -5,7 +5,7 @@ import Image from "next/image";
 import { DownloadSimple } from "@/ui/icons";
 import Link from "next/link";
 import Atropos from "atropos/react";
-import profile_image from "@/public/assets/profile-image.jpeg";
+import profile_image from "@/public/assets/profile-image.jpg";
 
 export default function Hero() {
   return (
@@ -36,7 +36,7 @@ export default function Hero() {
             <Image
               src={profile_image}
               alt="M. Shahanwaz"
-              className="object-contain"
+              className="object-contain rounded-xl"
               fill
               placeholder="blur"
               quality={100}
@@ -50,7 +50,7 @@ export default function Hero() {
           <Image
             src={profile_image}
             alt="M. Shahanwaz"
-            className="object-contain"
+            className="object-contain rounded-xl"
             fill
             placeholder="blur"
             quality={100}
