@@ -1,13 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Card from "../components/Project/Card";
 
 export default function Projects() {
   return (
     <main className="mx-auto w-full max-w-3xl space-y-16 px-4 py-16 md:space-y-20 md:py-20">
-      <div className="space-y-8 text-center">
-        <h1 className="text-center">Projects</h1>
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
+        <h1>Projects</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
           illum placeat hic quidem sed quia fugiat eum similique perspiciatis
