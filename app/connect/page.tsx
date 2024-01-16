@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "../components/Project/Card";
 import {
   CodepenLogo,
   GithubLogo,
@@ -40,7 +39,7 @@ export default function Connect() {
 
   return (
     <main className="mx-auto w-full max-w-3xl space-y-16 px-4 py-16 md:space-y-20 md:py-20">
-      <div className="text-center max-w-2xl flex flex-col gap-8 items-center mx-auto">
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
         <h1>Connect</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
@@ -48,15 +47,18 @@ export default function Connect() {
           aliquid possimus vero!
         </p>
       </div>
-      <section className="mt-4 w-full">
-        <div className="flex items-center justify-center gap-10">
-          {SOCIAL_PROFILES.map((profile, i) => (
-            <Link key={i} href={profile.link} target="_blank" title={profile.name}>
-              <profile.icon size={32} />
-            </Link>
-          ))}
-        </div>
-      </section>
+      <div className="mt-4 flex w-full flex-wrap items-center justify-center gap-10">
+        {SOCIAL_PROFILES.map((profile, i) => (
+          <Link
+            key={i}
+            href={profile.link}
+            target="_blank"
+            title={profile.name}
+          >
+            <profile.icon size={32} />
+          </Link>
+        ))}
+      </div>
     </main>
   );
 }
