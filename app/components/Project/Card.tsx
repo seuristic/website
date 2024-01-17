@@ -14,6 +14,7 @@ export default function Card() {
           src="https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png"
           alt="project"
           fill
+          sizes="100vw"
           className="object-cover opacity-70 transition-opacity group-hover:opacity-100"
         />
       </div>

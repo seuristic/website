@@ -16,9 +16,9 @@ export default function Hero() {
           <span>Shahanwaz</span>
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          modi, unde quidem numquam nemo reprehenderit alias eius repellendus
-          odio quas temporibus.
+          I am a passionate and creative full stack web developer, committed to
+          transforming imaginative ideas into vibrant digital realities. Focused
+          on building pixel perfect and seamless web experiences.
         </p>
         <Link
           href="https://drive.google.com/uc?export=download&id=1WzJkfRpXK2Ccc3yb9GWpQNXSiKifsDfO"
@@ -36,8 +36,9 @@ export default function Hero() {
             <Image
               src={profile_image}
               alt="M. Shahanwaz"
-              className="object-contain rounded-xl"
+              className="rounded-xl object-contain"
               fill
+              sizes="100vw"
               placeholder="blur"
               quality={100}
               priority
@@ -50,8 +51,9 @@ export default function Hero() {
           <Image
             src={profile_image}
             alt="M. Shahanwaz"
-            className="object-contain rounded-xl"
+            className="rounded-xl object-contain"
             fill
+            sizes="100vw"
             placeholder="blur"
             quality={100}
             priority

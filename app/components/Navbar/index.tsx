@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="sticky left-0 top-0 z-50 flex w-full justify-center border border-base-900 bg-base-950/80 backdrop-blur-md">
       <nav className="flex h-16 w-full max-w-3xl items-center justify-between px-4">
-        <Link href="/" className="hover:text-base-100">
+        <Link href="/">
           <span>
             <Logo size={20} />
           </span>

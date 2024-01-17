@@ -4,6 +4,8 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import cn from "@/utils/cn";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { parseFirstPath } from "@/utils/helper";
 
 type TNavMenuItem = {
   name: string;
@@ -15,6 +17,9 @@ type TNavMenu = {
 };
 
 export default function NavMenu({ routes }: TNavMenu) {
+  const pathname = usePathname();
+  const currentRoute = parseFirstPath(pathname);
+
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -42,20 +47,20 @@ export default function NavMenu({ routes }: TNavMenu) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-[10px] bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-2 w-40 origin-top-right rounded-[10px] border border-base-800 bg-base-900 shadow-lg focus:outline-none">
           <div className="px-1 py-1">
             {routes.map((route, i) => (
               <Menu.Item key={i}>
-                {({ active }) => (
-                  <Link
-                    href={route.path}
-                    className={`${
-                      active ? "bg-base-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                  >
-                    {route.name}
-                  </Link>
-                )}
+                <Link
+                  href={route.path}
+                  className={`${
+                    currentRoute === route.path
+                      ? "text-base-100"
+                      : "text-base-400"
+                  } group flex w-full items-center rounded-md hover:bg-base-800 px-2 py-2`}
+                >
+                  {route.name}
+                </Link>
               </Menu.Item>
             ))}
           </div>
