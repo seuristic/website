@@ -7,15 +7,15 @@ export default function Card() {
   return (
     <Link
       href={"/projects/test"}
-      className="group flex w-full flex-col gap-1 rounded-xl border border-base-900 p-1 transition-colors hover:border-base-800"
+      className="group flex w-full flex-col gap-1 rounded-xl border p-1 transition-colors border-base-800"
     >
-      <div className="relative h-[14rem] w-full overflow-hidden rounded-lg sm:h-[20rem] md:h-[14rem]">
+      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
         <Image
           src="https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png"
           alt="project"
           fill
           sizes="100vw"
-          className="object-cover opacity-70 transition-opacity group-hover:opacity-100"
+          className="object-cover"
         />
       </div>
       <div className="rounded-lg bg-base-900 px-3 py-2 text-sm transition-colors group-hover:bg-base-800">

@@ -7,6 +7,23 @@ import Link from "next/link";
 import Atropos from "atropos/react";
 import profile_image from "@/public/assets/profile-image.jpg";
 
+function HeroImage() {
+  return (
+    <div className="relative aspect-square w-full shrink-0 md:h-[288px]">
+      <Image
+        src={profile_image}
+        alt="M. Shahanwaz"
+        className="rounded-xl object-contain grayscale"
+        fill
+        sizes="100vw"
+        placeholder="blur"
+        quality={100}
+        priority
+      />
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
@@ -32,33 +49,11 @@ export default function Hero() {
       </div>
       <div className="hidden md:block">
         <Atropos>
-          <div className="relative aspect-square w-full shrink-0 md:h-[288px]">
-            <Image
-              src={profile_image}
-              alt="M. Shahanwaz"
-              className="rounded-xl object-contain"
-              fill
-              sizes="100vw"
-              placeholder="blur"
-              quality={100}
-              priority
-            />
-          </div>
+          <HeroImage />
         </Atropos>
       </div>
       <div className="md:hidden">
-        <div className="relative aspect-square w-full shrink-0 md:h-[288px]">
-          <Image
-            src={profile_image}
-            alt="M. Shahanwaz"
-            className="rounded-xl object-contain"
-            fill
-            sizes="100vw"
-            placeholder="blur"
-            quality={100}
-            priority
-          />
-        </div>
+        <HeroImage />
       </div>
     </div>
   );
