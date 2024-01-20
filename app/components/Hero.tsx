@@ -34,8 +34,11 @@ export default function Hero() {
         </h1>
         <p>
           I am a passionate and creative full stack web developer, committed to
-          transforming imaginative ideas into vibrant digital realities. Focused
-          on building pixel perfect and seamless web experiences.
+          transforming imaginative ideas into vibrant digital realities.
+          Currently working at{" "}
+          <Link href="https://www.bosscoderacademy.com" target="_blank">
+            Bosscoder Academy
+          </Link> as a software developer.
         </p>
         <Link
           href="https://drive.google.com/uc?export=download&id=1WzJkfRpXK2Ccc3yb9GWpQNXSiKifsDfO"

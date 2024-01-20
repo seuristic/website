@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../components/Project/Card";
+import projects from "@/data/projects";
 
 export default function Projects() {
   return (
@@ -7,15 +8,14 @@ export default function Projects() {
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
         <h1>Projects</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-          illum placeat hic quidem sed quia fugiat eum similique perspiciatis
-          excepturi laborum libero perferendis maxime, nobis fuga officia,
-          aliquid possimus vero!
+          Welcome to my projects showcase! It's a mix of web development and
+          core projects providing a glimpse into my software development
+          journey. Dive in and explore the code!
         </p>
       </div>
       <section className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
-        {[...Array(5)].map((_, i) => (
-          <Card key={i} />
+        {projects.map((project, i) => (
+          <Card key={i} project={project} />
         ))}
       </section>
     </main>
