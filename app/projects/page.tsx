@@ -8,7 +8,7 @@ export default function Projects() {
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
         <h1>Projects</h1>
         <p>
-          Welcome to my projects showcase! It's a mix of web development and
+          Welcome to my projects showcase! It&apos;s a mix of web development and
           core projects providing a glimpse into my software development
           journey. Dive in and explore the code!
         </p>

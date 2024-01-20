@@ -7,7 +7,7 @@ export default function Connect() {
     <main className="mx-auto w-full max-w-3xl space-y-16 px-4 py-16 md:space-y-20 md:py-20">
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
         <h1>Connect</h1>
-        <p>Get in Touch – Whether it's for collaboration, opportunities, or a friendly chat, I'd love to hear from you. Let's connect!</p>
+        <p>Get in Touch – Whether it&apos;s for collaboration, opportunities, or a friendly chat, I&apos;d love to hear from you. Let&apos;s connect!</p>
       </div>
       <div className="mt-4 flex w-full flex-wrap items-center justify-center gap-10">
         {profiles.map((profile, i) => (
