@@ -1,14 +1,16 @@
-import portfolio_v5 from "@/public/assets/projects/portfolio-v5.png";
-import image_processing from "@/public/assets/projects/image-processing.png";
-import noto_app from "@/public/assets/projects/noto-app.png";
-import amazon_clone from "@/public/assets/projects/amazon-clone.png";
-import fer from "@/public/assets/projects/fer.png";
-import experiment from "@/public/assets/projects/experiment.png";
+import {
+  portfolio_v5,
+  noto_app,
+  fer,
+  image_processing,
+  amazon_clone,
+  experiment,
+} from "@/ui/images";
 
 const data = [
   {
-    title: "Portfolio v5",
-    description: "Personal portfolio website version 5",
+    title: "Portfolio v5.0",
+    description: "Personal portfolio website v5.0",
     image: portfolio_v5,
     slug: "portfolio-v5",
   },
@@ -41,8 +43,8 @@ const data = [
     description: "Productivity app for everyone",
     image: experiment,
     slug: "experiment",
-    experiment: true
-  }
+    experiment: true,
+  },
 ];
 
 export default data;

@@ -27,6 +27,7 @@ export default function Card({ project }: TCard) {
           alt="project"
           fill
           sizes="100vw"
+          placeholder="blur"
           className="object-cover"
         />
       </div>

@@ -29,11 +29,11 @@
   }
 
   h2 {
-    @apply text-3xl font-semibold;
+    @apply text-3xl font-bold;
   }
 
   h3 {
-    @apply text-lg font-semibold;
+    @apply text-xl font-bold;
   }
 }
 

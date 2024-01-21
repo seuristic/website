@@ -5,7 +5,7 @@ import Image from "next/image";
 import { DownloadSimple } from "@/ui/icons";
 import Link from "next/link";
 import Atropos from "atropos/react";
-import profile_image from "@/public/assets/profile-image.jpg";
+import { profile_image } from "@/ui/images";
 
 function HeroImage() {
   return (
@@ -13,7 +13,7 @@ function HeroImage() {
       <Image
         src={profile_image}
         alt="M. Shahanwaz"
-        className="rounded-xl object-contain grayscale"
+        className="rounded-xl object-contain"
         fill
         sizes="100vw"
         placeholder="blur"
@@ -36,9 +36,14 @@ export default function Hero() {
           I am a passionate and creative full stack web developer, committed to
           transforming imaginative ideas into vibrant digital realities.
           Currently working at{" "}
-          <Link href="https://www.bosscoderacademy.com" target="_blank">
+          <Link
+            className="text-base-300 underline-offset-2 hover:underline"
+            href="https://www.bosscoderacademy.com"
+            target="_blank"
+          >
             Bosscoder Academy
-          </Link> as a software developer.
+          </Link>{" "}
+          as a software developer.
         </p>
         <Link
           href="https://drive.google.com/uc?export=download&id=1WzJkfRpXK2Ccc3yb9GWpQNXSiKifsDfO"
