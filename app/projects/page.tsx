@@ -1,8 +1,14 @@
 import React from "react";
 import Card from "../components/Project/Card";
 import projects from "@/data/projects";
+import { Metadata } from "next";
 
-export default function Projects() {
+export const metadata: Metadata = {
+  title: "Projects - M. Shahanwaz",
+  description: "Personal projects built to showcase skills & knowledge",
+};
+
+export default function Page() {
   return (
     <main className="mx-auto w-full max-w-3xl space-y-16 px-4 py-16 md:space-y-20 md:py-20">
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">

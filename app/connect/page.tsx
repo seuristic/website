@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import profiles from "@/data/profiles";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Connect - M. Shahanwaz",
+  description: "Connect me whether it's for collaboration, opportunities, or a friendly chat",
+};
 
 export default function Connect() {
   return (

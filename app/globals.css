@@ -20,7 +20,7 @@
     @apply transition-colors hover:text-accent-500;
   }
 
-  p {
+  p, li {
     @apply text-base-400;
   }
 

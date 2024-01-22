@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.simplilearn.com"
+        hostname: "animeindia.in"
       }
     ],
   },

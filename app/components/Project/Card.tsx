@@ -3,11 +3,11 @@ import Image, { StaticImageData } from "next/image";
 import { ArrowUpRight } from "@/ui/icons";
 import Link from "next/link";
 
-type TCard = {
+export type TCard = {
   project: TProject;
 };
 
-type TProject = {
+export type TProject = {
   title: string;
   description: string;
   image: StaticImageData;
