@@ -3,6 +3,8 @@ import React from "react";
 import projects from "@/data/projects";
 import { TProject } from "@/app/components/Project/Card";
 import Image from "next/image";
+import { ArrowUpRight, GithubLogo, LinkSimple } from "@/ui/icons";
+import Link from "next/link";
 
 type TProps = {
   params: { slug: string };
@@ -33,12 +35,30 @@ export default function Page({ params }: TProps) {
         <h1>{project.title}</h1>
         <p>{project.description}</p>
         <div className="flex gap-4">
-          <button className="flex rounded-full bg-base-600 px-4 py-2">
+          <Link
+            href={project.github}
+            className="group inline-flex h-12 items-center gap-1.5 rounded-full bg-base-900 py-1.5 pl-1.5 pr-3 hover:bg-base-800 hover:text-base-100"
+          >
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-base-950">
+              <GithubLogo size={20} />
+            </span>
             GitHub
-          </button>
-          <button className="flex rounded-full bg-base-600 px-4 py-2">
+            <span className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+              <ArrowUpRight size={16} />
+            </span>
+          </Link>
+          <Link
+            href={project.github}
+            className="group inline-flex h-12 items-center gap-1.5 rounded-full bg-base-900 py-1.5 pl-1.5 pr-3 hover:bg-base-800 hover:text-base-100"
+          >
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-base-950">
+              <LinkSimple size={20} />
+            </span>
             Link
-          </button>
+            <span className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+              <ArrowUpRight size={16} />
+            </span>
+          </Link>
         </div>
       </div>
       <div className="relative aspect-video w-full overflow-hidden rounded-lg">
@@ -53,7 +73,7 @@ export default function Page({ params }: TProps) {
       </div>
       <div className="flex gap-4">
         {project.tags.map((tag: string) => (
-          <span key={tag} className="rounded-full bg-base-600 px-4 py-2">
+          <span key={tag} className="rounded-full bg-base-800 px-4 py-2">
             {tag}
           </span>
         ))}
@@ -74,23 +94,25 @@ export default function Page({ params }: TProps) {
       </div>
       <div className="space-y-4">
         <h2>Screenshots</h2>
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg border-4 border-base-800">
-          <Image
-            src="https://animeindia.in/wp-content/uploads/2023/10/71cf9-16368203172095-1920-1024x576.jpg"
-            alt="project"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg border-4 border-base-800">
-          <Image
-            src="https://animeindia.in/wp-content/uploads/2023/10/71cf9-16368203172095-1920-1024x576.jpg"
-            alt="project"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
+        <div className="space-y-6">
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg border-4 border-base-800">
+            <Image
+              src="https://animeindia.in/wp-content/uploads/2023/10/71cf9-16368203172095-1920-1024x576.jpg"
+              alt="project"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg border-4 border-base-800">
+            <Image
+              src="https://animeindia.in/wp-content/uploads/2023/10/71cf9-16368203172095-1920-1024x576.jpg"
+              alt="project"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </main>

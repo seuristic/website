@@ -35,6 +35,10 @@
   h3 {
     @apply text-xl font-bold;
   }
+  
+  button {
+    @apply select-none;
+  }
 }
 
 @layer utilities {

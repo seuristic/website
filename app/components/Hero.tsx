@@ -51,7 +51,7 @@ export default function Hero() {
           className="w-fit"
         >
           <Button className="inline-flex items-center gap-2">
-            Resume <DownloadSimple size={20} weight="bold" />
+            Resume <DownloadSimple size={20} />
           </Button>
         </Link>
       </div>

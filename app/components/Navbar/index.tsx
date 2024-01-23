@@ -1,19 +1,28 @@
+"use client";
+
 import Logo from "@/ui/components/Logo";
 import Link from "next/link";
 import React from "react";
 import NavMenu from "./NavMenu";
+import { usePathname } from "next/navigation";
+import { formatPath, parsePathname } from "@/utils/helper";
+import cn from "@/utils/cn";
 
 export default function Navbar() {
-  const NAV_ROUTES = [
+  const routes = [
     {
       name: "Projects",
-      path: "/projects",
+      path: "projects",
     },
     {
       name: "Connect",
-      path: "/connect",
+      path: "connect",
     },
   ];
+
+  const pathname = usePathname();
+  const paths = parsePathname(pathname);
+  const activePath = paths.at(0);
 
   return (
     <header className="sticky left-0 top-0 z-50 flex w-full justify-center border border-base-900 bg-base-950/80 backdrop-blur-md">
@@ -24,14 +33,21 @@ export default function Navbar() {
           </span>
         </Link>
         <ul className="hidden items-center gap-4 text-sm font-semibold md:flex md:gap-8">
-          {NAV_ROUTES.map((link, i) => (
+          {routes.map((link, i) => (
             <li key={i}>
-              <Link href={link.path}>{link.name}</Link>
+              <Link
+                href={formatPath(link.path)}
+                className={cn(
+                  activePath === link.path ? "text-base-100" : "text-base-400",
+                )}
+              >
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
         <div className="md:hidden">
-          <NavMenu routes={NAV_ROUTES} />
+          <NavMenu routes={routes} />
         </div>
       </nav>
     </header>

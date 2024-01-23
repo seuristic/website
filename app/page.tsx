@@ -30,7 +30,7 @@ export default function Page() {
           >
             View all projects
             <span className="transition-transform group-hover:translate-x-1">
-              <ArrowRight size={16} weight="bold" />
+              <ArrowRight size={16} />
             </span>
           </Link>
         </div>

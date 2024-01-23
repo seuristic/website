@@ -8,6 +8,7 @@ import {
   CodepenLogo,
   GithubLogo,
   LinkedinLogo,
+  LinkSimple,
 } from "@phosphor-icons/react/dist/ssr";
 
 export {
@@ -20,4 +21,5 @@ export {
   CodepenLogo,
   GithubLogo,
   LinkedinLogo,
+  LinkSimple,
 };

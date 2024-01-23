@@ -5,20 +5,21 @@ import { Menu, Transition } from "@headlessui/react";
 import cn from "@/utils/cn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { parseFirstPath } from "@/utils/helper";
+import { parsePathname } from "@/utils/helper";
 
-type TNavMenuItem = {
+type TRoute = {
   name: string;
   path: string;
 };
 
-type TNavMenu = {
-  routes: TNavMenuItem[];
+type TProps = {
+  routes: TRoute[];
 };
 
-export default function NavMenu({ routes }: TNavMenu) {
+export default function NavMenu({ routes }: TProps) {
   const pathname = usePathname();
-  const currentRoute = parseFirstPath(pathname);
+  const paths = parsePathname(pathname);
+  const activePath = paths.at(0);
 
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -53,11 +54,12 @@ export default function NavMenu({ routes }: TNavMenu) {
               <Menu.Item key={i}>
                 <Link
                   href={route.path}
-                  className={`${
-                    currentRoute === route.path
+                  className={cn(
+                    activePath === route.path
                       ? "text-base-100"
-                      : "text-base-400"
-                  } group flex w-full items-center rounded-md hover:bg-base-800 px-2 py-2`}
+                      : "text-base-400",
+                    "group flex w-full items-center rounded-md px-2 py-2 hover:bg-base-800",
+                  )}
                 >
                   {route.name}
                 </Link>

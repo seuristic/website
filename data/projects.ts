@@ -14,6 +14,8 @@ const data = [
     image: portfolio_v5,
     slug: "portfolio-v5",
     tags: ["hello", "world"],
+    github: "",
+    link: "",
   },
   {
     title: "Noto App",
@@ -21,6 +23,8 @@ const data = [
     image: noto_app,
     slug: "noto-app",
     tags: ["hello", "world"],
+    github: "",
+    link: "",
   },
   {
     title: "Facial Emotion Recognition",
@@ -28,6 +32,8 @@ const data = [
     image: fer,
     slug: "fer",
     tags: ["hello", "world"],
+    github: "",
+    link: "",
   },
   {
     title: "Image Processing",
@@ -35,6 +41,8 @@ const data = [
     image: image_processing,
     slug: "image-processing",
     tags: ["hello", "world"],
+    github: "",
+    link: "",
   },
   {
     title: "Amazon Clone",
@@ -42,6 +50,8 @@ const data = [
     image: amazon_clone,
     slug: "amazon-clone",
     tags: ["hello", "world"],
+    github: "",
+    link: "",
   },
   {
     title: "useDaily",
@@ -50,6 +60,8 @@ const data = [
     slug: "experiment",
     experiment: true,
     tags: ["hello", "world"],
+    github: "",
+    link: "",
   },
 ];
 
