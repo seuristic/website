@@ -4,17 +4,18 @@ import "atropos/css";
 import { inter } from "@/ui/fonts";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "M. Shahanwaz",
   description: "Personal portfolio website",
 };
 
-export default function RootLayout({
-  children,
-}: {
+type TProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function RootLayout({ children }: TProps) {
   return (
     <html lang="en">
       <body className={inter.className}>

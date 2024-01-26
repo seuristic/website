@@ -1,35 +1,26 @@
 import { Metadata } from "next";
 import React from "react";
-import projects from "@/data/projects";
 import Image from "next/image";
-import { ArrowUpRight, GithubLogo, LinkSimple } from "@/ui/icons";
 import Link from "next/link";
+import projects from "@/data/projects";
 import { TProject } from "@/utils/types";
+import { ArrowUpRight, GithubLogo, LinkSimple } from "@/ui/icons";
 
 type TProps = {
   params: { slug: string };
 };
 
 export function generateMetadata({ params }: TProps): Metadata {
-  const project = projects.find(
-    (p: TProject) => p.slug === params.slug,
-  ) as TProject;
-  const title = project ? `${project.title} - M. Shahanwaz` : ":(";
-  const description = project ? project.description : "💔 Link";
-
+  const { slug } = params;
+  const project = projects.find((p) => p.slug === slug) as TProject;
+  const title = `${project.title} - M. Shahanwaz`;
+  const description = project.description;
   return { title, description };
 }
 
 export default function Page({ params }: TProps) {
-  const project = projects.find((p: TProject) => p.slug === params.slug);
-
-  if (!project) {
-    return (
-      <main className="mx-auto w-full max-w-3xl space-y-8 px-4 py-16 md:py-20">
-        <p>Undefined</p>
-      </main>
-    );
-  }
+  const { slug } = params;
+  const project = projects.find((p) => p.slug === slug) as TProject;
 
   return (
     <main className="mx-auto w-full max-w-3xl space-y-8 px-4 py-16 md:py-20">
@@ -115,3 +106,9 @@ export default function Page({ params }: TProps) {
     </main>
   );
 }
+
+export function generateStaticParams() {
+  return projects.map(({ slug }) => ({ slug }));
+}
+
+export const dynamicParams = false;

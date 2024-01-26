@@ -5,8 +5,9 @@ import {
   LinkedinLogo,
   TwitterLogo,
 } from "@/ui/icons";
+import { TProfile } from "@/utils/types";
 
-const data = [
+const data: TProfile[] = [
   {
     name: "Twitter",
     link: "https://twitter.com/_mshahanwaz",

@@ -1,3 +1,4 @@
+import { Icon } from "@phosphor-icons/react";
 import { StaticImageData } from "next/image";
 
 export type TProject = {
@@ -11,4 +12,10 @@ export type TProject = {
   link?: string;
   features: string[];
   screenshots?: StaticImageData[];
+};
+
+export type TProfile = {
+  name: string;
+  link: string;
+  icon: Icon;
 };

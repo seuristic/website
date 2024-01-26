@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="mt-auto flex w-full items-center justify-center border-t border-base-900 p-2">
+    <div className="mt-auto flex h-9 w-full items-center justify-center border-t border-base-900 px-2">
       <div className="text-sm text-base-700">
         Built with{" "}
         <Link
