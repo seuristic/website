@@ -68,7 +68,7 @@ export default function Page({ params }: TProps) {
           className="object-cover"
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4">
         {project.tags.map((tag: string) => (
           <span key={tag} className="rounded-full bg-base-800 px-4 py-2">
             {tag}
