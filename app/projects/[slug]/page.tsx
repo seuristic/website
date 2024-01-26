@@ -97,6 +97,7 @@ export default function Page({ params }: TProps) {
                   alt="project screenshot"
                   sizes="100vw"
                   className="object-cover"
+                  placeholder="blur"
                 />
               </div>
             ))}
