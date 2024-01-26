@@ -5,12 +5,8 @@ import { Menu, Transition } from "@headlessui/react";
 import cn from "@/utils/cn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { parsePathname } from "@/utils/helper";
-
-type TRoute = {
-  name: string;
-  path: string;
-};
+import { formatPath, parsePathname } from "@/utils/helper";
+import { TRoute } from "@/utils/types";
 
 type TProps = {
   routes: TRoute[];
@@ -53,7 +49,7 @@ export default function NavMenu({ routes }: TProps) {
             {routes.map((route, i) => (
               <Menu.Item key={i}>
                 <Link
-                  href={route.path}
+                  href={formatPath(route.path)}
                   className={cn(
                     activePath === route.path
                       ? "text-base-100"

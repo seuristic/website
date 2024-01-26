@@ -7,7 +7,7 @@ import {
 } from "@/ui/icons";
 import { TProfile } from "@/utils/types";
 
-const data: TProfile[] = [
+const profiles: TProfile[] = [
   {
     name: "Twitter",
     link: "https://twitter.com/_mshahanwaz",
@@ -35,4 +35,4 @@ const data: TProfile[] = [
   },
 ];
 
-export default data;
+export default profiles;

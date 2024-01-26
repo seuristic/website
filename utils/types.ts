@@ -19,3 +19,8 @@ export type TProfile = {
   link: string;
   icon: Icon;
 };
+
+export type TRoute = {
+  name: string;
+  path: string;
+};

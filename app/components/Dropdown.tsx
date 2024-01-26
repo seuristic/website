@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import cn from "@/utils/cn";
 
-export default function MenuDropdown() {
+export default function Dropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>

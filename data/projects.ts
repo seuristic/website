@@ -12,7 +12,7 @@ import {
 } from "@/ui/images";
 import { TProject } from "@/utils/types";
 
-const data: TProject[] = [
+const projects: TProject[] = [
   {
     title: "Portfolio v5.0",
     description: "Personal portfolio website v5.0 (previously)",
@@ -94,4 +94,4 @@ const data: TProject[] = [
   },
 ];
 
-export default data;
+export default projects;
