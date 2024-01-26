@@ -9,7 +9,7 @@ export type TProject = {
   slug: string;
   experiment?: boolean;
   tags: string[];
-  github: string;
+  github?: string;
   link?: string;
   other_links?: { name: string; url: string; icon?: Icon }[];
   features: string[];
