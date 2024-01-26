@@ -1,22 +1,15 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { ArrowUpRight } from "@/ui/icons";
 import Link from "next/link";
 import { formatPath } from "@/utils/helper";
+import { TProject } from "@/utils/types";
 
-export type TCard = {
+type TProps = {
   project: TProject;
 };
 
-export type TProject = {
-  title: string;
-  description: string;
-  image: StaticImageData;
-  slug: string;
-  experiment?: boolean;
-};
-
-export default function Card({ project }: TCard) {
+export default function Card({ project }: TProps) {
   return (
     <Link
       href={formatPath("projects", project.slug)}

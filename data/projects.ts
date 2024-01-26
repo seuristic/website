@@ -1,21 +1,32 @@
 import {
   portfolio_v5,
+  portfolio_v5_dark,
+  portfolio_v5_light,
   noto_app,
   fer,
   image_processing,
   amazon_clone,
   experiment,
 } from "@/ui/images";
+import { TProject } from "@/utils/types";
 
-const data = [
+const data: TProject[] = [
   {
     title: "Portfolio v5.0",
-    description: "Personal portfolio website v5.0",
+    description: "Personal portfolio website v5.0 (previously)",
     image: portfolio_v5,
     slug: "portfolio-v5",
-    tags: ["hello", "world"],
-    github: "",
-    link: "",
+    tags: ["Next", "TypeScript", "Tailwind", "Vercel", "Framer Motion"],
+    github: "https://github.com/mshahanwaz/portfolio-v5",
+    link: "https://shahanwaz.vercel.app/",
+    features: [
+      "Visually Engaging Design",
+      "Dynamic Animations",
+      "Responsive Layout",
+      "Minimalistic Design",
+      "Thoughtful Color Palette",
+    ],
+    screenshots: [portfolio_v5_dark, portfolio_v5_light],
   },
   {
     title: "Noto App",
@@ -25,6 +36,7 @@ const data = [
     tags: ["hello", "world"],
     github: "",
     link: "",
+    features: ["some", "more"],
   },
   {
     title: "Facial Emotion Recognition",
@@ -34,6 +46,7 @@ const data = [
     tags: ["hello", "world"],
     github: "",
     link: "",
+    features: ["some", "more"],
   },
   {
     title: "Image Processing",
@@ -43,6 +56,7 @@ const data = [
     tags: ["hello", "world"],
     github: "",
     link: "",
+    features: ["some", "more"],
   },
   {
     title: "Amazon Clone",
@@ -52,6 +66,7 @@ const data = [
     tags: ["hello", "world"],
     github: "",
     link: "",
+    features: ["some", "more"],
   },
   {
     title: "useDaily",
@@ -62,6 +77,7 @@ const data = [
     tags: ["hello", "world"],
     github: "",
     link: "",
+    features: ["some", "more"],
   },
 ];
 

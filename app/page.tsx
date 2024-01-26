@@ -3,6 +3,7 @@ import Card from "./components/Project/Card";
 import Link from "next/link";
 import { ArrowRight } from "@/ui/icons";
 import projects from "@/data/projects";
+import { formatPath } from "@/utils/helper";
 
 export default function Page() {
   return (
@@ -17,15 +18,13 @@ export default function Page() {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {projects
-            .filter((_, i) => i < 4)
-            .map((project, i) => (
-              <Card key={i} project={project} />
-            ))}
+          {projects.map(
+            (project, i) => i < 4 && <Card key={i} {...{ project }} />,
+          )}
         </div>
         <div className="flex justify-center">
           <Link
-            href="projects"
+            href={formatPath("projects")}
             className="group inline-flex items-center gap-1 text-center text-sm font-semibold"
           >
             View all projects
