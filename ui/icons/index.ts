@@ -10,6 +10,7 @@ import {
   GithubLogo,
   LinkedinLogo,
   LinkSimple,
+  ReadCvLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 export {
@@ -24,4 +25,5 @@ export {
   GithubLogo,
   LinkedinLogo,
   LinkSimple,
+  ReadCvLogo,
 };

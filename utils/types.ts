@@ -3,6 +3,7 @@ import { StaticImageData } from "next/image";
 
 export type TProject = {
   title: string;
+  subtitle: string;
   description: string;
   image: StaticImageData;
   slug: string;
@@ -10,6 +11,7 @@ export type TProject = {
   tags: string[];
   github: string;
   link?: string;
+  other_links?: { name: string; url: string; icon?: Icon }[];
   features: string[];
   screenshots?: StaticImageData[];
 };

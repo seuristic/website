@@ -27,7 +27,7 @@ export default function Page({ params }: TProps) {
       <div className="mx-auto space-y-8">
         <h1>{project.title}</h1>
         <p>{project.description}</p>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <Link
             className="group inline-flex h-12 items-center gap-1.5 rounded-full bg-base-900 py-1.5 pl-1.5 pr-3 hover:bg-base-800 hover:text-base-100"
             href={project.github}
@@ -56,6 +56,27 @@ export default function Page({ params }: TProps) {
               </span>
             </Link>
           )}
+          {project.other_links &&
+            project.other_links.map((link, i) => (
+              <Link
+                key={i}
+                className="group inline-flex h-12 items-center gap-1.5 rounded-full bg-base-900 py-1.5 pl-1.5 pr-3 hover:bg-base-800 hover:text-base-100"
+                href={link.url}
+                target="_blank"
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-base-950">
+                  {link.icon ? (
+                    <link.icon size={20} />
+                  ) : (
+                    <LinkSimple size={20} />
+                  )}
+                </span>
+                {link.name}
+                <span className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  <ArrowUpRight size={16} />
+                </span>
+              </Link>
+            ))}
         </div>
       </div>
       <div className="relative aspect-video w-full overflow-hidden rounded-lg">

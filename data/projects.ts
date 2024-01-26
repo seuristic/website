@@ -6,15 +6,18 @@ import {
   noto_app_dark,
   noto_app_light,
   fer,
+  fer_frontend,
   image_processing,
   amazon_clone,
   experiment,
 } from "@/ui/images";
 import { TProject } from "@/utils/types";
+import { ReadCvLogo } from "@/ui/icons";
 
 const projects: TProject[] = [
   {
     title: "Portfolio v5.0",
+    subtitle: "Personal portfolio website v5.0 (previously)",
     description: "Personal portfolio website v5.0 (previously)",
     image: portfolio_v5,
     slug: "portfolio-v5",
@@ -33,6 +36,7 @@ const projects: TProject[] = [
   },
   {
     title: "Noto App",
+    subtitle: "Notes + todo taking application",
     description: "Notes + todo taking application",
     image: noto_app,
     slug: "noto-app",
@@ -53,16 +57,48 @@ const projects: TProject[] = [
   },
   {
     title: "Facial Emotion Recognition",
-    description: "Final year college project",
+    subtitle: "Final year college group project",
+    description:
+      // "FER for rehabilitation - our final year college group project in which we worked upon improving the accuracy of various existing ML model, and integrated the model with hardware e.g. LED grid panel through Arduino to show emotions as pixelated emojis with LEDs",
+      "Facial Emotion Recognition (FER) for rehabilitation was our final year college group project, where we concentrated on refining the accuracy of various existing ML models. We integrated the model with hardware, such as an LED grid panel through Arduino, to visualize emotions as pixelated emojis using LEDs. Additionally, we employed a MERN-based website to track the metrics of detected emotions and conduct analysis.",
     image: fer,
     slug: "fer",
-    tags: ["hello", "world"],
-    github: "",
-    link: "",
-    features: ["some", "more"],
+    tags: [
+      "Keras",
+      "Tensorflow",
+      "PySerial",
+      "Opencv",
+      "Scikit",
+      "Arduino",
+      "React",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Figma",
+    ],
+    github: "https://github.com/mshahanwaz/college-project-FER-ml-program",
+    link: "https://fer-frontend.vercel.app/",
+    other_links: [
+      {
+        name: "Research Paper",
+        url: "https://camps.aptaracorp.com/ACM_PMS/PMS/ACM/IC32023/82/314aaaa2-23bd-11ee-b37c-16bb50361d1f/OUT/ic32023-82.html",
+        icon: ReadCvLogo,
+      },
+    ],
+    features: [
+      "Improved Accuracy of ML Model",
+      "Integration with Hardware Devices",
+      "Emotion Metrics Tracking",
+      "Full-Stack Integration",
+      "Real-Time Emotion Analysis",
+      "User Interface Design",
+      "Collaborative Development Process",
+    ],
+    screenshots: [fer_frontend],
   },
   {
     title: "Image Processing",
+    subtitle: "BMP image processing in C++",
     description: "BMP image processing in C++",
     image: image_processing,
     slug: "image-processing",
@@ -73,6 +109,7 @@ const projects: TProject[] = [
   },
   {
     title: "Amazon Clone",
+    subtitle: "UI & basic functionality clone of real Amazon",
     description: "UI & basic functionality clone of real Amazon",
     image: amazon_clone,
     slug: "amazon-clone",
@@ -83,6 +120,7 @@ const projects: TProject[] = [
   },
   {
     title: "useDaily",
+    subtitle: "Productivity app for everyone",
     description: "Productivity app for everyone",
     image: experiment,
     slug: "experiment",

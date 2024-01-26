@@ -33,7 +33,7 @@ export default function Card({ project }: TProps) {
           </span>
         </h3>
         <p className="line-clamp-1 text-base-500 transition-colors group-hover:text-base-400">
-          {project.description}
+          {project.subtitle}
         </p>
       </div>
     </Link>
