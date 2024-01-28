@@ -27,7 +27,7 @@ const projects: TProject[] = [
     slug: "portfolio-v5",
     tags: ["Next", "TypeScript", "Tailwind", "Vercel", "Framer Motion"],
     github: "https://github.com/mshahanwaz/portfolio-v5",
-    link: "https://shahanwaz.vercel.app/",
+    link: "https://portfolio-v5-shahanwaz.vercel.app/",
     features: [
       "Visually Engaging Design",
       "Dynamic Animations",
@@ -40,7 +40,7 @@ const projects: TProject[] = [
   },
   {
     title: "Noto App",
-    subtitle: "Notes + Todo taking application",
+    subtitle: "Notes + Tod o taking application",
     description:
       "Notes and todo taking productivity application with custom keyboard shortcuts to effortlessly make notes and list your todos instantly",
     image: noto_app,

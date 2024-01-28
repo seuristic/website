@@ -19,7 +19,7 @@ export default function Connect() {
           a friendly chat, I&apos;d love to hear from you. Let&apos;s connect!
         </p>
       </div>
-      <div className="mt-4 flex w-full flex-wrap items-center justify-center gap-10">
+      <div className="flex w-full flex-wrap items-center justify-center gap-10">
         {profiles.map((profile, i) => (
           <Link
             key={i}
@@ -30,6 +30,21 @@ export default function Connect() {
             <profile.icon size={32} />
           </Link>
         ))}
+      </div>
+      <div className="flex justify-center text-base-900">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={200}
+          viewBox="0 0 634 104"
+          fill="none"
+        >
+          <path
+            d="M8 8C8 8 511.5 8 526 8C540.5 8 237.5 37.3333 220 38.6087C202.5 39.8841 519.5 58.6957 534.5 58.6957C549.5 58.6957 290 81.971 303.5 81.971C317 81.971 626 96 626 96"
+            stroke="currentColor"
+            strokeWidth={10}
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
     </main>
   );

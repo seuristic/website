@@ -113,13 +113,13 @@ export default function Page({ params }: TProps) {
             {project.screenshots.map((screenshot, i) => (
               <div
                 key={i}
-                className="relative w-full overflow-hidden rounded-lg border-4 border-base-900"
+                className="relative w-full overflow-hidden rounded-lg border border-base-700 bg-base-800 p-8"
               >
                 <Image
                   src={screenshot}
                   alt="project screenshot"
                   sizes="100vw"
-                  className="object-cover"
+                  className="rounded-md object-cover shadow-md"
                   placeholder="blur"
                 />
               </div>
