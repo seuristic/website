@@ -46,7 +46,7 @@ export default function Hero() {
           as a software developer.
         </p>
         <Link
-          href="https://drive.google.com/uc?export=download&id=1WzJkfRpXK2Ccc3yb9GWpQNXSiKifsDfO"
+          href="https://resume.shahanwaz.dev"
           target="_blank"
           className="w-fit"
         >
