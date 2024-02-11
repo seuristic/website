@@ -9,11 +9,11 @@ import { profile_image } from "@/ui/images";
 
 function HeroImage() {
   return (
-    <div className="relative aspect-square w-full shrink-0 md:h-[288px]">
+    <div className="relative aspect-square w-full shrink-0 md:h-[250px]">
       <Image
         src={profile_image}
         alt="M. Shahanwaz"
-        className="rounded-xl object-contain"
+        className="rounded-md object-contain"
         fill
         sizes="100vw"
         placeholder="blur"
@@ -32,7 +32,7 @@ export default function Hero() {
           <span>M.</span>
           <span>Shahanwaz</span>
         </h1>
-        <p>
+        <p className="md:max-w-md">
           I am a passionate and creative full stack web developer, committed to
           transforming imaginative ideas into vibrant digital realities.
           Currently working at{" "}

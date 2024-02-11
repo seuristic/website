@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import NavMenu from "./NavMenu";
+import NavMenu from "./Menu";
 import Logo from "@/ui/components/Logo";
 import { formatPath, parsePathname } from "@/utils/helper";
 import cn from "@/utils/cn";
@@ -15,7 +15,7 @@ export default function Navbar() {
   const activePath = paths.at(0);
 
   return (
-    <header className="sticky left-0 top-0 z-50 flex w-full justify-center border border-base-900 bg-base-950/80 backdrop-blur-md">
+    <header className="sticky left-0 top-0 z-50 flex w-full justify-center border-b border-base-900 bg-base-950/80 backdrop-blur-md">
       <nav className="flex h-16 w-full max-w-3xl items-center justify-between px-4">
         <Link href="/">
           <span>

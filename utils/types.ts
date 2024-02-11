@@ -26,3 +26,19 @@ export type TRoute = {
   name: string;
   path: string;
 };
+
+export type TIconWeight =
+  | "thin"
+  | "light"
+  | "regular"
+  | "bold"
+  | "fill"
+  | "duotone";
+
+export type TIcon = {
+  alt?: string;
+  color?: string;
+  size?: string | number;
+  weight?: TIconWeight;
+  mirrored?: boolean;
+};

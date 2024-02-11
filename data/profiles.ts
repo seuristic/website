@@ -23,11 +23,11 @@ const profiles: TProfile[] = [
     link: "https://github.com/mshahanwaz",
     icon: GithubLogo,
   },
-  {
-    name: "CodePen",
-    link: "https://codepen.io/mshahanwaz",
-    icon: CodepenLogo,
-  },
+  // {
+  //   name: "CodePen",
+  //   link: "https://codepen.io/mshahanwaz",
+  //   icon: CodepenLogo,
+  // },
   {
     name: "Instagram",
     link: "https://www.instagram.com/imshahanwaz/",
