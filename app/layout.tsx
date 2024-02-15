@@ -19,7 +19,7 @@ export default function RootLayout({ children }: TProps) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-dvh flex flex-col bg-base-950 text-base-100">
+        <div className="flex min-h-dvh flex-col bg-base-950 text-base-100">
           <Navbar />
           {children}
           <Footer />
