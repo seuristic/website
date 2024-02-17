@@ -1,5 +1,4 @@
 import {
-  CodepenLogo,
   GithubLogo,
   InstagramLogo,
   LinkedinLogo,
@@ -8,11 +7,6 @@ import {
 import { TProfile } from "@/utils/types";
 
 const profiles: TProfile[] = [
-  {
-    name: "Twitter",
-    link: "https://twitter.com/_mshahanwaz",
-    icon: TwitterLogo,
-  },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/mshahanwaz/",
@@ -32,6 +26,11 @@ const profiles: TProfile[] = [
     name: "Instagram",
     link: "https://www.instagram.com/imshahanwaz/",
     icon: InstagramLogo,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/_mshahanwaz",
+    icon: TwitterLogo,
   },
 ];
 
