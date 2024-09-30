@@ -16,6 +16,9 @@
 }
 
 @layer base {
+  html {
+    color-scheme: light dark;
+  }
   a {
     @apply transition-colors hover:text-accent-500;
   }

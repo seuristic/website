@@ -26,7 +26,7 @@ const projects: TProject[] = [
     image: portfolio_v5,
     slug: "portfolio-v5",
     tags: ["Next", "TypeScript", "Tailwind", "Vercel", "Framer Motion"],
-    github: "https://github.com/mshahanwaz/portfolio-v5",
+    github: "https://github.com/seuristic/portfolio-v5",
     link: "https://portfolio-v5-shahanwaz.vercel.app/",
     features: [
       "Visually Engaging Design",
@@ -40,13 +40,13 @@ const projects: TProject[] = [
   },
   {
     title: "Noto App",
-    subtitle: "Notes + Tod o taking application",
+    subtitle: "Notes + Todo taking application",
     description:
       "Notes and todo taking productivity application with custom keyboard shortcuts to effortlessly make notes and list your todos instantly",
     image: noto_app,
     slug: "noto-app",
     tags: ["Next", "Tailwind", "Firebase", "Recoil", "NextAuth"],
-    github: "https://github.com/mshahanwaz/noto-app",
+    github: "https://github.com/seuristic/noto-app",
     link: "https://noto-app.vercel.app/",
     features: [
       "User Authentication",
@@ -80,7 +80,7 @@ const projects: TProject[] = [
       "MongoDB",
       "Figma",
     ],
-    github: "https://github.com/mshahanwaz/college-project-FER-ml-program",
+    github: "https://github.com/seuristic/college-project-FER-ml-program",
     link: "https://fer-frontend.vercel.app/",
     other_links: [
       {
@@ -108,7 +108,7 @@ const projects: TProject[] = [
     image: image_processing,
     slug: "image-processing",
     tags: ["C++", "BMP"],
-    github: "https://github.com/mshahanwaz/image-processing-v2",
+    github: "https://github.com/seuristic/image-processing-v2",
     features: [
       "Reading BMP Files",
       "Writing BMP Files",
@@ -127,7 +127,7 @@ const projects: TProject[] = [
     image: amazon_clone,
     slug: "amazon-clone",
     tags: ["Next", "Tailwind", "Redux", "NextAuth", "Stripe", "Firebase"],
-    github: "https://github.com/mshahanwaz/amazon-clone",
+    github: "https://github.com/seuristic/amazon-clone",
     link: "https://amazon-clone-mshahanwaz.vercel.app/",
     features: [
       "Fully-functional SSR Amazon Clone",
@@ -152,7 +152,7 @@ const projects: TProject[] = [
     features: [
       "Notes Management",
       "Todo List Functionality",
-      "Movies Collection",
+      "Movies List Collection",
       "more coming...",
     ],
   },

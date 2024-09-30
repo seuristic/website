@@ -83,7 +83,7 @@ export default function Page({ params }: TProps) {
                   src={screenshot}
                   alt="project screenshot"
                   sizes="100vw"
-                  className="rounded-md object-cover shadow-md"
+                  className="object-cover shadow-md"
                   placeholder="blur"
                 />
               </div>
