@@ -85,7 +85,8 @@ const projects: TProject[] = [
     other_links: [
       {
         name: "Research Paper",
-        url: "https://camps.aptaracorp.com/ACM_PMS/PMS/ACM/IC32023/82/314aaaa2-23bd-11ee-b37c-16bb50361d1f/OUT/ic32023-82.html",
+        // url: "https://camps.aptaracorp.com/ACM_PMS/PMS/ACM/IC32023/82/314aaaa2-23bd-11ee-b37c-16bb50361d1f/OUT/ic32023-82.html",
+        url: "https://dl.acm.org/doi/10.1145/3607947.3608053",
         icon: ReadCvLogo,
       },
     ],
