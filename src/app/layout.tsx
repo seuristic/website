@@ -2,22 +2,32 @@ import type { Metadata } from "next";
 import { Fragment_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 
-const aeonikFont = localFont({
-  src: "../assets/fonts/Aeonik.ttf",
-  variable: "--font-primary",
-  display: "swap"
+const interFont = localFont({
+  src: [
+    {
+      path: "../assets/fonts/InterVariable.ttf",
+      style: "normal"
+    },
+    {
+      path: "../assets/fonts/InterVariable-Italic.ttf",
+      style: "italic"
+    }
+  ],
+  variable: "--font-sans"
 });
 
-const fragmentMono = Fragment_Mono({
-  variable: "--font-secondary",
+const fragmentMonoFont = Fragment_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: "400"
 });
 
 export const metadata: Metadata = {
   title: "M Shahanwaz",
-  description: "Portfolio website built using Next 15, Tailwind 4"
+  description: "Portfolio website built using Next, Tailwind"
 };
 
 export default function RootLayout({
@@ -27,8 +37,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${aeonikFont.variable} ${fragmentMono.variable}`}>
-        {children}
+      <body
+        className={cn(
+          fragmentMonoFont.variable,
+          interFont.variable,
+          "font-primary"
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

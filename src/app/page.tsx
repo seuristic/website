@@ -1,3 +1,11 @@
+import Navbar from "@/components/custom/navbar";
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
-  return <div className="font-primary">Hello, world!</div>;
+  return (
+    <main className="font-sans">
+      <Navbar />
+      <Button className="mt-10">SERVICES</Button>
+    </main>
+  );
 }
