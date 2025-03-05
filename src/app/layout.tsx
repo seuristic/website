@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
-const interFont = localFont({
+const Inter = localFont({
   src: [
     {
       path: "../assets/fonts/InterVariable.ttf",
@@ -16,10 +16,11 @@ const interFont = localFont({
       style: "italic"
     }
   ],
-  variable: "--font-sans"
+  variable: "--font-sans",
+  display: "swap"
 });
 
-const fragmentMonoFont = Fragment_Mono({
+const FragmentMono = Fragment_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: "400"
@@ -38,11 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(
-          fragmentMonoFont.variable,
-          interFont.variable,
-          "font-primary"
-        )}
+        className={cn(FragmentMono.variable, Inter.variable, "font-primary")}
       >
         <ThemeProvider
           attribute="class"

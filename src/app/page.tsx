@@ -1,38 +1,47 @@
 import Navbar from "@/components/custom/navbar";
+import DiamondPattern from "@/components/custom/pattern";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="font-sans">
       <Navbar />
-      <div className="bg-background isolate">
-        {/* section #1 */}
-        <div className="relative z-3 flex h-[50vh] w-full border-b px-2 py-2 sm:py-8">
-          <div className="mx-auto h-full w-full max-w-3xl px-4 py-2">
-            <div className="flex h-full w-full items-center justify-center rounded-md bg-zinc-800">
-              Section #1
-            </div>
-          </div>
-          <div className="bg-border absolute inset-y-0 left-2 h-full w-px lg:left-10">
-            <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rotate-45 rounded border bg-zinc-950" />
-          </div>
-          <div className="bg-border absolute inset-y-0 right-2 h-full w-px lg:right-10">
-            <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rotate-45 rounded border bg-zinc-950" />
-          </div>
-        </div>
 
-        {/* section #2 */}
-        <div className="relative z-2 flex h-[50vh] w-full px-2 py-2 sm:py-8">
-          <div className="mx-auto h-full w-full max-w-3xl px-4 py-2">
-            <div className="flex h-full w-full items-center justify-center rounded-md bg-zinc-800">
-              Section #2
+      <div className="bg-background isolate">
+        <div className="relative z-3 w-full border-b px-2">
+          <div className="mx-auto flex min-h-[80svh] w-full max-w-3xl px-4 py-4 sm:min-h-[650px]">
+            <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-16 rounded-md sm:flex-row sm:gap-8">
+              <div className="flex flex-col gap-4">
+                <p className="text-muted-foreground">hi, myself ↓</p>
+                <h2 className="mb-4 text-3xl font-semibold tracking-tight">
+                  Mohammad Shahanwaz
+                </h2>
+                <p className="text-muted-foreground text-justify">
+                  <span className="text-foreground">software engineer</span> at{" "}
+                  <Link href="https://www.bosscoderacademy.com" target="_blank">
+                    Bosscoder Academy
+                  </Link>{" "}
+                  ↗ • focused on building scalable, high-performance, and
+                  complex solutions • keen interest in{" "}
+                  <span className="line-through">web2</span>, cloud computing,
+                  web3, blockchain, LLMs, AI, automation, distributed systems •
+                  tech stack ⎇ includes Next, React, Tailwind, shadcn/ui,
+                  Postgres, ♡AI • into fitness, competitive programming,
+                  photography, and reading • read blogs, articles, and books
+                  about tech, self-improvement, or anything that sparks my
+                  curiosity • free time? ‣ anime, outings, explore cuisines •
+                  let&apos;s build together ⁂
+                </p>
+              </div>
+              <div className="grid h-[200px] w-[200px] shrink-0 grid-cols-2 bg-zinc-500">
+                <div className="h-[100px] w-[100px] rounded-l-xl rounded-tr-xl bg-zinc-500"></div>
+                <div className="bg-background h-[100px] w-[100px] rounded-bl-xl"></div>
+                <div className="bg-background h-[100px] w-[100px] rounded-tr-xl"></div>
+                <div className="h-[100px] w-[100px] rounded-tl-xl rounded-r-xl bg-zinc-500"></div>
+              </div>
             </div>
           </div>
-          <div className="bg-border absolute inset-y-0 left-2 h-full w-px lg:left-10">
-            <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rotate-45 rounded border bg-zinc-950" />
-          </div>
-          <div className="bg-border absolute inset-y-0 right-2 h-full w-px lg:right-10">
-            <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rotate-45 rounded border bg-zinc-950" />
-          </div>
+          <DiamondPattern />
         </div>
       </div>
     </main>

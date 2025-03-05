@@ -129,4 +129,12 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  a {
+    @apply text-muted-foreground hover:text-blue-600 active:text-purple-600;
+  }
+
+  .logo {
+    @apply text-foreground hover:text-foreground active:text-foreground;
+  }
 }
