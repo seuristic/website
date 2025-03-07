@@ -137,4 +137,8 @@
   .logo {
     @apply text-foreground hover:text-foreground active:text-foreground;
   }
+
+  .pattern-lines {
+    @apply border-border border bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed;
+  }
 }

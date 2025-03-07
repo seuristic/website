@@ -1,5 +1,7 @@
 import Navbar from "@/components/custom/navbar";
-import DiamondPattern from "@/components/custom/pattern";
+import MarginXPattern from "@/components/custom/pattern";
+import { Button } from "@/components/ui/button";
+import { ArrowDownToLineIcon, FileIcon, RocketIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,40 +10,56 @@ export default function Home() {
       <Navbar />
 
       <div className="bg-background isolate">
-        <div className="relative z-3 w-full border-b px-2">
+        <div className="relative w-full border-b px-2">
           <div className="mx-auto flex min-h-[80svh] w-full max-w-3xl px-4 py-4 sm:min-h-[650px]">
-            <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-16 rounded-md sm:flex-row sm:gap-8">
+            <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-8 rounded-md sm:flex-row">
               <div className="flex flex-col gap-4">
                 <p className="text-muted-foreground">hi, myself ↓</p>
-                <h2 className="mb-4 text-3xl font-semibold tracking-tight">
+                <h2 className="text-3xl font-semibold tracking-tight">
                   Mohammad Shahanwaz
                 </h2>
-                <p className="text-muted-foreground text-justify">
+                <p className="text-muted-foreground mt-4 text-justify hyphens-auto">
                   <span className="text-foreground">software engineer</span> at{" "}
                   <Link href="https://www.bosscoderacademy.com" target="_blank">
                     Bosscoder Academy
                   </Link>{" "}
-                  ↗ • focused on building scalable, high-performance, and
-                  complex solutions • keen interest in{" "}
+                  ↗ • keen interest in{" "}
                   <span className="line-through">web2</span>, cloud computing,
                   web3, blockchain, LLMs, AI, automation, distributed systems •
-                  tech stack ⎇ includes Next, React, Tailwind, shadcn/ui,
-                  Postgres, ♡AI • into fitness, competitive programming,
-                  photography, and reading • read blogs, articles, and books
-                  about tech, self-improvement, or anything that sparks my
-                  curiosity • free time? ‣ anime, outings, explore cuisines •
-                  let&apos;s build together ⁂
+                  tech stack ⎇ Next, React, Tailwind, shadcn/ui, Postgres, ♡AI •
+                  fitness, competitive programming, and photography • blogs,
+                  articles, books — tech, self-growth, or whatever hooks me •
+                  free time = anime, outings, food adventures • let&apos;s build
+                  together <RocketIcon className="inline size-3.5" />
                 </p>
+                <div className="flex gap-4">
+                  <Link
+                    href="https://resume.shahanwaz.dev"
+                    target="_blank"
+                    className="mt-4 w-fit"
+                  >
+                    <Button>
+                      RÉSUMÉ <FileIcon />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://resume.shahanwaz.dev/Shahanwaz_Resume.pdf"
+                    target="_blank"
+                    className="mt-4 w-fit"
+                  >
+                    <Button variant="secondary">
+                      DOWNLOAD <ArrowDownToLineIcon />
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              <div className="grid h-[200px] w-[200px] shrink-0 grid-cols-2 bg-zinc-500">
-                <div className="h-[100px] w-[100px] rounded-l-xl rounded-tr-xl bg-zinc-500"></div>
-                <div className="bg-background h-[100px] w-[100px] rounded-bl-xl"></div>
-                <div className="bg-background h-[100px] w-[100px] rounded-tr-xl"></div>
-                <div className="h-[100px] w-[100px] rounded-tl-xl rounded-r-xl bg-zinc-500"></div>
+              <div className="relative h-[200px] w-[200px] shrink-0">
+                <div className="absolute top-10 right-10 z-1 h-[100px] w-[100px] bg-zinc-500"></div>
+                <div className="pattern-lines absolute bottom-10 left-10 h-[100px] w-[100px]"></div>
               </div>
             </div>
           </div>
-          <DiamondPattern />
+          <MarginXPattern pattern />
         </div>
       </div>
     </main>
