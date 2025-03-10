@@ -124,7 +124,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 font-sans;
   }
   body {
     @apply bg-background text-foreground;
@@ -133,12 +133,18 @@
   a {
     @apply text-muted-foreground hover:text-blue-600 active:text-purple-600;
   }
+}
 
+@layer utilities {
   .logo {
     @apply text-foreground hover:text-foreground active:text-foreground;
   }
 
-  .pattern-lines {
-    @apply border-border border bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed;
+  .shade-lines {
+    @apply bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed;
+  }
+
+  .custom-container {
+    @apply mx-auto w-full max-w-3xl px-4;
   }
 }

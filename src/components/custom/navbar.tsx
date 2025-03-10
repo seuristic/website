@@ -3,13 +3,14 @@ import React from "react";
 import { Button } from "../ui/button";
 import { ArrowDownIcon, ArrowUpRightIcon, MenuIcon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
-import DiamondPattern from "./pattern";
+import { XPattern } from "./pattern";
+import { ThemeToggler } from "./theme-toggler";
 
 export default function Navbar() {
   return (
     <nav className="bg-background sticky top-0 z-1 w-full">
-      <div className="relative w-full border-b px-2">
-        <div className="mx-auto max-w-3xl px-4 py-2">
+      <div className="relative isolate w-full border-b px-2">
+        <div className="custom-container py-2">
           <div className="flex items-center gap-4">
             <Link
               href={"/"}
@@ -18,7 +19,7 @@ export default function Navbar() {
               Shahanwaz
             </Link>
             <div className="bg-secondary hidden h-6 w-px sm:block" />
-            <div className="hidden items-center gap-4 font-mono text-sm/tight sm:flex">
+            <div className="hidden items-center gap-4 text-sm/tight sm:flex [&>a]:font-mono">
               <Link href={"/blogs"}>BLOGS</Link>
               <Link href={"/photography"}>PHOTOGRAPHY</Link>
               <Link href={"/bookshelf"}>BOOKSHELF</Link>
@@ -28,10 +29,11 @@ export default function Navbar() {
                 CONNECT <ArrowDownIcon />
               </Button>
             </div>
+            <ThemeToggler />
             <NavMenu />
           </div>
         </div>
-        <DiamondPattern />
+        <XPattern shade={false} />
       </div>
     </nav>
   );
