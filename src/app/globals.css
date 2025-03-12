@@ -123,6 +123,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50 font-sans;
   }
@@ -132,6 +135,24 @@
 
   a {
     @apply text-muted-foreground hover:text-blue-600 active:text-purple-600;
+  }
+
+  [data-logo] path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    pointer-events: none;
+    animation: drawPath 2s linear forwards;
+    animation-delay: 500ms;
+  }
+
+  [data-logo] path:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes drawPath {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }
 

@@ -5,6 +5,7 @@ import { ArrowDownIcon, ArrowUpRightIcon, MenuIcon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { XPattern } from "./pattern";
 import { ThemeToggler } from "./theme-toggler";
+import Logo from "./logo";
 
 export default function Navbar() {
   return (
@@ -16,17 +17,19 @@ export default function Navbar() {
               href={"/"}
               className="logo text-2xl/tight font-semibold tracking-tight"
             >
-              Shahanwaz
+              <Logo size={20} />
             </Link>
-            <div className="bg-secondary hidden h-6 w-px sm:block" />
+            <div className="bg-border hidden h-6 w-px sm:block" />
             <div className="hidden items-center gap-4 text-sm/tight sm:flex [&>a]:font-mono">
               <Link href={"/blogs"}>BLOGS</Link>
               <Link href={"/photography"}>PHOTOGRAPHY</Link>
               <Link href={"/bookshelf"}>BOOKSHELF</Link>
             </div>
             <div className="ml-auto">
-              <Button size={"sm"} className="cursor-pointer">
-                CONNECT <ArrowDownIcon />
+              <Button size={"sm"} asChild>
+                <Link href="#connect">
+                  CONNECT <ArrowDownIcon />
+                </Link>
               </Button>
             </div>
             <ThemeToggler />

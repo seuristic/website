@@ -1,19 +1,27 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-export function XPattern({ shade = true }: { shade?: boolean }) {
+export function XPattern({
+  shade = true,
+  border = true
+}: {
+  shade?: boolean;
+  border?: boolean;
+}) {
   return (
     <>
       <div
         className={cn(
-          "absolute inset-y-0 left-0 h-full w-2 border-r lg:w-10",
-          shade && "shade-lines border-y-0"
+          "absolute inset-y-0 left-0 h-full w-2 lg:w-10",
+          shade && "shade-lines border-y-0",
+          border && "border-r"
         )}
       />
       <div
         className={cn(
-          "absolute inset-y-0 right-0 h-full w-2 border-l lg:w-10",
-          shade && "shade-lines border-y-0"
+          "absolute inset-y-0 right-0 h-full w-2 lg:w-10",
+          shade && "shade-lines border-y-0",
+          border && "border-l"
         )}
       />
     </>
