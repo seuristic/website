@@ -68,7 +68,7 @@ export default function Home() {
                 <Image
                   src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                   alt="profile picture"
-                  objectFit="cover"
+                  className="object-cover"
                   fill
                 />
               </div>
@@ -76,22 +76,26 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="custom-container grid h-96 grid-rows-3 sm:h-36 sm:grid-cols-3 sm:grid-rows-1">
-          <div className="flex flex-col items-center justify-center gap-3 border-t border-l p-4 text-center">
-            <strong className="text-4xl font-bold">1000</strong>
-            <p className="text-muted-foreground font-mono text-sm">
-              lines of code written
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-3 border-t border-l p-4 text-center">
-            <strong className="text-4xl font-bold">749</strong>
-            <p className="text-muted-foreground font-mono text-sm">bug fixes</p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-3 border-x border-t p-4 text-center">
-            <strong className="text-4xl font-bold">690</strong>
-            <p className="text-muted-foreground font-mono text-sm">
-              DSA problems solved
-            </p>
+        <div className="custom-container">
+          <div className="grid h-96 grid-rows-3 divide-y border border-b-0 sm:h-36 sm:grid-cols-3 sm:grid-rows-1 sm:divide-x sm:divide-y-0">
+            <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
+              <strong className="text-4xl font-bold">1000</strong>
+              <p className="text-muted-foreground font-mono text-sm">
+                lines of code written
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
+              <strong className="text-4xl font-bold">749</strong>
+              <p className="text-muted-foreground font-mono text-sm">
+                bug fixes
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
+              <strong className="text-4xl font-bold">690</strong>
+              <p className="text-muted-foreground font-mono text-sm">
+                DSA problems solved
+              </p>
+            </div>
           </div>
         </div>
         <XPattern />
@@ -119,8 +123,7 @@ export default function Home() {
                         <Image
                           src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
                           alt="profile"
-                          objectFit="cover"
-                          className="overflow-hidden rounded-2xl"
+                          className="overflow-hidden rounded-2xl object-cover"
                           fill
                         />
                       </div>
