@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { ArrowDownIcon, ArrowUpRightIcon, MenuIcon } from "lucide-react";
+import { ArrowDownIcon, FileIcon, MenuIcon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { XPattern } from "./pattern";
 import { ThemeToggler } from "./theme-toggler";
@@ -13,15 +13,11 @@ export default function Navbar() {
       <div className="relative isolate w-full border-b px-2">
         <div className="custom-container py-2">
           <div className="flex items-center gap-4">
-            <Link
-              href={"/"}
-              className="logo text-2xl/tight font-semibold tracking-tight"
-            >
+            <Link href={"/"}>
               <Logo size={20} />
             </Link>
             <div className="bg-border hidden h-6 w-px sm:block" />
             <div className="hidden items-center gap-4 text-sm/tight sm:flex [&>a]:font-mono">
-              <Link href={"/blogs"}>BLOGS</Link>
               <Link href={"/photography"}>PHOTOGRAPHY</Link>
               <Link href={"/bookshelf"}>BOOKSHELF</Link>
             </div>
@@ -51,23 +47,18 @@ function NavMenu() {
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="flex flex-col items-center gap-4 p-4 font-sans">
-          <Link
-            href={"/"}
-            className="text-2xl/tight font-semibold tracking-tight"
-          >
-            Shahanwaz
+        <div className="flex flex-col items-center gap-10 px-4 py-20 font-sans">
+          <Link href={"/"}>
+            <Logo size={20} />
           </Link>
           <div className="flex flex-col items-center gap-4 font-mono text-sm/tight">
-            <Link href={"/blogs"}>BLOGS</Link>
             <Link href={"/photography"}>PHOTOGRAPHY</Link>
-            <Link href={"/bookshelf"}>BOOKSHELF</Link>
           </div>
-          <Link href="https://resume.shahanwaz.dev" target="_blank">
-            <Button size={"sm"} className="cursor-pointer">
-              RESUME <ArrowUpRightIcon className="size-5" />
-            </Button>
-          </Link>
+          <Button size={"sm"} asChild>
+            <Link href="https://resume.shahanwaz.dev" target="_blank">
+              RESUME <FileIcon />
+            </Link>
+          </Button>
         </div>
       </DrawerContent>
     </Drawer>

@@ -40,7 +40,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(FragmentMono.variable, Inter.variable, "font-primary")}
+        className={cn(
+          FragmentMono.variable,
+          Inter.variable,
+          "bg-background text-foreground"
+        )}
       >
         <ThemeProvider
           attribute="class"

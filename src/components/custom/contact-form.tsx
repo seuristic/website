@@ -19,9 +19,9 @@ import { SendIcon } from "lucide-react";
 import { toast } from "sonner";
 
 const formSchema = z.object({
-  name: z.string(),
+  name: z.string().min(1),
   email: z.string().email(),
-  message: z.string()
+  message: z.string().min(1)
 });
 
 export default function ContactForm() {
