@@ -137,7 +137,7 @@
     @apply text-muted-foreground hover:text-blue-600 active:text-purple-600;
   }
 
-  [data-logo] path {
+  .logo-animate > svg path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     pointer-events: none;
@@ -145,7 +145,7 @@
     animation-delay: 500ms;
   }
 
-  [data-logo] path:nth-child(2) {
+  .logo-animate > svg path:nth-child(2) {
     animation-delay: 1.5s;
   }
 

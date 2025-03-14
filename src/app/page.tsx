@@ -192,7 +192,6 @@ export default function Home() {
           <CopyrightIcon className="size-4" />
           {new Date().getFullYear()} Mohammad Shahanwaz
         </div>
-        <XPattern shade={false} />
       </div>
     </main>
   );

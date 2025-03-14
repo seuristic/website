@@ -1,16 +1,15 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { ArrowDownIcon, FileIcon, MenuIcon } from "lucide-react";
+import { ArrowDownIcon, MenuIcon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
-import { XPattern } from "./pattern";
 import { ThemeToggler } from "./theme-toggler";
 import Logo from "./logo";
 
 export default function Navbar() {
   return (
     <nav className="bg-background sticky top-0 z-1 w-full">
-      <div className="relative isolate w-full border-b px-2">
+      <div className="isolate w-full border-b px-2">
         <div className="custom-container py-2">
           <div className="flex items-center gap-4">
             <Link href={"/"}>
@@ -32,7 +31,6 @@ export default function Navbar() {
             <NavMenu />
           </div>
         </div>
-        <XPattern shade={false} />
       </div>
     </nav>
   );
@@ -42,23 +40,16 @@ function NavMenu() {
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>
-        <Button className="sm:hidden" variant={"ghost"} size={"icon"}>
+        <Button variant={"ghost"} size={"icon"}>
           <MenuIcon className="size-5" />
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="flex flex-col items-center gap-10 px-4 py-20 font-sans">
-          <Link href={"/"}>
-            <Logo size={20} />
+        <div className="grid grid-cols-1 place-items-center gap-4 p-4 font-mono">
+          <Link href={"/"} className="py-10">
+            <Logo size={20} animate={false} />
           </Link>
-          <div className="flex flex-col items-center gap-4 font-mono text-sm/tight">
-            <Link href={"/photography"}>PHOTOGRAPHY</Link>
-          </div>
-          <Button size={"sm"} asChild>
-            <Link href="https://resume.shahanwaz.dev" target="_blank">
-              RESUME <FileIcon />
-            </Link>
-          </Button>
+          <Link href={"/photography"}>PHOTOGRAPHY</Link>
         </div>
       </DrawerContent>
     </Drawer>
