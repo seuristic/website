@@ -16,7 +16,7 @@ export default function Navbar() {
               <Logo size={20} />
             </Link>
             <div className="bg-border hidden h-6 w-px sm:block" />
-            <div className="hidden items-center gap-4 text-sm/tight sm:flex [&>a]:font-mono">
+            <div className="hidden space-x-4 font-mono text-sm sm:inline">
               <Link href={"/photography"}>PHOTOGRAPHY</Link>
               <Link href={"/bookshelf"}>BOOKSHELF</Link>
             </div>
@@ -40,7 +40,7 @@ function NavMenu() {
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>
-        <Button variant={"ghost"} size={"icon"}>
+        <Button className="sm:hidden" variant={"ghost"} size={"icon"}>
           <MenuIcon className="size-5" />
         </Button>
       </DrawerTrigger>

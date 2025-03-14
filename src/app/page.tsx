@@ -22,14 +22,14 @@ export default function Home() {
 
       {/* Hero section */}
       <div className="relative isolate w-full border-b px-2">
-        <div className="custom-container flex min-h-[80svh] py-4 sm:min-h-[650px]">
+        <div className="custom-container flex py-4 sm:min-h-[650px]">
           <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-8 rounded-md sm:flex-row">
             <div className="space-y-10">
               <div className="space-y-4">
                 <p className="text-muted-foreground inline-flex items-center gap-1">
                   hi, myself <ArrowDownIcon className="size-4" />
                 </p>
-                <h2 className="text-3xl font-semibold tracking-tight">
+                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                   Mohammad Shahanwaz
                 </h2>
               </div>
@@ -76,12 +76,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="custom-container">
+        <div className="custom-container mt-20 sm:mt-0">
           <div className="grid h-96 grid-rows-3 divide-y border border-b-0 sm:h-36 sm:grid-cols-3 sm:grid-rows-1 sm:divide-x sm:divide-y-0">
             <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
               <strong className="text-4xl font-bold">1000</strong>
               <p className="text-muted-foreground font-mono text-sm">
-                lines of code written
+                lines of code
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
               <strong className="text-4xl font-bold">690</strong>
               <p className="text-muted-foreground font-mono text-sm">
-                DSA problems solved
+                dsa problems
               </p>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Home() {
 
       {/* Project section */}
       <div id="projects" className="relative isolate w-full border-b px-2">
-        <div className="custom-container py-32">
+        <div className="custom-container py-20 sm:py-32">
           <div className="space-y-10">
             <div className="space-y-4">
               <p className="text-muted-foreground inline-flex items-center gap-1">
@@ -113,7 +113,7 @@ export default function Home() {
                 Things I&apos;ve built in the past
               </h2>
             </div>
-            <div className="space-y-32">
+            <div className="space-y-20 sm:space-y-32">
               {Array(3)
                 .fill(0)
                 .map((_, i) => (
@@ -168,7 +168,7 @@ export default function Home() {
 
       {/* Contact form section */}
       <div id="connect" className="relative isolate w-full border-b px-2">
-        <div className="custom-container py-32">
+        <div className="custom-container py-20 sm:py-32">
           <div className="space-y-10">
             <div className="space-y-4">
               <p className="text-muted-foreground inline-flex items-center gap-1">
@@ -188,7 +188,7 @@ export default function Home() {
 
       {/* footer */}
       <div className="relative isolate px-2">
-        <div className="custom-container flex items-center justify-center gap-2 py-4 font-mono text-zinc-400 dark:text-zinc-700">
+        <div className="custom-container flex items-center justify-center gap-2 py-4 font-mono text-sm text-zinc-400 dark:text-zinc-700">
           <CopyrightIcon className="size-4" />
           {new Date().getFullYear()} Mohammad Shahanwaz
         </div>
