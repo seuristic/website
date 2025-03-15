@@ -7,29 +7,28 @@ import {
   ArrowDownToLineIcon,
   FileIcon,
   CogIcon,
-  GithubIcon,
   SquareArrowOutUpRightIcon,
   SatelliteDishIcon,
   CopyrightIcon
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { GithubIcon } from "@/assets/icons/brands";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <Navbar />
 
-      {/* Hero section */}
       <div className="relative isolate w-full border-b px-2">
         <div className="custom-container flex py-4 sm:min-h-[650px]">
           <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-8 rounded-md sm:flex-row">
-            <div className="space-y-10">
+            <div className="space-y-6 sm:space-y-10">
               <div className="space-y-4">
                 <p className="text-muted-foreground inline-flex items-center gap-1">
                   hi, myself <ArrowDownIcon className="size-4" />
                 </p>
-                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                <h2 className="text-3xl font-semibold tracking-tight">
                   Mohammad Shahanwaz
                 </h2>
               </div>
@@ -101,7 +100,6 @@ export default function Home() {
         <XPattern />
       </div>
 
-      {/* Project section */}
       <div id="projects" className="relative isolate w-full border-b px-2">
         <div className="custom-container py-20 sm:py-32">
           <div className="space-y-10">
@@ -166,7 +164,6 @@ export default function Home() {
         <XPattern />
       </div>
 
-      {/* Contact form section */}
       <div id="connect" className="relative isolate w-full border-b px-2">
         <div className="custom-container py-20 sm:py-32">
           <div className="space-y-10">
@@ -186,7 +183,6 @@ export default function Home() {
         <XPattern />
       </div>
 
-      {/* footer */}
       <div className="relative isolate px-2">
         <div className="custom-container flex items-center justify-center gap-2 py-4 font-mono text-sm text-zinc-400 dark:text-zinc-700">
           <CopyrightIcon className="size-4" />

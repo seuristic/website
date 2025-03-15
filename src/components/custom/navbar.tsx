@@ -8,9 +8,9 @@ import Logo from "./logo";
 
 export default function Navbar() {
   return (
-    <nav className="bg-background sticky top-0 z-100">
+    <nav className="bg-background sticky top-0 z-1">
       <div className="w-full border-b px-2">
-        <div className="custom-container py-2">
+        <div className="custom-container h-12.5 py-2">
           <div className="flex items-center gap-4">
             <Link href={"/"}>
               <Logo size={20} />
