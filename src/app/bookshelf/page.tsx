@@ -11,12 +11,19 @@ export const metadata: Metadata = {
 
 export default function BookshelfPage() {
   const photoList = [
-    "https://www.picmaker.com/assets/images/bookcovermaker/template-1.png",
-    "https://blog-cdn.reedsy.com/directories/admin/attachments/large_4c70095371eff60044f41f5a30854561.jpg",
-    "https://marketplace.canva.com/EAGEuNwgF3k/1/0/1003w/canva-modern-and-simple-prayer-journal-book-cover-UL8kCB4ONE8.jpg",
-    "https://i.pinimg.com/736x/07/d4/8e/07d48e4f76e56efe05377eabc22da671.jpg",
+    "https://m.media-amazon.com/images/I/81F90H7hnML._AC_UF1000,1000_QL80_.jpg",
+    "https://m.media-amazon.com/images/I/61mxjI8qcxL.jpg",
+    "https://m.media-amazon.com/images/I/71zlhHlWOzL.jpg",
+    "https://m.media-amazon.com/images/I/91CqNElQaKL.jpg",
     "https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg",
-    "https://m.media-amazon.com/images/I/616c+ys7RBL._UF1000,1000_QL80_.jpg"
+    "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+    "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
+    "https://m.media-amazon.com/images/I/81BE7eeKzAL.jpg",
+    "https://m.media-amazon.com/images/I/81JJ7fyyKyS.jpg",
+    "https://m.media-amazon.com/images/I/71uUY42uNsL.jpg",
+    "https://m.media-amazon.com/images/I/61jCkOVf1oL.jpg",
+    "https://m.media-amazon.com/images/I/91868k2+gUL.jpg",
+    "https://m.media-amazon.com/images/I/615KGTRs1OL._UF1000,1000_QL80_.jpg"
   ];
 
   return (

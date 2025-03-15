@@ -14,6 +14,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { GithubIcon } from "@/assets/icons/brands";
+import ShahanwazPhoto from "@/assets/images/shahanwaz.png";
+import HomeMetrics from "@/components/custom/metrics";
 
 export default function Home() {
   return (
@@ -34,7 +36,10 @@ export default function Home() {
               </div>
               <div className="space-y-8">
                 <p className="text-muted-foreground text-justify hyphens-auto">
-                  <span className="text-foreground">software engineer</span> at{" "}
+                  <span className="text-foreground font-medium">
+                    software engineer
+                  </span>{" "}
+                  at{" "}
                   <Link href="https://www.bosscoderacademy.com" target="_blank">
                     Bosscoder Academy
                   </Link>{" "}
@@ -65,7 +70,7 @@ export default function Home() {
             <div className="relative h-[200px] w-[200px] shrink-0">
               <div className="absolute top-10 right-10 z-1 h-[100px] w-[100px]">
                 <Image
-                  src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                  src={ShahanwazPhoto}
                   alt="profile picture"
                   className="object-cover"
                   fill
@@ -75,28 +80,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="custom-container mt-20 sm:mt-0">
-          <div className="grid h-96 grid-rows-3 divide-y border border-b-0 sm:h-36 sm:grid-cols-3 sm:grid-rows-1 sm:divide-x sm:divide-y-0">
-            <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
-              <strong className="text-4xl font-bold">1000</strong>
-              <p className="text-muted-foreground font-mono text-sm">
-                lines of code
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
-              <strong className="text-4xl font-bold">749</strong>
-              <p className="text-muted-foreground font-mono text-sm">
-                bug fixes
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
-              <strong className="text-4xl font-bold">690</strong>
-              <p className="text-muted-foreground font-mono text-sm">
-                dsa problems
-              </p>
-            </div>
-          </div>
-        </div>
+        <HomeMetrics />
         <XPattern />
       </div>
 

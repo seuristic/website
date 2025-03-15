@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "*.com"
+        hostname: "*.*"
       }
       // "cdn-icons-png.flaticon.com",
       // "wallpapershome.com"

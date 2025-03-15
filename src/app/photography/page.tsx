@@ -5,6 +5,19 @@ import { CameraIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
+import Photo1 from "@/assets/images/photography/1.jpg";
+import Photo2 from "@/assets/images/photography/2.jpg";
+import Photo3 from "@/assets/images/photography/3.jpg";
+import Photo4 from "@/assets/images/photography/4.jpg";
+import Photo5 from "@/assets/images/photography/5.jpg";
+import Photo6 from "@/assets/images/photography/6.jpg";
+import Photo7 from "@/assets/images/photography/7.jpg";
+import Photo8 from "@/assets/images/photography/8.jpg";
+import Photo9 from "@/assets/images/photography/9.jpg";
+import Photo10 from "@/assets/images/photography/10.jpg";
+import Photo11 from "@/assets/images/photography/11.jpg";
+import Photo12 from "@/assets/images/photography/12.jpg";
+import Photo13 from "@/assets/images/photography/13.jpg";
 
 export const metadata: Metadata = {
   title: "Photography"
@@ -12,11 +25,19 @@ export const metadata: Metadata = {
 
 export default function PhotographyPage() {
   const photoList = [
-    "https://images6.alphacoders.com/129/1293436.jpg",
-    "https://i.pinimg.com/originals/12/39/bd/1239bd52ed659fbdb6a941bc87d26c53.jpg",
-    "https://mrwallpaper.com/images/hd/sung-jinwoo-from-solo-leveling-4k-5nocnj2a0sy7bkyp.jpg",
-    "https://wallpapersok.com/images/high/igris-from-solo-leveling-4k-noriawlf3y7v5jh7.jpg",
-    "https://mrwallpaper.com/images/hd/igris-and-jinwoo-solo-leveling-4k-7vnufsi3vg7bhybf.jpg"
+    Photo1,
+    Photo2,
+    Photo3,
+    Photo4,
+    Photo5,
+    Photo6,
+    Photo7,
+    Photo8,
+    Photo9,
+    Photo10,
+    Photo11,
+    Photo12,
+    Photo13
   ];
 
   return (
