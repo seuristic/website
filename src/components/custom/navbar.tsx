@@ -10,6 +10,43 @@ export default function Navbar() {
   return (
     <nav className="bg-background sticky top-0 z-1">
       <div className="w-full border-b px-2">
+        <div className="custom-container flex h-12.5 items-center gap-x-4 py-2">
+          <Link href={"/"} className="mr-auto">
+            <Logo size={20} />
+          </Link>
+          <ThemeToggler />
+          <NavMenu />
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export function NavMenu() {
+  return (
+    <Drawer direction="right">
+      <DrawerTrigger asChild>
+        <Button className="sm:hidden" variant={"ghost"} size={"icon"}>
+          <MenuIcon className="size-5" />
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent>
+        <div className="grid grid-cols-1 place-items-center gap-4 p-4 font-mono">
+          <Link href={"/"} className="py-10">
+            <Logo size={20} animate={false} />
+          </Link>
+          <Link href={"/photography"}>PHOTOGRAPHY</Link>
+          <Link href={"/bookshelf"}>BOOKSHELF</Link>
+        </div>
+      </DrawerContent>
+    </Drawer>
+  );
+}
+
+export function HomeNavbar() {
+  return (
+    <nav className="bg-background sticky top-0 z-1">
+      <div className="w-full border-b px-2">
         <div className="custom-container h-12.5 py-2">
           <div className="flex items-center gap-4">
             <Link href={"/"}>
@@ -33,25 +70,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  );
-}
-
-function NavMenu() {
-  return (
-    <Drawer direction="right">
-      <DrawerTrigger asChild>
-        <Button className="sm:hidden" variant={"ghost"} size={"icon"}>
-          <MenuIcon className="size-5" />
-        </Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <div className="grid grid-cols-1 place-items-center gap-4 p-4 font-mono">
-          <Link href={"/"} className="py-10">
-            <Logo size={20} animate={false} />
-          </Link>
-          <Link href={"/photography"}>PHOTOGRAPHY</Link>
-        </div>
-      </DrawerContent>
-    </Drawer>
   );
 }

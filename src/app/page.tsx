@@ -1,5 +1,5 @@
 import ContactForm from "@/components/custom/contact-form";
-import Navbar from "@/components/custom/navbar";
+import { HomeNavbar } from "@/components/custom/navbar";
 import { XPattern } from "@/components/custom/pattern";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +18,7 @@ import { GithubIcon } from "@/assets/icons/brands";
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      <HomeNavbar />
 
       <div className="relative isolate w-full border-b px-2">
         <div className="custom-container flex py-4 sm:min-h-[650px]">

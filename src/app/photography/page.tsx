@@ -1,10 +1,9 @@
-import Logo from "@/components/custom/logo";
+import Navbar from "@/components/custom/navbar";
 import { XPattern } from "@/components/custom/pattern";
 import { cn } from "@/lib/utils";
 import { CameraIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -19,24 +18,14 @@ export default function PhotographyPage() {
     "https://wallpapersok.com/images/high/igris-from-solo-leveling-4k-noriawlf3y7v5jh7.jpg",
     "https://mrwallpaper.com/images/hd/igris-and-jinwoo-solo-leveling-4k-7vnufsi3vg7bhybf.jpg"
   ];
+
   return (
     <main className="relative">
-      <nav className="bg-background sticky top-0 z-1">
-        <div className="w-full border-b px-2">
-          <div className="custom-container flex h-12.5 items-center py-2">
-            <Link href={"/"}>
-              <Logo
-                className="text-muted-foreground hover:text-foreground"
-                size={20}
-              />
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <div className="relative">
         <div className="custom-container space-y-4 py-10">
           <p className="text-muted-foreground inline-flex items-center gap-1">
-            camera clicks <CameraIcon className="size-4" />
+            clicks <CameraIcon className="size-4" />
           </p>
           <h2 className="text-3xl font-semibold tracking-tight">Photography</h2>
         </div>

@@ -1,9 +1,8 @@
-import Logo from "@/components/custom/logo";
+import Navbar from "@/components/custom/navbar";
 import { XPattern } from "@/components/custom/pattern";
 import { BookIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -22,18 +21,7 @@ export default function BookshelfPage() {
 
   return (
     <main className="relative">
-      <nav className="bg-background sticky top-0 z-1">
-        <div className="w-full border-b px-2">
-          <div className="custom-container flex h-12.5 items-center py-2">
-            <Link href={"/"}>
-              <Logo
-                className="text-muted-foreground hover:text-foreground"
-                size={20}
-              />
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <div className="relative">
         <div className="custom-container space-y-4 py-10">
           <p className="text-muted-foreground inline-flex items-center gap-1">
@@ -46,7 +34,7 @@ export default function BookshelfPage() {
             {photoList.map((photo, i) => (
               <div
                 key={i}
-                className="flex aspect-3/4 w-full overflow-hidden border p-10"
+                className="flex aspect-3/4 w-full overflow-hidden border p-5 sm:p-10"
               >
                 <div className="relative m-auto h-full w-full">
                   <Image
