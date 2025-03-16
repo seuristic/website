@@ -4,6 +4,19 @@ import { BookIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
+import AtomicHabits from "@/assets/images/bookshelf/atomic-habits.jpg";
+import ShoeDog from "@/assets/images/bookshelf/shoe-dog.jpg";
+import AsAManThinketh from "@/assets/images/bookshelf/as-a-man-thinketh.jpg";
+import ItEndsWithUs from "@/assets/images/bookshelf/it-ends-with-us.jpg";
+import CTCI from "@/assets/images/bookshelf/ctci.jpg";
+import Ikigai from "@/assets/images/bookshelf/ikigai.jpg";
+import TheSubtleArtOfGivingAFuck from "@/assets/images/bookshelf/the-subtle-art-of-not-giving-a-fuck.jpg";
+import RichDadPoorDad from "@/assets/images/bookshelf/rich-dad-poor-dad.jpg";
+import DeepWork from "@/assets/images/bookshelf/deep-work.jpg";
+import BeforeTheCoffeeGetsCold from "@/assets/images/bookshelf/before-the-coffee-gets-cold.jpg";
+import DoItToday from "@/assets/images/bookshelf/do-it-today.jpg";
+import Verity from "@/assets/images/bookshelf/verity.jpg";
+import SystemDesignInterview from "@/assets/images/bookshelf/system-design-interview.jpg";
 
 export const metadata: Metadata = {
   title: "Photography"
@@ -11,19 +24,19 @@ export const metadata: Metadata = {
 
 export default function BookshelfPage() {
   const photoList = [
-    "https://m.media-amazon.com/images/I/81F90H7hnML._AC_UF1000,1000_QL80_.jpg",
-    "https://m.media-amazon.com/images/I/61mxjI8qcxL.jpg",
-    "https://m.media-amazon.com/images/I/71zlhHlWOzL.jpg",
-    "https://m.media-amazon.com/images/I/91CqNElQaKL.jpg",
-    "https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg",
-    "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
-    "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
-    "https://m.media-amazon.com/images/I/81BE7eeKzAL.jpg",
-    "https://m.media-amazon.com/images/I/81JJ7fyyKyS.jpg",
-    "https://m.media-amazon.com/images/I/71uUY42uNsL.jpg",
-    "https://m.media-amazon.com/images/I/61jCkOVf1oL.jpg",
-    "https://m.media-amazon.com/images/I/91868k2+gUL.jpg",
-    "https://m.media-amazon.com/images/I/615KGTRs1OL._UF1000,1000_QL80_.jpg"
+    AtomicHabits,
+    ShoeDog,
+    DeepWork,
+    DoItToday,
+    SystemDesignInterview,
+    CTCI,
+    AsAManThinketh,
+    TheSubtleArtOfGivingAFuck,
+    RichDadPoorDad,
+    Ikigai,
+    BeforeTheCoffeeGetsCold,
+    Verity,
+    ItEndsWithUs
   ];
 
   return (
@@ -51,7 +64,7 @@ export default function BookshelfPage() {
                     alt="photo"
                     className="object-contain drop-shadow-lg"
                     fill
-                    // placeholder="blur"
+                    placeholder="blur"
                   />
                 </div>
               </div>

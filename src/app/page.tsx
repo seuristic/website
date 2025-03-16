@@ -106,8 +106,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[200px] w-[200px] shrink-0">
-              <div className="absolute top-10 right-10 z-1 h-[100px] w-[100px]">
+            <div className="relative size-[300px] shrink-0 sm:size-[200px]">
+              <div className="absolute top-10 right-10 z-1 size-[200px] sm:top-4 sm:right-4 sm:size-[150px]">
                 <Image
                   src={ShahanwazPhoto}
                   alt="profile picture"
@@ -116,7 +116,7 @@ export default function Home() {
                   placeholder="blur"
                 />
               </div>
-              <div className="shade-lines absolute bottom-10 left-10 h-[100px] w-[100px]" />
+              <div className="shade-lines absolute bottom-10 left-10 size-[200px] sm:bottom-4 sm:left-4 sm:size-[150px]" />
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
                 projects <CogIcon className="size-4" />
               </p>
               <h2 className="text-3xl font-semibold tracking-tight">
-                Things I&apos;ve built in the past
+                Things I&apos;ve built
               </h2>
             </div>
             <div className="space-y-20 sm:space-y-32">
@@ -158,7 +158,7 @@ export default function Home() {
                         {project.subtitle}
                       </h4>
                     </div>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-justify hyphens-auto">
                       {project.description}
                     </p>
                     <div className="inline-flex gap-4">
