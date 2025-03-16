@@ -1,3 +1,6 @@
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import GithubIcon from "./github";
+import LinkedInIcon from "./linkedin";
+import LeetcodeIcon from "./leetcode";
+import CodeforcesIcon from "./codeforces";
 
-export { SiGithub as GithubIcon };
+export { GithubIcon, LinkedInIcon, LeetcodeIcon, CodeforcesIcon };

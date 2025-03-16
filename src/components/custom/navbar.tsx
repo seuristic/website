@@ -5,6 +5,12 @@ import { ArrowDownIcon, MenuIcon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { ThemeToggler } from "./theme-toggler";
 import Logo from "./logo";
+import {
+  CodeforcesIcon,
+  GithubIcon,
+  LeetcodeIcon,
+  LinkedInIcon
+} from "@/assets/icons/brands";
 
 export default function Navbar() {
   return (
@@ -37,6 +43,28 @@ export function NavMenu() {
           </Link>
           <Link href={"/photography"}>PHOTOGRAPHY</Link>
           <Link href={"/bookshelf"}>BOOKSHELF</Link>
+          <div className="mt-10 grid grid-cols-2 gap-4">
+            <Button size={"icon"} asChild title="Github">
+              <Link href="#connect">
+                <GithubIcon />
+              </Link>
+            </Button>
+            <Button size={"icon"} asChild title="LinkedIn">
+              <Link href="#connect">
+                <LinkedInIcon />
+              </Link>
+            </Button>
+            <Button size={"icon"} asChild title="Leetcode">
+              <Link href="#connect">
+                <LeetcodeIcon />
+              </Link>
+            </Button>
+            <Button size={"icon"} asChild title="Codeforces">
+              <Link href="#connect">
+                <CodeforcesIcon />
+              </Link>
+            </Button>
+          </div>
         </div>
       </DrawerContent>
     </Drawer>

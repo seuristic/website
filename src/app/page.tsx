@@ -9,13 +9,52 @@ import {
   CogIcon,
   SquareArrowOutUpRightIcon,
   SatelliteDishIcon,
-  CopyrightIcon
+  CopyrightIcon,
+  PickaxeIcon
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { GithubIcon } from "@/assets/icons/brands";
 import ShahanwazPhoto from "@/assets/images/shahanwaz.png";
 import HomeMetrics from "@/components/custom/metrics";
+import ImagecLogo from "@/assets/images/projects/imagec-logo.png";
+import ImagecBanner from "@/assets/images/projects/imagec-banner.png";
+import NITDelhiLogo from "@/assets/images/projects/nitdelhi-logo.png";
+import FerBanner from "@/assets/images/projects/fer-banner.png";
+import DonezoLogo from "@/assets/images/projects/donezo-logo.png";
+
+const projects = [
+  {
+    title: "Imagec App",
+    subtitle: "Digital Image E-Commerce Platform",
+    description:
+      "Built a full-stack image e-commerce platform with Next.js 15, React, TypeScript. Secure image processing with ImageKit.io, payments with Razorpay, auth with NextAuth. Automated image delivery, responsive galleries, and email notifications with Mailtrap SMTP.",
+    logo: ImagecLogo,
+    live: "https://imagec-shahanwaz.vercel.app",
+    repo: "https://github.com/seuristic/imagec-app",
+    banner: ImagecBanner
+  },
+  {
+    title: "Facial Emotion Recognition for Rehabilitation",
+    subtitle: "ML-based emotion detection with LED display and web analytics",
+    description:
+      "Developed a Facial Emotion Recognition (FER) system for rehabilitation as a final-year project. Improved ML model accuracy and integrated with Arduino-powered LED grids to display emotions as pixelated emojis. Built a MERN-based web app for tracking and analyzing detected emotions.",
+    logo: NITDelhiLogo,
+    repo: "https://github.com/seuristic/college-project-FER-ml-program",
+    banner: FerBanner
+  },
+  {
+    title: "Donezo App",
+    subtitle: "All-in-one productivity tracker",
+    description:
+      "Donezo is an all-in-one productivity tracker that helps you stay organized. Manage notes, to-do lists, and movie collections in one place, with more features coming soon!",
+    logo: DonezoLogo,
+    // live: "/",
+    // repo: "/",
+    // banner: FerBanner,
+    inProgress: true
+  }
+];
 
 export default function Home() {
   return (
@@ -74,6 +113,7 @@ export default function Home() {
                   alt="profile picture"
                   className="object-cover"
                   fill
+                  placeholder="blur"
                 />
               </div>
               <div className="shade-lines absolute bottom-10 left-10 h-[100px] w-[100px]" />
@@ -96,50 +136,63 @@ export default function Home() {
               </h2>
             </div>
             <div className="space-y-20 sm:space-y-32">
-              {Array(3)
-                .fill(0)
-                .map((_, i) => (
+              {projects &&
+                projects.slice(0, 3).map((project, i) => (
                   <div key={i} className="space-y-6">
                     <div className="w-fit rounded-[20px] border p-1">
                       <div className="relative h-16 w-16">
                         <Image
-                          src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                          src={project.logo}
                           alt="profile"
-                          className="overflow-hidden rounded-2xl object-cover"
+                          className="overflow-hidden rounded-2xl object-cover shadow"
                           fill
+                          placeholder="blur"
                         />
                       </div>
                     </div>
-                    <h3 className="text-2xl font-semibold tracking-tight">
-                      Project Name {i + 1}
-                    </h3>
+                    <div className="space-y-2">
+                      <h3 className="inline-flex flex-wrap items-center gap-4 text-2xl font-semibold tracking-tight">
+                        {project.title}
+                      </h3>
+                      <h4 className="text-sm font-medium text-zinc-500">
+                        {project.subtitle}
+                      </h4>
+                    </div>
                     <p className="text-muted-foreground">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ratione rem libero eveniet totam asperiores similique
-                      distinctio sint sunt tempora corrupti saepe nemo incidunt,
-                      autem, maiores, enim fugiat temporibus voluptatum
-                      voluptatibus.
+                      {project.description}
                     </p>
                     <div className="inline-flex gap-4">
-                      <Button variant="secondary" asChild>
-                        <Link href={"/"}>
-                          LIVE <SquareArrowOutUpRightIcon />
-                        </Link>
-                      </Button>
-                      <Button variant="secondary" asChild>
-                        <Link href={"/"}>
-                          REPOSITORY <GithubIcon />
-                        </Link>
-                      </Button>
+                      {project.live && (
+                        <Button asChild>
+                          <Link href={project.live}>
+                            LIVE <SquareArrowOutUpRightIcon />
+                          </Link>
+                        </Button>
+                      )}
+                      {project.repo && (
+                        <Button variant="secondary" asChild>
+                          <Link href={project.repo}>
+                            REPOSITORY <GithubIcon />
+                          </Link>
+                        </Button>
+                      )}
+                      {project.inProgress && (
+                        <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-xs font-medium text-yellow-600 dark:text-yellow-500">
+                          <PickaxeIcon className="size-4" /> BUILDING
+                        </div>
+                      )}
                     </div>
-                    <div className="relative aspect-video w-full">
-                      <Image
-                        src="https://wallpapershome.com/images/pages/pic_h/6469.jpg"
-                        alt=""
-                        className="rounded-md"
-                        fill
-                      />
-                    </div>
+                    {project.banner && (
+                      <div className="relative aspect-video w-full">
+                        <Image
+                          src={project.banner}
+                          alt=""
+                          className="rounded-md shadow-lg"
+                          fill
+                          placeholder="blur"
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
             </div>
