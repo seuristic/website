@@ -44,23 +44,26 @@ export function NavMenu() {
           <Link href={"/photography"}>PHOTOGRAPHY</Link>
           <Link href={"/bookshelf"}>BOOKSHELF</Link>
           <div className="mt-10 grid grid-cols-2 gap-4">
-            <Button size={"icon"} asChild title="Github">
-              <Link href="#connect">
+            <Button size={"icon-lg"} asChild title="Github">
+              <Link href="https://github.com/seuristic/" target="_blank">
                 <GithubIcon />
               </Link>
             </Button>
-            <Button size={"icon"} asChild title="LinkedIn">
-              <Link href="#connect">
+            <Button size={"icon-lg"} asChild title="LinkedIn">
+              <Link href="https://linkedin.com/in/mshahanwaz" target="_blank">
                 <LinkedInIcon />
               </Link>
             </Button>
-            <Button size={"icon"} asChild title="Leetcode">
-              <Link href="#connect">
+            <Button size={"icon-lg"} asChild title="Leetcode">
+              <Link href="https://leetcode.com/u/seuristic/" target="_blank">
                 <LeetcodeIcon />
               </Link>
             </Button>
-            <Button size={"icon"} asChild title="Codeforces">
-              <Link href="#connect">
+            <Button size={"icon-lg"} asChild title="Codeforces">
+              <Link
+                href="https://codeforces.com/profile/seuristic"
+                target="_blank"
+              >
                 <CodeforcesIcon />
               </Link>
             </Button>
