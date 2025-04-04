@@ -15,7 +15,7 @@ export default function HomeMetrics() {
   }, []);
 
   return (
-    <div className="custom-container mt-20 sm:mt-0">
+    <div className="mx-auto mt-20 w-full max-w-3xl px-4 sm:mt-0 md:border-x">
       <div className="grid h-96 grid-rows-3 divide-y border border-b-0 sm:h-36 sm:grid-cols-3 sm:grid-rows-1 sm:divide-x sm:divide-y-0">
         <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
           <strong className="text-4xl font-bold">

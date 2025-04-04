@@ -1,6 +1,5 @@
 import Navbar from "@/components/custom/navbar";
 import { XPattern } from "@/components/custom/pattern";
-import { BookIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
@@ -44,15 +43,12 @@ export default function BookshelfPage() {
       <Navbar />
       <div className="relative">
         <div className="px-2">
-          <div className="custom-container space-y-4 py-10">
-            <p className="text-muted-foreground inline-flex items-center gap-1">
-              reading <BookIcon className="size-4" />
-            </p>
+          <div className="mx-auto w-full max-w-3xl px-4 py-10 md:border-x">
             <h2 className="text-3xl font-semibold tracking-tight">Bookshelf</h2>
           </div>
         </div>
         <div className="mx-auto w-[calc(100%-16px)] lg:w-[calc(100%-80px)]">
-          <div className="grid grid-cols-1 gap-2 p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="grid grid-cols-1 gap-2 p-2 sm:grid-cols-2 md:grid-cols-3 md:border-t lg:grid-cols-4 xl:grid-cols-5">
             {photoList.map((photo, i) => (
               <div
                 key={i}

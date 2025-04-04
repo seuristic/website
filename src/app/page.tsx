@@ -62,7 +62,7 @@ export default function Home() {
       <HomeNavbar />
 
       <div className="relative isolate w-full border-b px-2">
-        <div className="custom-container flex py-4 sm:min-h-[650px]">
+        <div className="mx-auto flex w-full max-w-3xl px-4 py-4 sm:min-h-[650px] md:border-x">
           <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-8 rounded-md sm:flex-row">
             <div className="space-y-6 sm:space-y-10">
               <div className="space-y-4">
@@ -75,7 +75,7 @@ export default function Home() {
               </div>
               <div className="space-y-8">
                 <p className="text-muted-foreground text-justify hyphens-auto">
-                  <span className="text-foreground font-medium">
+                  <span className="animate-shine from-border to-border via-foreground bg-gradient-to-r bg-[length:200%_100%] bg-clip-text font-medium text-transparent">
                     software engineer
                   </span>{" "}
                   at{" "}
@@ -106,8 +106,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative size-[300px] shrink-0 sm:size-[200px]">
-              <div className="absolute top-10 right-10 z-1 size-[200px] sm:top-4 sm:right-4 sm:size-[150px]">
+            <div className="shrink-0 rounded-3xl border p-2">
+              <div className="relative size-[180px] overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src={ShahanwazPhoto}
                   alt="profile picture"
@@ -116,7 +116,6 @@ export default function Home() {
                   placeholder="blur"
                 />
               </div>
-              <div className="shade-lines absolute bottom-10 left-10 size-[200px] sm:bottom-4 sm:left-4 sm:size-[150px]" />
             </div>
           </div>
         </div>
@@ -125,7 +124,7 @@ export default function Home() {
       </div>
 
       <div id="projects" className="relative isolate w-full border-b px-2">
-        <div className="custom-container py-20 sm:py-32">
+        <div className="mx-auto w-full max-w-3xl px-4 py-20 sm:py-32 md:border-x">
           <div className="space-y-10">
             <div className="space-y-4">
               <p className="text-muted-foreground inline-flex items-center gap-1">
@@ -202,7 +201,7 @@ export default function Home() {
       </div>
 
       <div id="connect" className="relative isolate w-full border-b px-2">
-        <div className="custom-container py-20 sm:py-32">
+        <div className="mx-auto w-full max-w-3xl px-4 py-20 sm:py-32 md:border-x">
           <div className="space-y-10">
             <div className="space-y-4">
               <p className="text-muted-foreground inline-flex items-center gap-1">
@@ -221,7 +220,7 @@ export default function Home() {
       </div>
 
       <div className="relative isolate px-2">
-        <div className="custom-container flex items-center justify-center gap-2 py-4 font-mono text-sm text-zinc-400 dark:text-zinc-700">
+        <div className="mx-auto flex w-full max-w-3xl items-center justify-center gap-2 px-4 py-4 font-mono text-sm text-zinc-400 md:border-x dark:text-zinc-700">
           <CopyrightIcon className="size-4" />
           {new Date().getFullYear()} Mohammad Shahanwaz
         </div>

@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="bg-background sticky top-0 z-1">
       <div className="w-full border-b px-2">
-        <div className="custom-container flex h-12.5 items-center gap-x-4 py-2">
+        <div className="mx-auto flex h-12.5 w-full max-w-3xl items-center gap-x-4 px-4 py-2">
           <Link href={"/"} className="mr-auto">
             <Logo size={20} />
           </Link>
@@ -78,12 +78,12 @@ export function HomeNavbar() {
   return (
     <nav className="bg-background sticky top-0 z-1">
       <div className="w-full border-b px-2">
-        <div className="custom-container h-12.5 py-2">
-          <div className="flex items-center gap-4">
+        <div className="mx-auto h-12 w-full max-w-3xl px-4 py-2">
+          <div className="flex h-full items-center gap-4">
             <Link href={"/"}>
               <Logo size={20} />
             </Link>
-            <div className="bg-border hidden h-6 w-px sm:block" />
+            <div className="bg-border hidden h-full w-px sm:block" />
             <div className="hidden space-x-4 font-mono text-sm sm:inline">
               <Link href={"/photography"}>PHOTOGRAPHY</Link>
               <Link href={"/bookshelf"}>BOOKSHELF</Link>

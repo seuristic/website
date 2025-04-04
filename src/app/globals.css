@@ -120,6 +120,15 @@
   --font-sans--font-feature-settings: var(--default-font-feature-settings);
   --font-mono: var(--font-mono);
   --font-mono--font-feature-settings: var(--default-mono-font-feature-settings);
+  @keyframes shine {
+    0% {
+      background-position: 200% 0%;
+    }
+    100% {
+      background-position: -200% 0%;
+    }
+  }
+  --animate-shine: shine 8s linear infinite;
 }
 
 @layer base {
@@ -159,9 +168,5 @@
 @layer utilities {
   .shade-lines {
     @apply bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed;
-  }
-
-  .custom-container {
-    @apply mx-auto w-full max-w-3xl px-4;
   }
 }
