@@ -1,9 +1,8 @@
 import ContactForm from "@/components/custom/contact-form";
-import { HomeNavbar } from "@/components/custom/navbar";
+import Navbar from "@/components/custom/navbar";
 import { XPattern } from "@/components/custom/pattern";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowDownIcon,
   ArrowDownToLineIcon,
   FileIcon,
   CogIcon,
@@ -60,137 +59,150 @@ const projects = [
 export default function Home() {
   return (
     <main>
-      <HomeNavbar />
+      <Navbar />
 
-      <div className="relative isolate w-full border-b px-2">
-        <div className="mx-auto flex w-full max-w-3xl px-4 py-4 sm:min-h-[650px] md:border-x">
-          <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-8 rounded-md sm:flex-row">
-            <div className="space-y-6 sm:space-y-10">
-              <div className="space-y-4">
-                <p className="text-muted-foreground inline-flex items-center gap-1">
-                  hi, myself <ArrowDownIcon className="size-4" />
-                </p>
-                <h2 className="text-3xl font-semibold tracking-tight">
-                  Mohammad Shahanwaz
-                </h2>
-              </div>
-              <div className="space-y-8">
-                <p className="text-muted-foreground text-justify hyphens-auto">
-                  <span className="animate-shine from-border to-border via-foreground bg-gradient-to-r bg-[length:200%_100%] bg-clip-text font-medium text-transparent">
-                    software engineer
-                  </span>{" "}
-                  at{" "}
-                  <Link href="https://www.bosscoderacademy.com" target="_blank">
-                    Bosscoder Academy
-                  </Link>{" "}
-                  ↗ keen interest in web2, cloud, web3, blockchain, LLMs, AI,
-                  automation, distributed systems, SaaS ⎇ tech stack — Next,
-                  React, Tailwind, shadcn/ui, Postgres, AI ‣ into fitness,
-                  competitive programming, photography ‣ read blogs, articles,
-                  books about tech, self-growth, fiction ‣ anime, outings, food
-                  adventures ‣ let&apos;s build together
-                </p>
-                <div className="inline-flex gap-4">
-                  <Button asChild>
-                    <Link href="https://resume.shahanwaz.dev" target="_blank">
-                      RESUME <FileIcon />
-                    </Link>
-                  </Button>
-                  <Button variant="secondary" asChild>
+      <div id="intro" className="relative isolate w-full px-2">
+        <div className="mx-auto w-full border-b lg:w-[calc(100%-64px)]">
+          <div className="mx-auto flex w-full max-w-3xl p-4 sm:min-h-[650px] md:border-x">
+            <div className="flex w-full flex-1 flex-col-reverse items-center justify-center gap-8 rounded-md sm:flex-row">
+              <div className="space-y-6 sm:space-y-10">
+                <div className="space-y-4">
+                  <Link
+                    href="#intro"
+                    className="text-muted-foreground inline-flex font-mono tracking-tighter"
+                  >
+                    Hi, myself
+                  </Link>
+                  <h2 className="text-3xl font-semibold tracking-tight">
+                    Mohammad Shahanwaz
+                  </h2>
+                </div>
+                <div className="space-y-8">
+                  <p className="text-muted-foreground text-justify hyphens-auto">
+                    <span className="animate-shine from-muted-foreground to-muted-foreground via-foreground bg-gradient-to-r bg-[length:200%_100%] bg-clip-text font-medium text-transparent">
+                      software engineer
+                    </span>{" "}
+                    at{" "}
                     <Link
-                      href="https://resume.shahanwaz.dev/Shahanwaz_Resume.pdf"
+                      href="https://www.bosscoderacademy.com"
                       target="_blank"
                     >
-                      DOWNLOAD <ArrowDownToLineIcon />
-                    </Link>
-                  </Button>
+                      Bosscoder Academy
+                    </Link>{" "}
+                    ↗ keen interest in web2, cloud, web3, blockchain, LLMs, AI,
+                    automation, distributed systems, SaaS ⎇ tech stack — Next,
+                    React, Tailwind, shadcn/ui, Postgres, AI ‣ into fitness,
+                    competitive programming, photography ‣ read blogs, articles,
+                    books about tech, self-growth, fiction ‣ anime, outings,
+                    food adventures ‣ let&apos;s build together
+                  </p>
+                  <div className="inline-flex gap-4">
+                    <Button asChild>
+                      <Link href="https://resume.shahanwaz.dev" target="_blank">
+                        RESUME <FileIcon />
+                      </Link>
+                    </Button>
+                    <Button variant="secondary" asChild>
+                      <Link
+                        href="https://resume.shahanwaz.dev/Shahanwaz_Resume.pdf"
+                        target="_blank"
+                      >
+                        DOWNLOAD <ArrowDownToLineIcon />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="shrink-0">
-              <GradientImage
-                src={ShahanwazPhoto}
-                alt="profile picture"
-                size={200}
-              />
+              <div className="shrink-0 py-4 sm:py-0">
+                <GradientImage
+                  src={ShahanwazPhoto}
+                  alt="profile picture"
+                  size={200}
+                />
+              </div>
             </div>
           </div>
+          <HomeMetrics />
         </div>
-        <HomeMetrics />
         <XPattern />
       </div>
 
-      <div id="projects" className="relative isolate w-full border-b px-2">
-        <div className="mx-auto w-full max-w-3xl px-4 py-20 sm:py-32 md:border-x">
-          <div className="space-y-10">
-            <div className="space-y-4">
-              <p className="text-muted-foreground inline-flex items-center gap-1">
-                projects <CogIcon className="size-4" />
-              </p>
-              <h2 className="text-3xl font-semibold tracking-tight">
-                Things I&apos;ve built
-              </h2>
-            </div>
-            <div className="space-y-20 sm:space-y-32">
-              {projects &&
-                projects.slice(0, 3).map((project, i) => (
-                  <div key={i} className="space-y-6">
-                    <div className="w-fit rounded-[20px] border p-1">
-                      <div className="relative h-16 w-16">
-                        <Image
-                          src={project.logo}
-                          alt="profile"
-                          className="overflow-hidden rounded-2xl object-cover shadow"
-                          fill
-                          placeholder="blur"
-                        />
+      <div id="projects" className="relative isolate w-full px-2">
+        <div className="mx-auto w-full border-b lg:w-[calc(100%-64px)]">
+          <div className="mx-auto w-full max-w-3xl px-4 py-20 sm:py-32 md:border-x">
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <Link
+                  href="#projects"
+                  className="text-muted-foreground inline-flex items-center gap-2 font-mono tracking-tighter"
+                >
+                  <CogIcon className="size-5" /> projects
+                </Link>
+                <h2 className="text-3xl font-semibold tracking-tight">
+                  Things I&apos;ve built
+                </h2>
+              </div>
+              <div className="space-y-20 sm:space-y-32">
+                {projects &&
+                  projects.slice(0, 3).map((project, i) => (
+                    <div key={i} className="space-y-6">
+                      <div className="w-fit rounded-[20px] border p-1">
+                        <div className="relative h-16 w-16">
+                          <Image
+                            src={project.logo}
+                            alt="profile"
+                            className="overflow-hidden rounded-2xl object-cover shadow"
+                            fill
+                            placeholder="blur"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="inline-flex flex-wrap items-center gap-4 text-2xl font-semibold tracking-tight">
-                        {project.title}
-                      </h3>
-                      <h4 className="text-sm font-medium text-zinc-500">
-                        {project.subtitle}
-                      </h4>
-                    </div>
-                    <p className="text-muted-foreground text-justify hyphens-auto">
-                      {project.description}
-                    </p>
-                    <div className="inline-flex gap-4">
-                      {project.live && (
-                        <Button asChild>
-                          <Link href={project.live}>
-                            LIVE <SquareArrowOutUpRightIcon />
-                          </Link>
-                        </Button>
-                      )}
-                      {project.repo && (
-                        <Button variant="secondary" asChild>
-                          <Link href={project.repo}>
-                            REPOSITORY <GithubIcon />
-                          </Link>
-                        </Button>
-                      )}
-                      {project.inProgress && (
-                        <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-xs font-medium text-yellow-600 dark:text-yellow-500">
-                          <PickaxeIcon className="size-4" /> BUILDING
+                      <div className="space-y-2">
+                        <h3 className="inline-flex flex-wrap items-center gap-4 text-2xl font-semibold tracking-tight">
+                          {project.title}
+                        </h3>
+                        <h4 className="text-muted-foreground font-medium">
+                          {project.subtitle}
+                        </h4>
+                      </div>
+                      <p className="text-muted-foreground text-justify hyphens-auto">
+                        {project.description}
+                      </p>
+                      <div className="inline-flex gap-4">
+                        {project.live && (
+                          <Button asChild>
+                            <Link href={project.live} target="_blank">
+                              LIVE <SquareArrowOutUpRightIcon />
+                            </Link>
+                          </Button>
+                        )}
+                        {project.repo && (
+                          <Button variant="secondary" asChild>
+                            <Link href={project.repo} target="_blank">
+                              REPOSITORY <GithubIcon />
+                            </Link>
+                          </Button>
+                        )}
+                        {project.inProgress && (
+                          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-xs font-medium text-yellow-600 dark:text-yellow-500">
+                            <PickaxeIcon className="size-4" /> BUILDING
+                          </div>
+                        )}
+                      </div>
+                      {project.banner && (
+                        <div className="relative aspect-video w-full">
+                          <Image
+                            src={project.banner}
+                            alt=""
+                            className="rounded-md shadow-lg"
+                            fill
+                            placeholder="blur"
+                          />
                         </div>
                       )}
                     </div>
-                    {project.banner && (
-                      <div className="relative aspect-video w-full">
-                        <Image
-                          src={project.banner}
-                          alt=""
-                          className="rounded-md shadow-lg"
-                          fill
-                          placeholder="blur"
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  ))}
+              </div>
             </div>
           </div>
         </div>
@@ -201,11 +213,15 @@ export default function Home() {
         <div className="mx-auto w-full max-w-3xl px-4 py-20 sm:py-32 md:border-x">
           <div className="space-y-10">
             <div className="space-y-4">
-              <p className="text-muted-foreground inline-flex items-center gap-1">
-                let&apos;s connect <SatelliteDishIcon className="size-4" />
-              </p>
+              <p className="text-muted-foreground inline-flex items-center gap-1"></p>
+              <Link
+                href="#connect"
+                className="text-muted-foreground inline-flex items-center gap-2 font-mono tracking-tighter"
+              >
+                <SatelliteDishIcon className="size-4" /> connect
+              </Link>
               <h2 className="text-3xl font-semibold tracking-tight">
-                Contact me
+                Let&apos;s talk
               </h2>
             </div>
             <div className="">
@@ -217,7 +233,7 @@ export default function Home() {
       </div>
 
       <div className="relative isolate px-2">
-        <div className="mx-auto flex w-full max-w-3xl items-center justify-center gap-2 px-4 py-4 font-mono text-sm text-zinc-400 md:border-x dark:text-zinc-700">
+        <div className="mx-auto flex w-full max-w-3xl items-center justify-center gap-2 px-4 py-4 font-mono text-sm text-zinc-400 dark:text-zinc-700">
           <CopyrightIcon className="size-4" />
           {new Date().getFullYear()} Mohammad Shahanwaz
         </div>
