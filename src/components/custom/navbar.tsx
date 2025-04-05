@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { ArrowDownIcon, MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { ThemeToggler } from "./theme-toggler";
 import Logo from "./logo";
@@ -83,16 +83,14 @@ export function HomeNavbar() {
             <Link href={"/"}>
               <Logo size={20} />
             </Link>
-            <div className="bg-border hidden h-full w-px sm:block" />
+            <div className="bg-border hidden h-5 w-px sm:block" />
             <div className="hidden space-x-4 font-mono text-sm sm:inline">
               <Link href={"/photography"}>PHOTOGRAPHY</Link>
               <Link href={"/bookshelf"}>BOOKSHELF</Link>
             </div>
             <div className="ml-auto">
               <Button size={"sm"} asChild>
-                <Link href="#connect">
-                  CONNECT <ArrowDownIcon />
-                </Link>
+                <Link href="#connect">PING ME</Link>
               </Button>
             </div>
             <ThemeToggler />

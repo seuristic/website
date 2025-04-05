@@ -22,6 +22,7 @@ import ImagecBanner from "@/assets/images/projects/imagec-banner.png";
 import NITDelhiLogo from "@/assets/images/projects/nitdelhi-logo.png";
 import FerBanner from "@/assets/images/projects/fer-banner.png";
 import DonezoLogo from "@/assets/images/projects/donezo-logo.png";
+import { GradientImage } from "@/components/custom/gradient-image";
 
 const projects = [
   {
@@ -106,16 +107,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="shrink-0 rounded-3xl border p-2">
-              <div className="relative size-[180px] overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src={ShahanwazPhoto}
-                  alt="profile picture"
-                  className="object-cover"
-                  fill
-                  placeholder="blur"
-                />
-              </div>
+            <div className="shrink-0">
+              <GradientImage
+                src={ShahanwazPhoto}
+                alt="profile picture"
+                size={200}
+              />
             </div>
           </div>
         </div>
