@@ -31,6 +31,7 @@ export default function HomeMetrics() {
         </div>
         <div className="flex flex-col items-center justify-center gap-3 p-4 text-center">
           <strong className="text-4xl font-bold">
+            ~
             <NumberFlow
               value={start ? bugsFixed : 0}
               transformTiming={{ duration: 2000, easing: "ease-out" }}
@@ -48,6 +49,7 @@ export default function HomeMetrics() {
               transformTiming={{ duration: 2000, easing: "ease-out" }}
               format={{ notation: "compact" }}
             />
+            +
           </strong>
           <p className="text-muted-foreground font-mono text-sm">
             DSA problems solved

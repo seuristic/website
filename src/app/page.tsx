@@ -139,7 +139,7 @@ export default function Home() {
                   <CogIcon className="size-5" /> projects
                 </Link>
                 <h2 className="text-3xl font-semibold tracking-tight">
-                  Things I&apos;ve built
+                  Things I&apos;ve shipped
                 </h2>
               </div>
               <div className="space-y-20 sm:space-y-32">

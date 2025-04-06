@@ -18,7 +18,7 @@ import Verity from "@/assets/images/bookshelf/verity.jpg";
 import SystemDesignInterview from "@/assets/images/bookshelf/system-design-interview.jpg";
 
 export const metadata: Metadata = {
-  title: "Photography"
+  title: "Bookshelf"
 };
 
 export default function BookshelfPage() {
