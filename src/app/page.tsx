@@ -21,9 +21,19 @@ import ImagecBanner from "@/assets/images/projects/imagec-banner.png";
 import NITDelhiLogo from "@/assets/images/projects/nitdelhi-logo.png";
 import FerBanner from "@/assets/images/projects/fer-banner.png";
 import DonezoLogo from "@/assets/images/projects/donezo-logo.png";
+import BosscoderLogo from "@/assets/images/projects/bosscoder-logo.png";
 import { GradientImage } from "@/components/custom/gradient-image";
 
 const projects = [
+  {
+    title: "Bosscoder Academy",
+    subtitle:
+      "Engineering the Backbone of a Scalable Education Platform at BCA",
+    description:
+      "Built and scaled a Premium platform with React and Node.js using Clean Architecture. Set up CI/CD with GitLab and Docker on AWS. Automated video processing and delivery with HLS/DASH. Self-hosted Judge0 with Docker for code execution. Streamlined ops with cloud functions and cron jobs. Led a cross-functional tech team.",
+    logo: BosscoderLogo,
+    live: "https://www.bosscoderacademy.com"
+  },
   {
     title: "Imagec App",
     subtitle: "Digital Image E-Commerce Platform",
@@ -144,7 +154,7 @@ export default function Home() {
               </div>
               <div className="space-y-20 sm:space-y-32">
                 {projects &&
-                  projects.slice(0, 3).map((project, i) => (
+                  projects.map((project, i) => (
                     <div key={i} className="space-y-6">
                       <div className="w-fit rounded-[20px] border p-1">
                         <div className="relative h-16 w-16">
