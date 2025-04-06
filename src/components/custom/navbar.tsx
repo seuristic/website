@@ -14,11 +14,14 @@ import {
   LinkedInIcon
 } from "@/assets/icons/brands";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   const isHome = pathname === "/";
+  const isPhotography = pathname === "/photography";
+  const isBookshelf = pathname === "/bookshelf";
 
   return (
     <nav className="bg-background sticky top-0 z-1">
@@ -29,8 +32,18 @@ export default function Navbar() {
           </Link>
           <div className="bg-border hidden h-5 w-px sm:block" />
           <div className="hidden space-x-4 font-mono text-sm sm:inline">
-            <Link href={"/photography"}>PHOTOGRAPHY</Link>
-            <Link href={"/bookshelf"}>BOOKSHELF</Link>
+            <Link
+              href={"/photography"}
+              className={cn(isPhotography && "text-purple-600")}
+            >
+              PHOTOGRAPHY
+            </Link>
+            <Link
+              href={"/bookshelf"}
+              className={cn(isBookshelf && "text-purple-600")}
+            >
+              BOOKSHELF
+            </Link>
           </div>
           <div className="ml-auto flex items-center gap-x-4">
             {isHome && (
