@@ -114,7 +114,7 @@ export default function Home() {
                     </Button>
                     <Button variant="secondary" asChild>
                       <Link
-                        href="https://resume.shahanwaz.dev/Shahanwaz_Resume.pdf"
+                        href="https://resume.shahanwaz.dev/Mohammad_Shahanwaz_Resume.pdf"
                         target="_blank"
                       >
                         DOWNLOAD <ArrowDownToLineIcon />
