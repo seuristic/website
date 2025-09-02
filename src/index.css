@@ -1,5 +1,114 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* InterVariable Font Face Declarations */
+@font-face {
+  font-family: 'InterVariable';
+  src: url('./assets/fonts/inter/InterVariable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterVariable';
+  src: url('./assets/fonts/inter/InterVariable-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fraunces Font Face Declarations */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces/Fraunces--latin_basic.woff2')
+    format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces/Fraunces--latin_ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AF-20CF, U+2113,
+    U+2184, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces/Fraunces--vietnamese.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces/Fraunces-Italic--latin_basic.woff2')
+    format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces/Fraunces-Italic--latin_ext.woff2')
+    format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AF-20CF, U+2113,
+    U+2184, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces/Fraunces-Italic--vietnamese.woff2')
+    format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+/* JetBrains Mono Font Face Declarations */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/jetbrains-mono/JetBrainsMono[wght].ttf')
+    format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/jetbrains-mono/JetBrainsMono-Italic[wght].ttf')
+    format('truetype');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -39,6 +148,23 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-base: 'InterVariable', sans-serif;
+  --font-base--font-feature-settings:
+    'calt', 'dlig', 'tnum', 'ss08', 'cv01', 'cv09', 'cv03', 'cv04', 'cv10',
+    'cv06', 'cv11';
+  --font-display: 'Fraunces', serif;
+  --font-display--font-feature-settings: 'soft', 'wonk';
+  --font-code: 'JetBrains Mono', monospace;
+  --font-code--font-feature-settings:
+    'liga', 'calt', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06',
+    'ss07', 'ss08', 'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14', 'ss15',
+    'ss16', 'ss17', 'ss18', 'ss19', 'ss20', 'cv01', 'cv02', 'cv03', 'cv04',
+    'cv05', 'cv06', 'cv07', 'cv08', 'cv09', 'cv10', 'cv11', 'cv12', 'cv13',
+    'cv14', 'cv15', 'cv16', 'cv17', 'cv18', 'cv19', 'cv20', 'cv21', 'cv22',
+    'cv23', 'cv24', 'cv25', 'cv26', 'cv27', 'cv28', 'cv29', 'cv30', 'cv31',
+    'cv32', 'cv33', 'cv34', 'cv35', 'cv36', 'cv37', 'cv38', 'cv39', 'cv40',
+    'cv41', 'cv42', 'cv43', 'cv44', 'cv45', 'cv46', 'cv47', 'cv48', 'cv49',
+    'cv50';
 }
 
 :root {
@@ -115,6 +241,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-base;
   }
 }
