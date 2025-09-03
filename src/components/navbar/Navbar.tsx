@@ -23,11 +23,11 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="bg-background border-border w-full border-b px-4 py-4">
+      <nav className="border-border bg-background/90 fixed top-0 z-40 w-full border-b px-4 py-4 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           {/* Logo Section */}
           <div className="flex flex-1 justify-start">
-            <Link to="/" className="text-foreground font-serif text-xl">
+            <Link to="/" className="text-foreground font-display text-xl">
               Mohammad Shahanwaz
             </Link>
           </div>
@@ -36,7 +36,6 @@ const Navbar = () => {
           <div className="hidden items-center gap-2 md:flex">
             <NavLink to="/blogs">Blogs</NavLink>
             <NavLink to="/photography">Photography</NavLink>
-            <NavLink to="/font-test">Font Test</NavLink>
           </div>
 
           {/* Icon Links Section */}
@@ -64,7 +63,7 @@ const Navbar = () => {
                 </a>
               </Button>
               <Button
-                variant="ghost"
+                variant="secondary"
                 size="icon"
                 onClick={toggleTheme}
                 aria-label="Toggle theme"

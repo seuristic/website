@@ -150,21 +150,13 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-base: 'InterVariable', sans-serif;
   --font-base--font-feature-settings:
-    'calt', 'dlig', 'tnum', 'ss08', 'cv01', 'cv09', 'cv03', 'cv04', 'cv10',
-    'cv06', 'cv11';
+    'calt', 'tnum', 'ss08', 'cv01', 'cv09', 'cv03', 'cv04', 'cv10', 'cv06',
+    'cv11';
   --font-display: 'Fraunces', serif;
-  --font-display--font-feature-settings: 'soft', 'wonk';
+  /* --font-display--font-feature-settings: 'SOFT' 1, 'WONK' 1; */
   --font-code: 'JetBrains Mono', monospace;
   --font-code--font-feature-settings:
-    'liga', 'calt', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06',
-    'ss07', 'ss08', 'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14', 'ss15',
-    'ss16', 'ss17', 'ss18', 'ss19', 'ss20', 'cv01', 'cv02', 'cv03', 'cv04',
-    'cv05', 'cv06', 'cv07', 'cv08', 'cv09', 'cv10', 'cv11', 'cv12', 'cv13',
-    'cv14', 'cv15', 'cv16', 'cv17', 'cv18', 'cv19', 'cv20', 'cv21', 'cv22',
-    'cv23', 'cv24', 'cv25', 'cv26', 'cv27', 'cv28', 'cv29', 'cv30', 'cv31',
-    'cv32', 'cv33', 'cv34', 'cv35', 'cv36', 'cv37', 'cv38', 'cv39', 'cv40',
-    'cv41', 'cv42', 'cv43', 'cv44', 'cv45', 'cv46', 'cv47', 'cv48', 'cv49',
-    'cv50';
+    'liga', 'calt', 'dlig', 'cv02', 'cv04', 'cv05', 'cv11', 'cv16', 'cv18';
 }
 
 :root {

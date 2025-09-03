@@ -4,7 +4,7 @@ const Photography = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mx-auto max-w-6xl">
-        <h1 className="mb-8 text-center font-serif text-4xl font-bold">
+        <h1 className="font-display mb-8 text-center text-4xl font-bold">
           Photography Portfolio
         </h1>
 
@@ -20,7 +20,9 @@ const Photography = () => {
               <span className="text-muted-foreground">Mountain Landscape</span>
             </div>
             <div className="p-4">
-              <h3 className="mb-2 font-serif font-semibold">Mountain Vista</h3>
+              <h3 className="font-display mb-2 font-semibold">
+                Mountain Vista
+              </h3>
               <p className="text-muted-foreground text-sm">
                 A breathtaking view from the summit during golden hour.
               </p>
@@ -32,7 +34,7 @@ const Photography = () => {
               <span className="text-muted-foreground">Urban Architecture</span>
             </div>
             <div className="p-4">
-              <h3 className="mb-2 font-serif font-semibold">City Lights</h3>
+              <h3 className="font-display mb-2 font-semibold">City Lights</h3>
               <p className="text-muted-foreground text-sm">
                 The vibrant energy of the city captured at night.
               </p>

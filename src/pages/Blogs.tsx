@@ -4,13 +4,13 @@ const Blogs = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mx-auto max-w-4xl">
-        <h1 className="mb-8 text-center font-serif text-4xl font-bold">
+        <h1 className="font-display mb-8 text-center text-4xl font-bold">
           My Blog
         </h1>
 
         <div className="space-y-8">
           <article className="bg-card border-border rounded-lg border p-6">
-            <h2 className="mb-3 font-serif text-2xl font-semibold">
+            <h2 className="font-display mb-3 text-2xl font-semibold">
               Getting Started with React and TypeScript
             </h2>
             <p className="text-muted-foreground mb-4">
@@ -36,7 +36,7 @@ const Blogs = () => {
           </article>
 
           <article className="bg-card border-border rounded-lg border p-6">
-            <h2 className="mb-3 font-serif text-2xl font-semibold">
+            <h2 className="font-display mb-3 text-2xl font-semibold">
               Building Modern Web Applications with Vite
             </h2>
             <p className="text-muted-foreground mb-4">
@@ -61,7 +61,7 @@ const Blogs = () => {
           </article>
 
           <article className="bg-card border-border rounded-lg border p-6">
-            <h2 className="mb-3 font-serif text-2xl font-semibold">
+            <h2 className="font-display mb-3 text-2xl font-semibold">
               The Future of Web Development
             </h2>
             <p className="text-muted-foreground mb-4">
