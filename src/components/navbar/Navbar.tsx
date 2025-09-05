@@ -23,11 +23,11 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="border-border bg-background/90 fixed top-0 z-40 w-full border-b px-4 py-4 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between">
+      <nav className="border-border bg-background/90 fixed top-0 z-40 w-full border-b p-4 backdrop-blur-md">
+        <div className="flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex flex-1 justify-start">
-            <Link to="/" className="text-foreground font-display text-xl">
+            <Link to="/" className="text-foreground font-serif text-xl">
               Mohammad Shahanwaz
             </Link>
           </div>
