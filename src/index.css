@@ -149,6 +149,10 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  /* Custom Properties */
+  /* Colors */
+  --color-tertiary-foreground: var(--tertiary-foreground);
+
   /* Fonts */
   --font-sans: 'InterVariable', sans-serif;
   --font-sans--font-feature-settings:
@@ -159,6 +163,10 @@
   --font-mono: 'JetBrains Mono', monospace;
   --font-mono--font-feature-settings:
     'liga', 'calt', 'dlig', 'cv02', 'cv04', 'cv05', 'cv11', 'cv16', 'cv18';
+
+  /* Spacings */
+  --spacing-gutter: var(--gutter-space);
+  --spacing-gutter-sm: var(--gutter-space-sm);
 }
 
 :root {
@@ -194,6 +202,14 @@
   --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
   --sidebar-border: oklch(0.928 0.006 264.531);
   --sidebar-ring: oklch(0.707 0.022 261.325);
+
+  /* Custom Properties */
+  /* Colors */
+  --tertiary-foreground: oklch(70.115% 0.01753 262.776);
+
+  /* Widths */
+  --gutter-space: 2.5rem;
+  --gutter-space-sm: 1.5rem;
 }
 
 .dark {
@@ -228,6 +244,10 @@
   --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+
+  /* Custom Properties */
+  /* Colors */
+  --tertiary-foreground: oklch(0.707 0.022 261.325);
 }
 
 @layer base {
@@ -236,5 +256,11 @@
   }
   body {
     @apply bg-background text-foreground overflow-x-hidden font-sans;
+  }
+}
+
+@layer utilities {
+  .gutter-pattern {
+    @apply bg-[image:repeating-linear-gradient(45deg,_var(--border)_0,_var(--border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed;
   }
 }

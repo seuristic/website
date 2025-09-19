@@ -137,13 +137,6 @@ const Navbar = () => {
               >
                 Photography
               </NavLink>
-              <NavLink
-                to="/font-test"
-                className="justify-start"
-                onClick={closeMobileMenu}
-              >
-                Font Test
-              </NavLink>
             </div>
 
             {/* Mobile Icon Links */}
