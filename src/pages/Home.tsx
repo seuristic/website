@@ -55,8 +55,12 @@ const Home = () => {
               </div>
               <div className="col-span-2 flex w-full flex-col items-start justify-center gap-1 p-1">
                 <h1 className="font-serif text-7xl">Mohammad Shahanwaz</h1>
-                <div className="text-muted-foreground text-lg">
-                  Software Engineer
+                <div className="text-muted-foreground flex items-center gap-4 text-lg">
+                  <span>Software Engineer</span>
+                  <span className="text-border">/</span>
+                  <span>AI</span>
+                  <span className="text-border">/</span>
+                  <span>Web</span>
                 </div>
                 <a
                   href="https://resume.shahanwaz.dev"
@@ -82,31 +86,44 @@ const Home = () => {
 
               <div className="col-span-2 p-1">
                 <p className="text-muted-foreground text-justify text-lg">
-                  I'm a software engineer passionate about building scalable
-                  systems, creative digital products, and impactful developer
-                  tools. At{' '}
-                  <span className="text-primary">Bosscoder Academy</span>, I've
-                  led engineering teams, architected cost-efficient cloud
-                  solutions, and developed AI-driven support systems that cut
-                  costs by over 50%. My work spans across full-stack
-                  development, DevOps, and applied AI -&gt; from migrating
-                  infrastructures with Terraform and Cloud Run, to creating
-                  secure video platforms and online coding environments.
-                  <br />
-                  <br />I thrive at the intersection of engineering,
-                  problem-solving, and mentorship, having guided 40+ engineers
-                  and interns through best practices and scalable design. Beyond
-                  work, I explore projects like Imagec, a full-stack image
-                  licensing platform, and Facial Emotion Recognition systems
-                  integrated with hardware - research that earned me a
-                  publication at the{' '}
-                  <span className="text-primary">ACM IC3 Conference 2023</span>.
+                  I'm a software engineer with a deep passion for building
+                  meaningful and impactful software. I hold a B.Tech in Computer
+                  Science and Engineering from NIT Delhi, where my curiosity for
+                  systems, algorithms, and design translated into a strong
+                  technical foundation.
                   <br />
                   <br />
-                  With a B.Tech in CSE from{' '}
-                  <span className="text-primary">NIT Delhi</span>, I'm on a
-                  journey to craft products that are not only technically sound
-                  but also meaningful, performant, and human-centric.
+                  Currently, I am working at{' '}
+                  <a
+                    href="https://nexla.com"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    Nexla
+                  </a>{' '}
+                  as a UI Engineer (AI team), where I design and develop user
+                  interfaces for{' '}
+                  <a
+                    href="https://express.dev"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    Express
+                  </a>
+                  , an AI-powered product for building data flows and pipelines.
+                  My work involves close collaboration with cross-functional
+                  teams to deliver seamless integration and an intuitive user
+                  experience.
+                  <br />
+                  <br />
+                  Previously, I have worked with in a startup{' '}
+                  <a
+                    href="https://bosscoderacademy.com"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    Bosscoder Academy
+                  </a>
+                  . There I have had the opportunity to work on building
+                  learning platform from scratch, exploring services by cloud
+                  providers and leading a decent team.
                 </p>
               </div>
 
@@ -244,7 +261,7 @@ const Home = () => {
                     photography
                   </span>
                 </div>
-                {Array.from({ length: 7 }).map((_, index) => (
+                {Array.from({ length: 4 }).map((_, index) => (
                   <>
                     {index % 3 === 2 && (
                       <LineDivider className="border-b after:border-none" />
