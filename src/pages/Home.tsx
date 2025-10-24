@@ -233,28 +233,6 @@ const Home = () => {
                     </li>
                   </ul>
                 </div>
-
-                {/* Software Engineering Intern */}
-                <div className="space-y-2">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-lg">Software Engineering Intern</span>
-                    <div className="h-0 w-full flex-1 border-b border-dashed" />
-                    <span className="text-muted-foreground font-mono text-xs uppercase">
-                      January 2023 - June 2023
-                    </span>
-                  </div>
-                  <ul className="text-muted-foreground list-disc space-y-1 pl-4">
-                    <li>
-                      Built the foundation of a full-stack MVP using React.js,
-                      Node.js, and Flask with Firebase for storage and auth.
-                    </li>
-                    <li>
-                      Took ownership of monitoring and maintaining cloud
-                      services across AWS and GCP, ensuring smooth deployments
-                      and uptime.
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               <SectionDivider />
