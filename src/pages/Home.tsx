@@ -1,8 +1,20 @@
 import { Button } from '@/components/ui/button'
 import profile_picture from '../assets/images/profile_picture.jpeg'
-import { ArrowDownToLine, ArrowUpRight, Copyright } from 'lucide-react'
+import {
+  ArrowDownToLine,
+  ArrowUpRight,
+  ArrowUpRightIcon,
+  Copyright,
+  HistoryIcon,
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+import Anchor from '@/components/custom/Anchor'
 
 const SectionDivider = () => {
   return (
@@ -80,28 +92,27 @@ const Home = () => {
               {/* Row 2: Introduction */}
               <div className="after:bg-border relative col-span-1 row-span-2 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-['']">
                 <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex justify-end font-mono text-xs">
-                  introduction
+                  about-me
                 </span>
               </div>
 
               <div className="col-span-2 p-1">
                 <p className="text-muted-foreground text-justify text-lg">
                   I'm a software engineer with a deep passion for building
-                  meaningful and impactful software. I hold a B.Tech in Computer
-                  Science and Engineering from NIT Delhi, where my curiosity for
-                  systems, algorithms, and design translated into a strong
-                  technical foundation.
+                  meaningful and impactful software. I hold a B.Tech degree in
+                  Computer Science and Engineering from NIT Delhi, where my
+                  curiosity for systems, algorithms, and design translated into
+                  a strong technical foundation.
                   <br />
                   <br />
-                  Currently, I am working at{' '}
+                  Currently, I am working as a UI Engineer (AI) at{' '}
                   <a
                     href="https://nexla.com"
                     className="text-primary underline-offset-4 hover:underline"
                   >
                     Nexla
                   </a>{' '}
-                  as a UI Engineer (AI team), where I design and develop user
-                  interfaces for{' '}
+                  , where I design and develop user interfaces for{' '}
                   <a
                     href="https://express.dev"
                     className="text-primary underline-offset-4 hover:underline"
@@ -109,21 +120,23 @@ const Home = () => {
                     Express
                   </a>
                   , an AI-powered product for building data flows and pipelines.
-                  My work involves close collaboration with cross-functional
-                  teams to deliver seamless integration and an intuitive user
-                  experience.
+                  I work with cross-functional teams to ensure smooth
+                  integration between frontend and backend systems while
+                  creating intuitive, user-focused experiences.
                   <br />
                   <br />
-                  Previously, I have worked with in a startup{' '}
+                  Previously, I have worked at{' '}
                   <a
-                    href="https://bosscoderacademy.com"
+                    href="https://www.bosscoderacademy.com"
                     className="text-primary underline-offset-4 hover:underline"
                   >
                     Bosscoder Academy
-                  </a>
-                  . There I have had the opportunity to work on building
-                  learning platform from scratch, exploring services by cloud
-                  providers and leading a decent team.
+                  </a>{' '}
+                  as a Lead Software Engineer where I had built a platform with
+                  a dozen of features including AI mentorship, in-house doubt
+                  support chat system, code execution platform, HLS/DASH-based
+                  video player etc. from scratch, explored and utilized cloud
+                  providers and led technical team.
                 </p>
               </div>
 
@@ -137,118 +150,69 @@ const Home = () => {
               </div>
 
               <div className="col-span-2 space-y-4 p-1">
-                <h2 className="font-serif text-3xl">Nexla</h2>
-
-                {/* UI Engineer (AI) */}
+                <h2 className="font-serif text-3xl">
+                  <Anchor href="https://nexla.com">Nexla</Anchor>
+                </h2>
                 <div className="space-y-2">
                   <div className="flex items-baseline gap-4">
-                    <span className="text-lg">UI Engineer (AI)</span>
+                    <span className="text-lg">UI Engineer</span>
                     <div className="h-0 w-full flex-1 border-b border-dashed" />
-                    <span className="text-muted-foreground font-mono text-xs uppercase">
+                    <span className="text-muted-foreground font-mono text-xs">
                       August 2025 - Present
                     </span>
                   </div>
-                  <ul className="text-muted-foreground list-disc space-y-1 pl-4">
-                    <li>
-                      Designed and launched an AI-powered mentor and
-                      doubt-support system that streamlined queries and cut down
-                      support overhead by more than half.
-                    </li>
-                    <li>
-                      Transitioned backend services from App Engine to Cloud
-                      Run, which significantly boosted performance while
-                      reducing costs.
-                    </li>
-                    <li>
-                      Re-architected CI/CD runners using Terraform and GCP,
-                      making infrastructure leaner and more cost-efficient.
-                    </li>
-                    <li>
-                      Rolled out multi-region load balancing on Cloud Run, which
-                      improved both uptime and responsiveness for users.
-                    </li>
-                    <li>
-                      Guided and mentored a team of nearly 40 engineers and
-                      interns, shaping code quality, reviews, and engineering
-                      practices.
-                    </li>
-                  </ul>
+                  <p className="text-muted-foreground text-justify">
+                    Led the development of an AI-powered mentor system, a secure
+                    HLS-based video streaming platform, and an in-house coding
+                    environment powered by Judge0. Re-architected CI/CD
+                    pipelines with Terraform and GCP, automated deployments, and
+                    migrated infrastructure to Cloud Run and Vite to enhance
+                    performance and efficiency. Improved uptime, reduced costs,
+                    and elevated user experience while mentoring a team of
+                    nearly 40 engineers as the platform scaled to over 10,000
+                    daily active users.
+                  </p>
                 </div>
               </div>
 
               <ContentDivider />
 
               <div className="col-span-2 space-y-4 p-1">
-                <h2 className="font-serif text-3xl">Bosscoder Academy</h2>
-
-                {/* Senior Software Engineer */}
+                <h2 className="font-serif text-3xl">
+                  <Anchor href="https://www.bosscoderacademy.com">
+                    Bosscoder Academy
+                  </Anchor>
+                </h2>
                 <div className="space-y-2">
                   <div className="flex items-baseline gap-4">
-                    <span className="text-lg">Senior Software Engineer</span>
+                    <div className="flex items-center gap-2 text-lg">
+                      <span>Senior Software Engineer</span>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <HistoryIcon className="text-muted-foreground size-4" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          Previously: Software Engineer, Software Engineer
+                          Intern
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
                     <div className="h-0 w-full flex-1 border-b border-dashed" />
-                    <span className="text-muted-foreground font-mono text-xs uppercase">
-                      April 2025 - August 2025
+                    <span className="text-muted-foreground font-mono text-xs">
+                      2023 - 2025
                     </span>
                   </div>
-                  <ul className="text-muted-foreground list-disc space-y-1 pl-4">
-                    <li>
-                      Designed and launched an AI-powered mentor and
-                      doubt-support system that streamlined queries and cut down
-                      support overhead by more than half.
-                    </li>
-                    <li>
-                      Transitioned backend services from App Engine to Cloud
-                      Run, which significantly boosted performance while
-                      reducing costs.
-                    </li>
-                    <li>
-                      Re-architected CI/CD runners using Terraform and GCP,
-                      making infrastructure leaner and more cost-efficient.
-                    </li>
-                    <li>
-                      Rolled out multi-region load balancing on Cloud Run, which
-                      improved both uptime and responsiveness for users.
-                    </li>
-                    <li>
-                      Guided and mentored a team of nearly 40 engineers and
-                      interns, shaping code quality, reviews, and engineering
-                      practices.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Software Engineer */}
-                <div className="space-y-2">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-lg">Software Engineer</span>
-                    <div className="h-0 w-full flex-1 border-b border-dashed" />
-                    <span className="text-muted-foreground font-mono text-xs uppercase">
-                      July 2023 - March 2025
-                    </span>
-                  </div>
-                  <ul className="text-muted-foreground list-disc space-y-1 pl-4">
-                    <li>
-                      Helped scale the platform to seamlessly serve 10,000+
-                      daily active users with improved reliability.
-                    </li>
-                    <li>
-                      Built an in-house online coding environment powered by
-                      Judge0, allowing assessments and practice without relying
-                      on third-party platforms.
-                    </li>
-                    <li>
-                      Developed a secure video streaming system with encrypted
-                      HLS delivery, cutting hosting costs dramatically.
-                    </li>
-                    <li>
-                      Automated deployment pipelines end-to-end, turning
-                      releases into a fast, repeatable process.
-                    </li>
-                    <li>
-                      Switched the build system to Vite, trimming down build and
-                      deployment times by more than two-thirds.
-                    </li>
-                  </ul>
+                  <p className="text-muted-foreground text-justify">
+                    Led the development of an AI-powered mentor system, a secure
+                    HLS-based video streaming platform, and an in-house coding
+                    environment powered by Judge0. Re-architected CI/CD
+                    pipelines with Terraform and GCP, automated deployments, and
+                    migrated infrastructure to Cloud Run and Vite to enhance
+                    performance and efficiency. Improved uptime, reduced costs,
+                    and elevated user experience while mentoring a team of
+                    nearly 40 engineers as the platform scaled to over 10,000
+                    daily active users.
+                  </p>
                 </div>
               </div>
 
