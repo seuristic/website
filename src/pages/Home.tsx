@@ -3,7 +3,6 @@ import profile_picture from '../assets/images/profile_picture.jpeg'
 import {
   ArrowDownToLine,
   ArrowUpRight,
-  ArrowUpRightIcon,
   Copyright,
   HistoryIcon,
 } from 'lucide-react'
