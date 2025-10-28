@@ -1,12 +1,20 @@
 import { useState } from 'react'
-import { Sun, Moon, Menu, X } from 'lucide-react'
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Linkedin,
+  Instagram,
+  Twitter,
+  Github,
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { LinkedIn } from '@/components/icons'
 import { cn } from '@/lib/utils'
-import { Github } from '@/components/icons'
 import { useTheme } from '@/hooks/useTheme'
 import NavLink from './NavLink'
+import Anchor from '../custom/Anchor'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -28,7 +36,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="flex flex-1 justify-start">
             <Link to="/" className="text-foreground font-serif text-xl">
-              Mohammad Shahanwaz
+              seuristic
             </Link>
           </div>
 
@@ -42,26 +50,26 @@ const Navbar = () => {
           <div className="flex flex-1 items-center justify-end gap-2">
             {/* Desktop Icons */}
             <div className="hidden items-center gap-2 md:flex">
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://linkedin.com/in/mshahanwaz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedIn className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://github.com/seuristic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
+              <Anchor href="https://linkedin.com/in/mshahanwaz">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Linkedin className="size-4" />
+                </Button>
+              </Anchor>
+              <Anchor href="https://github.com/seuristic">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Github className="size-4" />
+                </Button>
+              </Anchor>
+              <Anchor href="https://instagram.com/seuristic">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Instagram className="size-4" />
+                </Button>
+              </Anchor>
+              <Anchor href="https://x.com/seuristic">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Twitter className="size-4" />
+                </Button>
+              </Anchor>
               <Button
                 variant="secondary"
                 size="icon"
@@ -69,9 +77,9 @@ const Navbar = () => {
                 aria-label="Toggle theme"
               >
                 {isDarkMode ? (
-                  <Sun className="h-5 w-5" />
+                  <Sun className="size-4" />
                 ) : (
-                  <Moon className="h-5 w-5" />
+                  <Moon className="size-4" />
                 )}
               </Button>
             </div>
@@ -150,7 +158,7 @@ const Navbar = () => {
                     aria-label="LinkedIn"
                     onClick={closeMobileMenu}
                   >
-                    <LinkedIn className="h-5 w-5" />
+                    <Linkedin className="size-4" />
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
@@ -161,7 +169,7 @@ const Navbar = () => {
                     aria-label="GitHub"
                     onClick={closeMobileMenu}
                   >
-                    <Github className="h-5 w-5" />
+                    <Github className="size-4" />
                   </a>
                 </Button>
                 <Button
@@ -171,9 +179,9 @@ const Navbar = () => {
                   aria-label="Toggle theme"
                 >
                   {isDarkMode ? (
-                    <Sun className="h-5 w-5" />
+                    <Sun className="size-4" />
                   ) : (
-                    <Moon className="h-5 w-5" />
+                    <Moon className="size-4" />
                   )}
                 </Button>
               </div>

@@ -1,10 +1,15 @@
+import { Fragment } from 'react'
 import { Button } from '@/components/ui/button'
-import profile_picture from '../assets/images/profile_picture.jpeg'
 import {
   ArrowDownToLine,
   ArrowUpRight,
   Copyright,
+  Github,
   HistoryIcon,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Twitter,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
@@ -14,6 +19,66 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import Anchor from '@/components/custom/Anchor'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import SELF_PICTURE from '../assets/images/SELF_PICTURE.jpeg'
+import IMG_01 from '@/assets/images/photos/IMG_01.jpg'
+import IMG_02 from '@/assets/images/photos/IMG_02.jpg'
+import IMG_03 from '@/assets/images/photos/IMG_03.jpg'
+import IMG_04 from '@/assets/images/photos/IMG_04.jpg'
+import IMG_05 from '@/assets/images/photos/IMG_05.jpg'
+import IMG_06 from '@/assets/images/photos/IMG_06.jpg'
+import IMG_07 from '@/assets/images/photos/IMG_07.jpg'
+
+const CAPTURED_PHOTOS = [
+  {
+    id: 1,
+    src: IMG_01,
+    alt: 'JLN Stadium, Delhi',
+    location: 'JLN Stadium, Delhi',
+  },
+  {
+    id: 2,
+    src: IMG_02,
+    alt: 'Greater Noida, UP',
+    location: 'Greater Noida, UP',
+  },
+  {
+    id: 3,
+    src: IMG_03,
+    alt: 'Greater Noida, UP',
+    location: 'Greater Noida, UP',
+  },
+  {
+    id: 4,
+    src: IMG_04,
+    alt: 'Sarovar, Delhi',
+    location: 'Sarovar, Delhi',
+  },
+  {
+    id: 5,
+    src: IMG_05,
+    alt: 'Rishikesh, UK',
+    location: 'Rishikesh, UK',
+  },
+  {
+    id: 6,
+    src: IMG_06,
+    alt: 'Rishikesh, UK',
+    location: 'Rishikesh, UK',
+  },
+  {
+    id: 7,
+    src: IMG_07,
+    alt: 'Rishikesh, UK',
+    location: 'Rishikesh, UK',
+  },
+]
 
 const SectionDivider = () => {
   return (
@@ -59,31 +124,64 @@ const Home = () => {
               {/* Row 1: Hero */}
               <div className="relative col-span-1 aspect-square w-full p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-0 after:w-[200vw] after:border-b">
                 <img
-                  src={profile_picture}
+                  src={SELF_PICTURE}
                   alt="Profile Picture"
                   className="aspect-square w-full rounded-md border object-cover"
                 />
               </div>
               <div className="col-span-2 flex w-full flex-col items-start justify-center gap-1 p-1">
                 <h1 className="font-serif text-7xl">Mohammad Shahanwaz</h1>
-                <div className="text-muted-foreground flex items-center gap-4 text-lg">
-                  <span>Software Engineer</span>
-                  <span className="text-border">/</span>
-                  <span>AI</span>
-                  <span className="text-border">/</span>
-                  <span>Web</span>
+                <div className="text-muted-foreground mt-2 flex items-center gap-4 text-lg">
+                  <span>(vibe) Software Engineer</span>
+                  <span>⬩</span>
+                  <span>Creative &amp; Curious</span>
+                  <span>⬩</span>
+                  <span>Fitness Enthusiast</span>
                 </div>
-                <a
-                  href="https://resume.shahanwaz.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4"
-                >
-                  <Button size="lg" className="cursor-pointer">
-                    <ArrowDownToLine className="size-4" />
-                    Resume
-                  </Button>
-                </a>
+                <div className="mt-2 flex items-center gap-3">
+                  <Anchor href="https://resume.shahanwaz.dev">
+                    <Button size="lg" className="cursor-pointer">
+                      <ArrowDownToLine className="size-4" />
+                      Resume
+                    </Button>
+                  </Anchor>
+                  <Anchor href="https://linkedin.com/in/mshahanwaz">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="size-10 cursor-pointer"
+                    >
+                      <Linkedin className="size-5" />
+                    </Button>
+                  </Anchor>
+                  <Anchor href="https://github.com/seuristic">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="size-10 cursor-pointer"
+                    >
+                      <Github className="size-5" />
+                    </Button>
+                  </Anchor>
+                  <Anchor href="https://instagram.com/seuristic">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="size-10 cursor-pointer"
+                    >
+                      <Instagram className="size-5" />
+                    </Button>
+                  </Anchor>
+                  <Anchor href="https://x.com/seuristic">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="size-10 cursor-pointer"
+                    >
+                      <Twitter className="size-5" />
+                    </Button>
+                  </Anchor>
+                </div>
               </div>
 
               <SectionDivider />
@@ -91,7 +189,7 @@ const Home = () => {
               {/* Row 2: Introduction */}
               <div className="after:bg-border relative col-span-1 row-span-2 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-['']">
                 <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex justify-end font-mono text-xs">
-                  about-me
+                  intro
                 </span>
               </div>
 
@@ -153,23 +251,23 @@ const Home = () => {
                   <Anchor href="https://nexla.com">Nexla</Anchor>
                 </h2>
                 <div className="space-y-2">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-lg">UI Engineer</span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-lg">UI Engineer (AI Team)</span>
                     <div className="h-0 w-full flex-1 border-b border-dashed" />
                     <span className="text-muted-foreground font-mono text-xs">
                       August 2025 - Present
                     </span>
                   </div>
                   <p className="text-muted-foreground text-justify">
-                    Led the development of an AI-powered mentor system, a secure
-                    HLS-based video streaming platform, and an in-house coding
-                    environment powered by Judge0. Re-architected CI/CD
-                    pipelines with Terraform and GCP, automated deployments, and
-                    migrated infrastructure to Cloud Run and Vite to enhance
-                    performance and efficiency. Improved uptime, reduced costs,
-                    and elevated user experience while mentoring a team of
-                    nearly 40 engineers as the platform scaled to over 10,000
-                    daily active users.
+                    Built the complete onboarding UI flow for new users,
+                    streamlining the first-time experience and product adoption.
+                    Added tool selection functionality enabling structured file
+                    extraction within chat, including file preview,
+                    backend-driven schema detection, and a tree-visualized
+                    schema viewer for intuitive data mapping. Developed an
+                    interactive component to display extracted result data with
+                    editable fields, enhancing flexibility and user control
+                    throughout the extraction workflow.
                   </p>
                 </div>
               </div>
@@ -183,7 +281,7 @@ const Home = () => {
                   </Anchor>
                 </h2>
                 <div className="space-y-2">
-                  <div className="flex items-baseline gap-4">
+                  <div className="flex items-baseline gap-2">
                     <div className="flex items-center gap-2 text-lg">
                       <span>Senior Software Engineer</span>
                       <Tooltip>
@@ -224,26 +322,51 @@ const Home = () => {
                     photography
                   </span>
                 </div>
-                {Array.from({ length: 4 }).map((_, index) => (
-                  <>
+                {CAPTURED_PHOTOS.map((photo, index) => (
+                  <Fragment key={photo.id}>
                     {index % 3 === 2 && (
                       <LineDivider className="border-b after:border-none" />
                     )}
                     <div
                       className={cn(
-                        'col-span-1 p-1',
+                        'group col-span-1 p-1',
                         index % 3 === 0 && 'border-r',
                         index % 3 === 1 && 'border-l',
                       )}
-                      key={index}
                     >
-                      <img
-                        src={profile_picture}
-                        alt="Profile Picture"
-                        className="aspect-square w-full rounded-md border object-cover"
-                      />
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="group dark:text-foreground text-background relative h-full w-full cursor-pointer overflow-hidden rounded-md border">
+                            <img
+                              src={photo.src}
+                              alt={photo.alt}
+                              className="aspect-square w-full object-cover object-bottom"
+                            />
+                            <div className="dark:from-background/80 from-foreground/80 dark:via-background/50 via-foreground/50 dark:group-hover:bg-background/50 group-hover:bg-foreground/50 pointer-events-none absolute inset-0 bg-linear-[5deg] from-10% via-30% to-transparent to-100% transition-colors" />
+                            <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2">
+                              <MapPin className="size-4" />
+                              <span className="font-mono text-xs font-medium tracking-wide">
+                                {photo.location}
+                              </span>
+                            </div>
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="bg-background max-w-3xl sm:max-w-5xl">
+                          <DialogHeader>
+                            <DialogTitle className="flex items-center gap-2">
+                              <MapPin className="size-5" />
+                              {photo.location}
+                            </DialogTitle>
+                          </DialogHeader>
+                          <img
+                            src={photo.src}
+                            alt={photo.alt}
+                            className="h-[80vh] w-full rounded-xs object-contain"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </div>
-                  </>
+                  </Fragment>
                 ))}
                 <div className="col-span-1 border-l p-1">
                   <Link to="/photography" className="mt-4">
@@ -272,7 +395,7 @@ const Home = () => {
               </div>
               <div className="col-span-2 grid place-items-center p-1">
                 <div className="text-tertiary-foreground flex items-center gap-2 font-mono text-sm">
-                  <p>Mohammad Shahanwaz</p>
+                  <p>Mohammad Shahanwaz [seuristic]</p>
                 </div>
               </div>
             </div>
