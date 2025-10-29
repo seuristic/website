@@ -1,4 +1,4 @@
-import PageShell from '@/components/layout/HomeLayout'
+import HomeLayout from '@/components/layout/HomeLayout'
 import { SectionDivider } from '@/components/layout/Dividers'
 import HeroSection from '@/components/home/HeroSection'
 import IntroSection from '@/components/home/IntroSection'
@@ -7,7 +7,7 @@ import PhotographySection from '@/components/home/PhotographySection'
 
 const Home = () => {
   return (
-    <PageShell>
+    <HomeLayout>
       <HeroSection />
       <SectionDivider />
       <IntroSection />
@@ -15,7 +15,7 @@ const Home = () => {
       <ExperienceSection />
       <SectionDivider />
       <PhotographySection />
-    </PageShell>
+    </HomeLayout>
   )
 }
 

@@ -40,18 +40,21 @@ const Navbar = () => {
           </div>
 
           <div className="hidden items-center gap-2 md:flex">
-            {/* <NavLink to="/blogs">Blogs</NavLink> */}
             <NavLink to="/photography">Photography</NavLink>
           </div>
 
-          {/* Icon Links Section */}
           <div className="flex flex-1 items-center justify-end gap-2">
             <div className="hidden gap-2 md:flex">
-              <Anchor href="https://linkedin.com/in/mshahanwaz">
-                <Button variant="ghost" size="icon" className="cursor-pointer">
+              <Button
+                variant="ghost"
+                asChild
+                size="icon"
+                className="cursor-pointer"
+              >
+                <Anchor href="https://linkedin.com/in/mshahanwaz">
                   <Linkedin className="size-4" />
-                </Button>
-              </Anchor>
+                </Anchor>
+              </Button>
               <Anchor href="https://github.com/seuristic">
                 <Button variant="ghost" size="icon" className="cursor-pointer">
                   <Github className="size-4" />
@@ -121,7 +124,7 @@ const Navbar = () => {
         <div className="flex h-full flex-col">
           {/* Mobile Menu Header */}
           <div className="border-border flex items-center justify-between border-b p-4">
-            <h2 className="text-lg font-semibold">Menu</h2>
+            <h2 className="text-lg font-semibold">Mohammad Shahanwaz</h2>
             <Button
               variant="ghost"
               size="icon"
@@ -133,18 +136,18 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation Links */}
-          <div className="flex-1 p-4">
-            <div className="flex flex-col gap-4">
-              {/* <NavLink
+          <div className="flex-1">
+            <div className="flex flex-col gap-2 py-4">
+              <NavLink
                 to="/blogs"
-                className="justify-start"
                 onClick={closeMobileMenu}
+                className="h-fit justify-start rounded-none py-4"
               >
                 Blogs
-              </NavLink> */}
+              </NavLink>
               <NavLink
                 to="/photography"
-                className="justify-start"
+                className="h-fit justify-start rounded-none py-4"
                 onClick={closeMobileMenu}
               >
                 Photography
@@ -152,30 +155,52 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Icon Links */}
-            <div className="border-border mt-8 border-t pt-8">
+            <div className="border-border border-t p-4">
               <div className="flex items-center gap-4">
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://linkedin.com/in/mohammad-shahanwaz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    onClick={closeMobileMenu}
+                <Anchor href="https://linkedin.com/in/mshahanwaz">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="cursor-pointer"
                   >
                     <Linkedin className="size-4" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://github.com/mohammad-shahanwaz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    onClick={closeMobileMenu}
+                  </Button>
+                </Anchor>
+                <Anchor href="https://github.com/seuristic">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="cursor-pointer"
                   >
                     <Github className="size-4" />
-                  </a>
-                </Button>
+                  </Button>
+                </Anchor>
+                <Anchor href="https://instagram.com/seuristic">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="cursor-pointer"
+                  >
+                    <Instagram className="size-4" />
+                  </Button>
+                </Anchor>
+                <Anchor href="https://x.com/seuristic" className="block">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="cursor-pointer"
+                  >
+                    <Twitter className="size-4" />
+                  </Button>
+                </Anchor>
+
+                <div className="flex items-center self-stretch">
+                  <Separator
+                    orientation="vertical"
+                    className="data-[orientation=vertical]:h-6"
+                  />
+                </div>
+
                 <Button
                   variant="ghost"
                   size="icon"

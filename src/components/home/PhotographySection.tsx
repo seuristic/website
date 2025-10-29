@@ -66,7 +66,7 @@ const capturedPhotos = [
 
 const PhotographySection = () => {
   return (
-    <div className="gap-x-gutter relative col-span-full grid grid-cols-3">
+    <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-3">
       <div className="col-span-1 p-1">
         <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex justify-end font-mono text-xs">
           photography

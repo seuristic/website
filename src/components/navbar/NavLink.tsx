@@ -32,8 +32,8 @@ const NavLink = ({
     <Button
       variant={isActive ? 'default' : variant}
       size={size}
-      asChild
       className={cn(className)}
+      asChild
     >
       <Link to={to} onClick={onClick}>
         {children}

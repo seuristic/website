@@ -43,8 +43,8 @@ const HeroSection = () => {
         />
       </div>
       <div className="col-span-2 flex w-full flex-col items-start justify-center gap-1 p-1">
-        <h1 className="font-serif text-7xl">Mohammad Shahanwaz</h1>
-        <div className="text-muted-foreground mt-2 flex items-center gap-2 text-lg">
+        <h1 className="font-serif text-5xl lg:text-7xl">Mohammad Shahanwaz</h1>
+        <div className="text-muted-foreground mt-1 flex w-fit items-center gap-2 lg:mt-2 lg:text-lg">
           <span>(vibe) Software Engineer</span>
           <span>⬩</span>
           <span>Creative &amp; Curious</span>

@@ -22,7 +22,7 @@ import IMG_12 from '@/assets/images/photos/IMG_12.jpg'
 import IMG_13 from '@/assets/images/photos/IMG_13.jpg'
 import { MapPin } from 'lucide-react'
 import FooterSection from '@/components/home/FooterSection'
-import PhotographLayout from '@/components/layout/PhotographLayout'
+import PhotographLayout from '@/components/layout/PhotographyLayout'
 
 const capturedPhotos = [
   {
@@ -108,7 +108,7 @@ const capturedPhotos = [
 const Photography = () => {
   return (
     <PhotographLayout footer={<FooterSection />}>
-      <div className="gap-x-gutter relative col-span-full grid grid-cols-3">
+      <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-3">
         {capturedPhotos.map((photo, index) => (
           <Fragment key={photo.id}>
             {index > 0 && index % 3 === 0 && (
