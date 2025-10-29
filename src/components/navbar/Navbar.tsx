@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import NavLink from './NavLink'
 import Anchor from '../custom/Anchor'
+import { Separator } from '../ui/separator'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -30,26 +31,22 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Main Navbar */}
       <nav className="border-border bg-background/90 fixed top-0 z-40 w-full border-b p-4 backdrop-blur-md">
         <div className="flex items-center justify-between">
-          {/* Logo Section */}
           <div className="flex flex-1 justify-start">
             <Link to="/" className="text-foreground font-serif text-xl">
               seuristic
             </Link>
           </div>
 
-          {/* Navigation Links - Desktop */}
           <div className="hidden items-center gap-2 md:flex">
-            <NavLink to="/blogs">Blogs</NavLink>
+            {/* <NavLink to="/blogs">Blogs</NavLink> */}
             <NavLink to="/photography">Photography</NavLink>
           </div>
 
           {/* Icon Links Section */}
           <div className="flex flex-1 items-center justify-end gap-2">
-            {/* Desktop Icons */}
-            <div className="hidden items-center gap-2 md:flex">
+            <div className="hidden gap-2 md:flex">
               <Anchor href="https://linkedin.com/in/mshahanwaz">
                 <Button variant="ghost" size="icon" className="cursor-pointer">
                   <Linkedin className="size-4" />
@@ -65,13 +62,21 @@ const Navbar = () => {
                   <Instagram className="size-4" />
                 </Button>
               </Anchor>
-              <Anchor href="https://x.com/seuristic">
+              <Anchor href="https://x.com/seuristic" className="block">
                 <Button variant="ghost" size="icon" className="cursor-pointer">
                   <Twitter className="size-4" />
                 </Button>
               </Anchor>
+
+              <div className="flex items-center self-stretch">
+                <Separator
+                  orientation="vertical"
+                  className="data-[orientation=vertical]:h-6"
+                />
+              </div>
+
               <Button
-                variant="secondary"
+                variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
@@ -84,7 +89,6 @@ const Navbar = () => {
               </Button>
             </div>
 
-            {/* Mobile Hamburger */}
             <Button
               variant="ghost"
               size="icon"
@@ -131,13 +135,13 @@ const Navbar = () => {
           {/* Mobile Navigation Links */}
           <div className="flex-1 p-4">
             <div className="flex flex-col gap-4">
-              <NavLink
+              {/* <NavLink
                 to="/blogs"
                 className="justify-start"
                 onClick={closeMobileMenu}
               >
                 Blogs
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/photography"
                 className="justify-start"

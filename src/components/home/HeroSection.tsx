@@ -44,7 +44,7 @@ const HeroSection = () => {
       </div>
       <div className="col-span-2 flex w-full flex-col items-start justify-center gap-1 p-1">
         <h1 className="font-serif text-7xl">Mohammad Shahanwaz</h1>
-        <div className="text-muted-foreground mt-2 flex items-center gap-4 text-lg">
+        <div className="text-muted-foreground mt-2 flex items-center gap-2 text-lg">
           <span>(vibe) Software Engineer</span>
           <span>⬩</span>
           <span>Creative &amp; Curious</span>
@@ -76,4 +76,3 @@ const HeroSection = () => {
 }
 
 export default HeroSection
-

@@ -4,11 +4,10 @@ import HeroSection from '@/components/home/HeroSection'
 import IntroSection from '@/components/home/IntroSection'
 import ExperienceSection from '@/components/home/ExperienceSection'
 import PhotographySection from '@/components/home/PhotographySection'
-import FooterSection from '@/components/home/FooterSection'
 
 const Home = () => {
   return (
-    <PageShell footer={<FooterSection />}>
+    <PageShell>
       <HeroSection />
       <SectionDivider />
       <IntroSection />
