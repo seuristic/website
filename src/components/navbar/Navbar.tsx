@@ -45,31 +45,26 @@ const Navbar = () => {
 
           <div className="flex flex-1 items-center justify-end gap-2">
             <div className="hidden gap-2 md:flex">
-              <Button
-                variant="ghost"
-                asChild
-                size="icon"
-                className="cursor-pointer"
-              >
+              <Button variant="ghost" asChild size="icon">
                 <Anchor href="https://linkedin.com/in/mshahanwaz">
                   <Linkedin className="size-4" />
                 </Anchor>
               </Button>
-              <Anchor href="https://github.com/seuristic">
-                <Button variant="ghost" size="icon" className="cursor-pointer">
+              <Button variant="ghost" asChild size="icon">
+                <Anchor href="https://github.com/seuristic">
                   <Github className="size-4" />
-                </Button>
-              </Anchor>
-              <Anchor href="https://instagram.com/seuristic">
-                <Button variant="ghost" size="icon" className="cursor-pointer">
+                </Anchor>
+              </Button>
+              <Button variant="ghost" asChild size="icon">
+                <Anchor href="https://instagram.com/seuristic">
                   <Instagram className="size-4" />
-                </Button>
-              </Anchor>
-              <Anchor href="https://x.com/seuristic" className="block">
-                <Button variant="ghost" size="icon" className="cursor-pointer">
+                </Anchor>
+              </Button>
+              <Button variant="ghost" asChild size="icon">
+                <Anchor href="https://x.com/seuristic" className="block">
                   <Twitter className="size-4" />
-                </Button>
-              </Anchor>
+                </Anchor>
+              </Button>
 
               <div className="flex items-center self-stretch">
                 <Separator
@@ -124,7 +119,7 @@ const Navbar = () => {
         <div className="flex h-full flex-col">
           {/* Mobile Menu Header */}
           <div className="border-border flex items-center justify-between border-b p-4">
-            <h2 className="text-lg font-semibold">Mohammad Shahanwaz</h2>
+            <h2 className="font-serif text-lg">Mohammad Shahanwaz</h2>
             <Button
               variant="ghost"
               size="icon"
@@ -157,42 +152,26 @@ const Navbar = () => {
             {/* Mobile Icon Links */}
             <div className="border-border border-t p-4">
               <div className="flex items-center gap-4">
-                <Anchor href="https://linkedin.com/in/mshahanwaz">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="cursor-pointer"
-                  >
+                <Button variant="ghost" asChild size="icon">
+                  <Anchor href="https://linkedin.com/in/mshahanwaz">
                     <Linkedin className="size-4" />
-                  </Button>
-                </Anchor>
-                <Anchor href="https://github.com/seuristic">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="cursor-pointer"
-                  >
+                  </Anchor>
+                </Button>
+                <Button variant="ghost" asChild size="icon">
+                  <Anchor href="https://github.com/seuristic">
                     <Github className="size-4" />
-                  </Button>
-                </Anchor>
-                <Anchor href="https://instagram.com/seuristic">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="cursor-pointer"
-                  >
+                  </Anchor>
+                </Button>
+                <Button variant="ghost" size="icon" asChild>
+                  <Anchor href="https://instagram.com/seuristic">
                     <Instagram className="size-4" />
-                  </Button>
-                </Anchor>
-                <Anchor href="https://x.com/seuristic" className="block">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="cursor-pointer"
-                  >
+                  </Anchor>
+                </Button>
+                <Button variant="ghost" asChild size="icon">
+                  <Anchor href="https://x.com/seuristic" className="block">
                     <Twitter className="size-4" />
-                  </Button>
-                </Anchor>
+                  </Anchor>
+                </Button>
 
                 <div className="flex items-center self-stretch">
                   <Separator

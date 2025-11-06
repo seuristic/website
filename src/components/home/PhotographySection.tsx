@@ -15,25 +15,29 @@ import { ArrowUpRight, MapPin } from 'lucide-react'
 
 const PhotographySection = () => {
   // Get 7 random photos for the homepage
-  const capturedPhotos = useMemo(() => getRandomPhotos(7), [])
+  const capturedPhotos = useMemo(() => getRandomPhotos(4), [])
 
   return (
-    <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-3">
-      <div className="col-span-1 p-1">
-        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex justify-end font-mono text-xs">
+    <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-1 lg:grid-cols-3">
+      <div className="after:bg-border relative col-span-1 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-[''] lg:after:hidden">
+        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex font-mono text-xs lg:justify-end">
           photography
         </span>
       </div>
       {capturedPhotos.map((photo, index) => (
         <Fragment key={photo.id}>
-          {index % 3 === 2 && (
-            <LineDivider className="col-span-full border-b after:border-none" />
-          )}
+          <LineDivider
+            className={cn(
+              'col-span-full border-b after:border-none',
+              index % 3 !== 2 && 'lg:hidden',
+              index === 0 && 'border-none',
+            )}
+          />
           <div
             className={cn(
               'group col-span-1 p-1',
-              index % 3 === 0 && 'border-r',
-              index % 3 === 1 && 'border-l',
+              index % 3 === 0 && 'lg:border-r',
+              index % 3 === 1 && 'lg:border-l',
             )}
           >
             <Dialog>
@@ -42,7 +46,7 @@ const PhotographySection = () => {
                   <img
                     src={photo.src}
                     alt={photo.alt}
-                    className="aspect-square w-full object-cover object-bottom"
+                    className="block aspect-square w-full object-cover object-bottom"
                   />
                   <div className="dark:from-background/80 from-foreground/80 dark:via-background/50 via-foreground/50 dark:group-hover:bg-background/50 group-hover:bg-foreground/50 pointer-events-none absolute inset-0 bg-linear-[5deg] from-10% via-30% to-transparent to-100% transition-colors" />
                   <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2">
@@ -70,7 +74,7 @@ const PhotographySection = () => {
           </div>
         </Fragment>
       ))}
-      <div className="col-span-1 border-l p-1">
+      <div className="col-span-1 border-t p-1 lg:border-l">
         <Link to="/photography" className="mt-4">
           <Button
             variant="ghost"

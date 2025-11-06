@@ -11,12 +11,12 @@ const ExperienceSection = () => {
   return (
     <>
       <div className="after:bg-border relative col-span-1 row-span-3 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-['']">
-        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex justify-end font-mono text-xs">
+        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex font-mono text-xs lg:justify-end">
           experience
         </span>
       </div>
 
-      <div className="col-span-2 space-y-4 p-1">
+      <div className="col-span-1 space-y-4 p-1 lg:col-span-2">
         <h2 className="font-serif text-3xl">
           <Anchor href="https://nexla.com">Nexla</Anchor>
         </h2>
@@ -43,7 +43,7 @@ const ExperienceSection = () => {
 
       <ContentDivider />
 
-      <div className="col-span-2 space-y-4 p-1">
+      <div className="col-span-1 space-y-4 p-1 lg:col-span-2">
         <h2 className="font-serif text-3xl">
           <Anchor href="https://www.bosscoderacademy.com">
             Bosscoder Academy

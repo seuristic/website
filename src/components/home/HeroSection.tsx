@@ -42,9 +42,9 @@ const HeroSection = () => {
           className="aspect-square w-full rounded-md border object-cover"
         />
       </div>
-      <div className="col-span-2 flex w-full flex-col items-start justify-center gap-1 p-1">
+      <div className="col-span-1 flex w-full flex-col items-start justify-center gap-1 p-1 lg:col-span-2">
         <h1 className="font-serif text-5xl lg:text-7xl">Mohammad Shahanwaz</h1>
-        <div className="text-muted-foreground mt-1 flex w-fit items-center gap-2 lg:mt-2 lg:text-lg">
+        <div className="text-muted-foreground mt-1 flex w-fit flex-wrap items-center gap-1 text-sm sm:gap-2 sm:text-base lg:mt-2 lg:text-lg">
           <span>(vibe) Software Engineer</span>
           <span>⬩</span>
           <span>Creative &amp; Curious</span>

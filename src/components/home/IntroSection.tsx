@@ -2,12 +2,12 @@ const IntroSection = () => {
   return (
     <>
       <div className="after:bg-border relative col-span-1 row-span-2 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-['']">
-        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex justify-end font-mono text-xs">
-          intro
+        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex font-mono text-xs lg:justify-end">
+          introduction
         </span>
       </div>
 
-      <div className="col-span-2 p-1">
+      <div className="col-span-1 p-1 lg:col-span-2">
         <p className="text-muted-foreground text-justify text-lg">
           I'm a software engineer with a deep passion for building meaningful
           and impactful software. I hold a B.Tech degree in Computer Science and
@@ -53,4 +53,3 @@ const IntroSection = () => {
 }
 
 export default IntroSection
-

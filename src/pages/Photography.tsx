@@ -11,18 +11,23 @@ import { MapPin } from 'lucide-react'
 import FooterSection from '@/components/home/FooterSection'
 import PhotographLayout from '@/components/layout/PhotographyLayout'
 import { getAllPhotosShuffled } from '@/lib/photos'
+import { cn } from '@/lib/utils'
 
 const Photography = () => {
   const capturedPhotos = useMemo(() => getAllPhotosShuffled(), [])
 
   return (
     <PhotographLayout footer={<FooterSection />}>
-      <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-3">
+      <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-1 lg:grid-cols-3">
         {capturedPhotos.map((photo, index) => (
           <Fragment key={photo.id}>
-            {index > 0 && index % 3 === 0 && (
-              <LineDivider className="col-span-full border-b after:border-none" />
-            )}
+            <LineDivider
+              className={cn(
+                'col-span-full border-b after:border-none',
+                index === 0 && 'hidden',
+                index > 0 && index % 3 !== 0 && 'lg:hidden',
+              )}
+            />
             <div className="col-span-1 p-1">
               <Dialog>
                 <DialogTrigger asChild>
