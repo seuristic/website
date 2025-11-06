@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -7,112 +7,21 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { LineDivider } from '@/components/layout/Dividers'
-import IMG_01 from '@/assets/images/photos/IMG_01.jpg'
-import IMG_02 from '@/assets/images/photos/IMG_02.jpg'
-import IMG_03 from '@/assets/images/photos/IMG_03.jpg'
-import IMG_04 from '@/assets/images/photos/IMG_04.jpg'
-import IMG_05 from '@/assets/images/photos/IMG_05.jpg'
-import IMG_06 from '@/assets/images/photos/IMG_06.jpg'
-import IMG_07 from '@/assets/images/photos/IMG_07.jpg'
-import IMG_08 from '@/assets/images/photos/IMG_08.jpg'
-import IMG_09 from '@/assets/images/photos/IMG_09.jpg'
-import IMG_10 from '@/assets/images/photos/IMG_10.jpg'
-import IMG_11 from '@/assets/images/photos/IMG_11.jpg'
-import IMG_12 from '@/assets/images/photos/IMG_12.jpg'
-import IMG_13 from '@/assets/images/photos/IMG_13.jpg'
 import { MapPin } from 'lucide-react'
 import FooterSection from '@/components/home/FooterSection'
 import PhotographLayout from '@/components/layout/PhotographyLayout'
-
-const capturedPhotos = [
-  {
-    id: 1,
-    src: IMG_01,
-    alt: 'JLN Stadium, Delhi',
-    location: 'JLN Stadium, Delhi',
-  },
-  {
-    id: 2,
-    src: IMG_02,
-    alt: 'Greater Noida, UP',
-    location: 'Greater Noida, UP',
-  },
-  {
-    id: 3,
-    src: IMG_03,
-    alt: 'Greater Noida, UP',
-    location: 'Greater Noida, UP',
-  },
-  {
-    id: 4,
-    src: IMG_04,
-    alt: 'Sarovar, Delhi',
-    location: 'Sarovar, Delhi',
-  },
-  {
-    id: 5,
-    src: IMG_05,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-  {
-    id: 6,
-    src: IMG_06,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-  {
-    id: 7,
-    src: IMG_07,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-  {
-    id: 8,
-    src: IMG_08,
-    alt: 'JLN Stadium, Delhi',
-    location: 'JLN Stadium, Delhi',
-  },
-  {
-    id: 9,
-    src: IMG_09,
-    alt: 'Greater Noida, UP',
-    location: 'Greater Noida, UP',
-  },
-  {
-    id: 10,
-    src: IMG_10,
-    alt: 'Greater Noida, UP',
-    location: 'Greater Noida, UP',
-  },
-  {
-    id: 11,
-    src: IMG_11,
-    alt: 'Sarovar, Delhi',
-    location: 'Sarovar, Delhi',
-  },
-  {
-    id: 12,
-    src: IMG_12,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-  {
-    id: 13,
-    src: IMG_13,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-]
+import { getAllPhotosShuffled } from '@/lib/photos'
 
 const Photography = () => {
+  const capturedPhotos = useMemo(() => getAllPhotosShuffled(), [])
+
   return (
     <PhotographLayout footer={<FooterSection />}>
       <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-3">
         {capturedPhotos.map((photo, index) => (
           <Fragment key={photo.id}>
             {index > 0 && index % 3 === 0 && (
-              <LineDivider className="border-b after:border-none" />
+              <LineDivider className="col-span-full border-b after:border-none" />
             )}
             <div className="col-span-1 p-1">
               <Dialog>

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import {
@@ -10,61 +10,13 @@ import {
 } from '@/components/ui/dialog'
 import { LineDivider } from '@/components/layout/Dividers'
 import { cn } from '@/lib/utils'
-import IMG_01 from '@/assets/images/photos/IMG_01.jpg'
-import IMG_02 from '@/assets/images/photos/IMG_02.jpg'
-import IMG_03 from '@/assets/images/photos/IMG_03.jpg'
-import IMG_04 from '@/assets/images/photos/IMG_04.jpg'
-import IMG_05 from '@/assets/images/photos/IMG_05.jpg'
-import IMG_06 from '@/assets/images/photos/IMG_06.jpg'
-import IMG_07 from '@/assets/images/photos/IMG_07.jpg'
+import { getRandomPhotos } from '@/lib/photos'
 import { ArrowUpRight, MapPin } from 'lucide-react'
 
-const capturedPhotos = [
-  {
-    id: 1,
-    src: IMG_01,
-    alt: 'JLN Stadium, Delhi',
-    location: 'JLN Stadium, Delhi',
-  },
-  {
-    id: 2,
-    src: IMG_02,
-    alt: 'Greater Noida, UP',
-    location: 'Greater Noida, UP',
-  },
-  {
-    id: 3,
-    src: IMG_03,
-    alt: 'Greater Noida, UP',
-    location: 'Greater Noida, UP',
-  },
-  {
-    id: 4,
-    src: IMG_04,
-    alt: 'Sarovar, Delhi',
-    location: 'Sarovar, Delhi',
-  },
-  {
-    id: 5,
-    src: IMG_05,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-  {
-    id: 6,
-    src: IMG_06,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-  {
-    id: 7,
-    src: IMG_07,
-    alt: 'Rishikesh, UK',
-    location: 'Rishikesh, UK',
-  },
-]
-
 const PhotographySection = () => {
+  // Get 7 random photos for the homepage
+  const capturedPhotos = useMemo(() => getRandomPhotos(7), [])
+
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-3">
       <div className="col-span-1 p-1">
@@ -75,7 +27,7 @@ const PhotographySection = () => {
       {capturedPhotos.map((photo, index) => (
         <Fragment key={photo.id}>
           {index % 3 === 2 && (
-            <LineDivider className="border-b after:border-none" />
+            <LineDivider className="col-span-full border-b after:border-none" />
           )}
           <div
             className={cn(

@@ -20,4 +20,3 @@ export const LineDivider = ({ className }: { className?: string }) => {
     />
   )
 }
-
