@@ -23,7 +23,7 @@ const Photography = () => {
           <Fragment key={photo.id}>
             <LineDivider
               className={cn(
-                'col-span-full border-b after:border-none',
+                'col-span-full',
                 index === 0 && 'hidden',
                 index > 0 && index % 3 !== 0 && 'lg:hidden',
               )}

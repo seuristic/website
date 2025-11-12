@@ -1,10 +1,10 @@
 const IntroSection = () => {
   return (
     <>
-      <div className="after:bg-border relative col-span-1 row-span-2 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-['']">
-        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex font-mono text-xs lg:justify-end">
+      <div className="col-span-1 row-span-3 p-1">
+        <div className="text-tertiary-foreground flex h-full font-mono text-xs lg:justify-end">
           introduction
-        </span>
+        </div>
       </div>
 
       <div className="col-span-1 p-1 lg:col-span-2">

@@ -10,8 +10,8 @@ import { HistoryIcon } from 'lucide-react'
 const ExperienceSection = () => {
   return (
     <>
-      <div className="after:bg-border relative col-span-1 row-span-3 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-['']">
-        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex font-mono text-xs lg:justify-end">
+      <div className="col-span-1 row-span-3 p-1">
+        <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
           experience
         </span>
       </div>
@@ -21,14 +21,14 @@ const ExperienceSection = () => {
           <Anchor href="https://nexla.com">Nexla</Anchor>
         </h2>
         <div className="space-y-2">
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-col items-baseline gap-2 lg:flex-row">
             <span className="text-lg">UI Engineer (AI Team)</span>
-            <div className="h-0 w-full flex-1 border-b border-dashed" />
+            <div className="hidden h-0 w-full flex-1 border-b border-dashed lg:block" />
             <span className="text-muted-foreground font-mono text-xs">
               August 2025 - Present
             </span>
           </div>
-          <p className="text-muted-foreground text-justify">
+          <p className="text-muted-foreground lg:text-justify">
             Built the complete onboarding UI flow for new users, streamlining
             the first-time experience and product adoption. Added tool selection
             functionality enabling structured file extraction within chat,
@@ -50,7 +50,7 @@ const ExperienceSection = () => {
           </Anchor>
         </h2>
         <div className="space-y-2">
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-col items-baseline gap-2 lg:flex-row">
             <div className="flex items-center gap-2 text-lg">
               <span>Senior Software Engineer</span>
               <Tooltip>
@@ -62,12 +62,12 @@ const ExperienceSection = () => {
                 </TooltipContent>
               </Tooltip>
             </div>
-            <div className="h-0 w-full flex-1 border-b border-dashed" />
+            <div className="hidden h-0 w-full flex-1 border-b border-dashed lg:block" />
             <span className="text-muted-foreground font-mono text-xs">
               2023 - 2025
             </span>
           </div>
-          <p className="text-muted-foreground text-justify">
+          <p className="text-muted-foreground lg:text-justify">
             Led the development of an AI-powered mentor system, a secure
             HLS-based video streaming platform, and an in-house coding
             environment powered by Judge0. Re-architected CI/CD pipelines with

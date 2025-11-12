@@ -12,7 +12,7 @@ type PageShellProps = {
 const PhotographLayout = ({ children, contentClassName }: PageShellProps) => {
   return (
     <main className="border-y">
-      <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-[var(--gutter-space-sm)_minmax(0,var(--container-7xl))_var(--gutter-space-sm)] justify-center lg:grid-cols-[var(--gutter-space)_minmax(0,var(--container-7xl))_var(--gutter-space)]">
+      <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-[var(--gutter-space-sm)_1fr_var(--gutter-space-sm)] justify-center lg:grid-cols-[var(--gutter-space)_1fr_var(--gutter-space)]">
         <div className="gutter-pattern border-x" />
 
         <div>
@@ -40,9 +40,7 @@ const PhotographLayout = ({ children, contentClassName }: PageShellProps) => {
             {/* horizontal line divider */}
             <LineDivider className="col-span-full col-start-1 row-span-1 row-start-4" />
 
-            <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full col-start-1 row-span-1 row-start-5 flex grid-cols-1 justify-between gap-y-2 text-center lg:grid lg:grid-cols-3 lg:gap-y-0">
-              <FooterSection />
-            </div>
+            <FooterSection />
           </div>
         </div>
 

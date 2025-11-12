@@ -13,26 +13,21 @@ import { cn } from '@/lib/utils'
 import { getRandomPhotos } from '@/lib/photos'
 import { ArrowUpRight, MapPin } from 'lucide-react'
 
+const PHOTO_ROWS = 2
+
 const PhotographySection = () => {
-  // Get 7 random photos for the homepage
-  const capturedPhotos = useMemo(() => getRandomPhotos(4), [])
+  const capturedPhotos = useMemo(() => getRandomPhotos(3 * PHOTO_ROWS - 2), [])
 
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-1 lg:grid-cols-3">
-      <div className="after:bg-border relative col-span-1 p-1 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:content-[''] lg:after:hidden">
-        <span className="text-tertiary-foreground sticky top-[calc(4.5rem+1px)] flex font-mono text-xs lg:justify-end">
+      <div className="col-span-1 p-1">
+        <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
           photography
         </span>
       </div>
       {capturedPhotos.map((photo, index) => (
         <Fragment key={photo.id}>
-          <LineDivider
-            className={cn(
-              'col-span-full border-b after:border-none',
-              index % 3 !== 2 && 'lg:hidden',
-              index === 0 && 'border-none',
-            )}
-          />
+          <LineDivider className={cn(index % 3 !== 2 && 'lg:hidden')} />
           <div
             className={cn(
               'group col-span-1 p-1',
@@ -74,17 +69,18 @@ const PhotographySection = () => {
           </div>
         </Fragment>
       ))}
-      <div className="col-span-1 border-t p-1 lg:border-l">
+      <div className="border-t p-1 lg:border-t-0 lg:border-l">
         <Link to="/photography" className="mt-4">
           <Button
             variant="ghost"
-            className="h-full w-full cursor-pointer rounded-md"
+            className="h-full w-full cursor-pointer rounded-md border"
           >
             View more
             <ArrowUpRight className="size-4" />
           </Button>
         </Link>
       </div>
+      <LineDivider />
     </div>
   )
 }
