@@ -20,7 +20,7 @@ const HomeLayout = ({ children, contentClassName }: HomeLayoutProps) => {
             <div className="col-span-1 col-start-2 row-start-1 row-end-6 lg:border-x" />
 
             <div className="col-span-full col-start-1 row-span-1 row-start-1 h-24 lg:h-36" />
-            <LineDivider className="col-span-full col-start-1 row-span-1 row-start-2" />
+            <LineDivider className="col-start-1 row-span-1 row-start-2" />
 
             <div
               className={cn(
@@ -31,7 +31,7 @@ const HomeLayout = ({ children, contentClassName }: HomeLayoutProps) => {
               {children}
             </div>
 
-            <LineDivider className="col-span-full" />
+            <LineDivider />
             <FooterSection />
           </div>
         </div>

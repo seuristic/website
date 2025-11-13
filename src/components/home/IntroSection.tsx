@@ -1,7 +1,7 @@
 const IntroSection = () => {
   return (
     <>
-      <div className="col-span-1 row-span-3 p-1">
+      <div className="col-span-1 row-span-3 border-b p-1 lg:border-none">
         <div className="text-tertiary-foreground flex h-full font-mono text-xs lg:justify-end">
           introduction
         </div>

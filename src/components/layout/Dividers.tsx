@@ -13,10 +13,7 @@ export const ContentDivider = () => {
 export const LineDivider = ({ className }: { className?: string }) => {
   return (
     <div
-      className={cn(
-        'after:bg-border relative col-span-full h-0 w-full after:absolute after:bottom-0 after:-left-[50vw] after:h-px after:w-[200vw]',
-        className,
-      )}
+      className={cn('bg-border relative col-span-full h-px w-full', className)}
     />
   )
 }

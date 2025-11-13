@@ -10,7 +10,7 @@ import { HistoryIcon } from 'lucide-react'
 const ExperienceSection = () => {
   return (
     <>
-      <div className="col-span-1 row-span-3 p-1">
+      <div className="col-span-1 row-span-3 border-b p-1 lg:border-none">
         <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
           experience
         </span>

@@ -69,8 +69,9 @@ const PhotographySection = () => {
           </div>
         </Fragment>
       ))}
-      <div className="border-t p-1 lg:border-t-0 lg:border-l">
-        <Link to="/photography" className="mt-4">
+      <LineDivider className="lg:hidden" />
+      <div className="p-1 lg:border-l">
+        <Link to="/photography">
           <Button
             variant="ghost"
             className="h-full w-full cursor-pointer rounded-md border"
