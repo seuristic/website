@@ -4,7 +4,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { ContentDivider } from '@/components/layout/Dividers'
+import { ContentDivider } from '@/components/layouts/Dividers'
 import { HistoryIcon } from 'lucide-react'
 
 const ExperienceSection = () => {

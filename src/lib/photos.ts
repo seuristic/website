@@ -1,5 +1,5 @@
 // Photo metadata mapping - maps image names to their locations
-const photoLocations: Record<string, string> = {
+export const photoLocations: Record<string, string> = {
   IMG_01: 'JLN Stadium, Delhi',
   IMG_02: 'Greater Noida, UP',
   IMG_03: 'Greater Noida, UP',

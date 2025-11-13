@@ -137,9 +137,12 @@ const Navbar = () => {
         <div className="flex h-full flex-col">
           {/* Mobile Menu Header */}
           <div className="border-border flex items-center justify-between border-b p-4">
-            <h2 className="font-serif text-xl font-medium">
+            <Link
+              to="/"
+              className="text-foreground font-serif text-xl font-medium"
+            >
               Mohammad Shahanwaz
-            </h2>
+            </Link>
             <Button
               variant="ghost"
               size="icon"
