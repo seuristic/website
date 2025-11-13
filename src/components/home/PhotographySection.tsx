@@ -33,13 +33,12 @@ const PhotographySection = () => {
             className={cn(
               'group col-span-1 p-1',
               index % 3 === 0 && 'lg:border-r',
-              index % 3 === 1 && 'lg:border-l',
+              index % 3 === 1 && 'lg:border-l'
             )}
           >
             <Dialog>
               <DialogTrigger asChild>
-                <button
-                  type="button"
+                <div
                   className="group dark:text-foreground text-background relative h-full w-full cursor-pointer overflow-hidden rounded-md border"
                   aria-label={`View photo from ${photo.location}`}
                 >
@@ -55,9 +54,9 @@ const PhotographySection = () => {
                       {photo.location}
                     </span>
                   </div>
-                </button>
+                </div>
               </DialogTrigger>
-              <DialogContent className="bg-background max-w-3xl sm:max-w-5xl">
+              <DialogContent className="bg-background max-w-3xl rounded-none sm:max-w-5xl">
                 <DialogHeader>
                   <DialogTitle className="flex items-center gap-2">
                     <MapPin className="size-5" />
