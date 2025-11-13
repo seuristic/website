@@ -1,3 +1,5 @@
+import Anchor from '../custom/Anchor'
+
 const IntroSection = () => {
   return (
     <>
@@ -16,19 +18,19 @@ const IntroSection = () => {
           <br />
           <br />
           Currently, I am working as a UI Engineer (AI) at{' '}
-          <a
+          <Anchor
             href="https://nexla.com"
             className="text-primary underline-offset-4 hover:underline"
           >
             Nexla
-          </a>{' '}
+          </Anchor>{' '}
           , where I design and develop user interfaces for{' '}
-          <a
+          <Anchor
             href="https://express.dev"
             className="text-primary underline-offset-4 hover:underline"
           >
             Express
-          </a>
+          </Anchor>
           , an AI-powered product for building data flows and pipelines. I work
           with cross-functional teams to ensure smooth integration between
           frontend and backend systems while creating intuitive, user-focused
@@ -36,12 +38,12 @@ const IntroSection = () => {
           <br />
           <br />
           Previously, I have worked at{' '}
-          <a
+          <Anchor
             href="https://www.bosscoderacademy.com"
             className="text-primary underline-offset-4 hover:underline"
           >
             Bosscoder Academy
-          </a>{' '}
+          </Anchor>{' '}
           as a Lead Software Engineer where I had built a platform with a dozen
           of features including AI mentorship, in-house doubt support chat
           system, code execution platform, HLS/DASH-based video player etc. from

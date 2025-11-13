@@ -1,12 +1,12 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 
-interface GithubProps {
+interface GitHubProps {
   className?: string
   size?: number
 }
 
-const Github: React.FC<GithubProps> = ({ className, size = 24 }) => {
+const GitHub: React.FC<GitHubProps> = ({ className, size = 24 }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -22,4 +22,4 @@ const Github: React.FC<GithubProps> = ({ className, size = 24 }) => {
   )
 }
 
-export default Github
+export default GitHub

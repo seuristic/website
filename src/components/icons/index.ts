@@ -1,4 +1,6 @@
-export { default as Github } from './Github'
+export { default as GitHub } from './GitHub'
 export { default as LinkedIn } from './LinkedIn'
 export { default as Instagram } from './Instagram'
 export { default as X } from './X'
+export { default as LeetCode } from './LeetCode'
+export { default as CodeForces } from './CodeForces'

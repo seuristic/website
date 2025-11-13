@@ -13,7 +13,7 @@ const X: React.FC<XProps> = ({ className, size = 24 }) => {
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      className={cn('fill-current', className)}
+      className={cn('fill-current p-px', className)}
       aria-label="X"
     >
       <title>X</title>
