@@ -38,7 +38,7 @@ const LazyImage = ({
       },
       {
         rootMargin: '50px', // Start loading 50px before the image enters viewport
-      },
+      }
     )
 
     observer.observe(imgRef.current)
@@ -73,9 +73,9 @@ const LazyImage = ({
         src={shouldLoad ? src : placeholder}
         alt={alt}
         className={cn(
-          'transition-opacity duration-300',
+          'inline-block transition-opacity duration-300',
           isLoaded ? 'opacity-100' : 'opacity-0',
-          className,
+          className
         )}
         loading="lazy"
         decoding="async"
@@ -88,4 +88,3 @@ const LazyImage = ({
 }
 
 export default LazyImage
-
