@@ -84,7 +84,7 @@ const Navbar = () => {
                   aria-label={`Visit ${id} profile`}
                 >
                   <Anchor href={href}>
-                    <Icon className="size-5" />
+                    <Icon className="size-4" />
                   </Anchor>
                 </Button>
               ))}

@@ -1,10 +1,10 @@
 import { useCallback, useRef } from 'react'
-import { Moon, Sun } from 'lucide-react'
 import { flushSync } from 'react-dom'
 
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import { Button } from './button'
+import { Theme } from '../icons'
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<'button'> {
@@ -16,7 +16,7 @@ export const AnimatedThemeToggler = ({
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
-  const { isDarkMode, toggleTheme: baseToggleTheme } = useTheme()
+  const { toggleTheme: baseToggleTheme } = useTheme()
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   const toggleTheme = useCallback(async () => {
@@ -62,11 +62,7 @@ export const AnimatedThemeToggler = ({
       aria-label="Toggle theme"
       {...props}
     >
-      {isDarkMode ? (
-        <Sun className="size-6 md:size-5" />
-      ) : (
-        <Moon className="size-6 md:size-5" />
-      )}
+      <Theme className="size-6 md:size-5" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
