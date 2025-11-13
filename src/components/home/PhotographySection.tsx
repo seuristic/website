@@ -81,7 +81,6 @@ const PhotographySection = () => {
           </Button>
         </Link>
       </div>
-      <LineDivider />
     </div>
   )
 }

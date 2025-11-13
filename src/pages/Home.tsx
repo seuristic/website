@@ -15,6 +15,7 @@ const Home = () => {
       <ExperienceSection />
       <SectionDivider />
       <PhotographySection />
+      <SectionDivider />
     </HomeLayout>
   )
 }
