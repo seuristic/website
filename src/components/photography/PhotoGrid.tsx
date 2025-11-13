@@ -10,6 +10,7 @@ import { LineDivider } from '@/components/layouts/Dividers'
 import { MapPin } from 'lucide-react'
 import type { Photo } from '@/lib/photos'
 import { cn } from '@/lib/utils'
+import LazyImage from '@/components/LazyImage'
 
 type PhotoGridProps = {
   photos: Photo[]
@@ -31,8 +32,12 @@ const PhotoGrid = ({ photos }: PhotoGridProps) => {
           <div className="col-span-1 p-1">
             <Dialog>
               <DialogTrigger asChild>
-                <div className="group dark:text-foreground text-background relative h-full w-full cursor-pointer overflow-hidden rounded-md border">
-                  <img
+                <button
+                  type="button"
+                  className="group dark:text-foreground text-background relative h-full w-full cursor-pointer overflow-hidden rounded-md border"
+                  aria-label={`View photo from ${photo.location}`}
+                >
+                  <LazyImage
                     src={photo.src}
                     alt={photo.alt}
                     className="aspect-square w-full object-cover object-bottom"
@@ -44,7 +49,7 @@ const PhotoGrid = ({ photos }: PhotoGridProps) => {
                       {photo.location}
                     </span>
                   </div>
-                </div>
+                </button>
               </DialogTrigger>
               <DialogContent className="bg-background max-w-3xl rounded-none sm:max-w-5xl">
                 <DialogHeader>
@@ -53,7 +58,7 @@ const PhotoGrid = ({ photos }: PhotoGridProps) => {
                     {photo.location}
                   </DialogTitle>
                 </DialogHeader>
-                <img
+                <LazyImage
                   src={photo.src}
                   alt={photo.alt}
                   className="h-[80vh] w-full rounded-xs object-contain"

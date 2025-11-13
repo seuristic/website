@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { Sun, Moon, Menu, X as CloseIcon } from 'lucide-react'
+import { Menu, X as CloseIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { useTheme } from '@/hooks/useTheme'
 import NavLink from './NavLink'
 import Anchor from '../custom/Anchor'
 import { Separator } from '../ui/separator'
 import { CodeForces, LeetCode, LinkedIn, GitHub, Instagram, X } from '../icons'
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 
 export const socialLinks = [
   {
@@ -47,7 +47,6 @@ export const codingLinks = [
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { isDarkMode, toggleTheme } = useTheme()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -77,7 +76,13 @@ const Navbar = () => {
           <div className="flex flex-1 items-center justify-end gap-2">
             <div className="hidden gap-2 md:flex">
               {socialLinks.map(({ id, href, icon: Icon }) => (
-                <Button variant="ghost" asChild size="icon" key={id}>
+                <Button
+                  variant="ghost"
+                  asChild
+                  size="icon"
+                  key={id}
+                  aria-label={`Visit ${id} profile`}
+                >
                   <Anchor href={href}>
                     <Icon className="size-4" />
                   </Anchor>
@@ -90,19 +95,7 @@ const Navbar = () => {
                   className="data-[orientation=vertical]:h-6"
                 />
               </div>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-              >
-                {isDarkMode ? (
-                  <Sun className="size-4" />
-                ) : (
-                  <Moon className="size-4" />
-                )}
-              </Button>
+              <AnimatedThemeToggler />
             </div>
 
             <Button
@@ -122,7 +115,7 @@ const Navbar = () => {
       <div
         className={cn(
           'bg-background/80 fixed inset-0 z-50 backdrop-blur-sm transition-opacity duration-300',
-          isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0',
+          isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
         )}
         onClick={closeMobileMenu}
       />
@@ -131,8 +124,11 @@ const Navbar = () => {
       <div
         className={cn(
           'bg-background border-border fixed top-0 right-0 z-50 h-full w-full max-w-sm transform border-l transition-transform duration-300 ease-in-out',
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full',
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
       >
         <div className="flex h-full flex-col">
           {/* Mobile Menu Header */}
@@ -179,18 +175,7 @@ const Navbar = () => {
                 <span className="text-muted-foreground text-sm font-medium">
                   Theme
                 </span>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={toggleTheme}
-                  aria-label="Toggle theme"
-                >
-                  {isDarkMode ? (
-                    <Sun className="size-6" />
-                  ) : (
-                    <Moon className="size-6" />
-                  )}
-                </Button>
+                <AnimatedThemeToggler />
               </div>
               <div className="flex flex-col gap-2">
                 <span className="text-muted-foreground text-sm font-medium">
@@ -198,7 +183,13 @@ const Navbar = () => {
                 </span>
                 <div className="flex flex-wrap items-center gap-4">
                   {socialLinks.map(({ id, href, icon: Icon }) => (
-                    <Button variant="ghost" asChild size="icon" key={id}>
+                    <Button
+                      variant="ghost"
+                      asChild
+                      size="icon"
+                      key={id}
+                      aria-label={`Visit ${id} profile`}
+                    >
                       <Anchor href={href}>
                         <Icon className="size-6" />
                       </Anchor>
@@ -212,7 +203,13 @@ const Navbar = () => {
                 </span>
                 <div className="flex flex-wrap items-center gap-4">
                   {codingLinks.map(({ id, href, icon: Icon }) => (
-                    <Button variant="ghost" asChild size="icon" key={id}>
+                    <Button
+                      variant="ghost"
+                      asChild
+                      size="icon"
+                      key={id}
+                      aria-label={`Visit ${id} profile`}
+                    >
                       <Anchor href={href}>
                         <Icon className="size-6" />
                       </Anchor>

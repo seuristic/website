@@ -12,6 +12,7 @@ import { LineDivider } from '@/components/layouts/Dividers'
 import { cn } from '@/lib/utils'
 import { getRandomPhotos } from '@/lib/photos'
 import { ArrowUpRight, MapPin } from 'lucide-react'
+import LazyImage from '@/components/LazyImage'
 
 const PHOTO_ROWS = 2
 
@@ -37,8 +38,12 @@ const PhotographySection = () => {
           >
             <Dialog>
               <DialogTrigger asChild>
-                <div className="group dark:text-foreground text-background relative h-full w-full cursor-pointer overflow-hidden rounded-md border">
-                  <img
+                <button
+                  type="button"
+                  className="group dark:text-foreground text-background relative h-full w-full cursor-pointer overflow-hidden rounded-md border"
+                  aria-label={`View photo from ${photo.location}`}
+                >
+                  <LazyImage
                     src={photo.src}
                     alt={photo.alt}
                     className="block aspect-square w-full object-cover object-bottom"
@@ -50,7 +55,7 @@ const PhotographySection = () => {
                       {photo.location}
                     </span>
                   </div>
-                </div>
+                </button>
               </DialogTrigger>
               <DialogContent className="bg-background max-w-3xl sm:max-w-5xl">
                 <DialogHeader>
@@ -59,7 +64,7 @@ const PhotographySection = () => {
                     {photo.location}
                   </DialogTitle>
                 </DialogHeader>
-                <img
+                <LazyImage
                   src={photo.src}
                   alt={photo.alt}
                   className="h-[80vh] w-full rounded-xs object-contain"

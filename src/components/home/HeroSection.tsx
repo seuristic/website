@@ -3,14 +3,15 @@ import { Button } from '@/components/ui/button'
 import { ArrowDownToLine } from 'lucide-react'
 import SELF_PICTURE from '@/assets/images/SELF_PICTURE.jpeg'
 import { codingLinks } from '../navbar/Navbar'
+import LazyImage from '@/components/LazyImage'
 
 const HeroSection = () => {
   return (
     <>
       <div className="relative aspect-square w-full overflow-hidden p-1">
-        <img
+        <LazyImage
           src={SELF_PICTURE}
-          alt="Profile Picture"
+          alt="Mohammad Shahanwaz - Profile Picture"
           className="aspect-square w-full rounded-md border object-cover"
         />
       </div>
@@ -38,12 +39,14 @@ const HeroSection = () => {
           </Button>
           {codingLinks.map(({ id, href, icon: Icon }) => (
             <Button
+              key={id}
               variant="ghost"
               size="icon"
               className="size-10 cursor-pointer"
               asChild
+              aria-label={`Visit ${id} profile`}
             >
-              <Anchor key={id} href={href}>
+              <Anchor href={href}>
                 <Icon className="size-5" />
               </Anchor>
             </Button>
