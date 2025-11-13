@@ -1,8 +1,6 @@
-import GitHub from './GitHub.tsx'
-import LinkedIn from './LinkedIn.tsx'
-import Instagram from './Instagram.tsx'
-import X from './X.tsx'
-import LeetCode from './LeetCode.tsx'
-import CodeForces from './CodeForces.tsx'
-
-export { GitHub, LinkedIn, Instagram, X, LeetCode, CodeForces }
+export { default as GitHub } from './GitHub'
+export { default as LinkedIn } from './LinkedIn'
+export { default as Instagram } from './Instagram'
+export { default as X } from './X'
+export { default as LeetCode } from './LeetCode'
+export { default as CodeForces } from './CodeForces'
