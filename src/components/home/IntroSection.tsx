@@ -5,7 +5,7 @@ const IntroSection = () => {
   return (
     <>
       <div className="col-span-1 row-span-3 p-1">
-        <span className="text-tertiary-foreground flex h-full font-mono text-xs lg:justify-end">
+        <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
           introduction
         </span>
       </div>
