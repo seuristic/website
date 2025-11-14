@@ -4,17 +4,19 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { ContentDivider } from '@/components/layouts/Dividers'
+import { ContentDivider, LineDivider } from '@/components/layouts/Dividers'
 import { HistoryIcon } from 'lucide-react'
 
 const ExperienceSection = () => {
   return (
     <>
-      <div className="col-span-1 row-span-3 border-b p-1 lg:border-none">
+      <div className="col-span-1 row-span-3 p-1">
         <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
           experience
         </span>
       </div>
+
+      <LineDivider className="lg:hidden" />
 
       <div className="col-span-1 space-y-4 p-1 lg:col-span-2">
         <h2 className="font-serif text-3xl">

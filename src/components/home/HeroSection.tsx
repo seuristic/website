@@ -20,10 +20,10 @@ const HeroSection = () => {
           Mohammad Shahanwaz
         </h1>
         <div className="text-muted-foreground flex w-fit flex-wrap items-center gap-1 text-base sm:gap-2 lg:text-lg">
-          <span>(vibe) Software Engineer</span>
+          <span>Software Engineer (vibe)</span>
           <div className="inline-flex gap-1 sm:gap-2">
             <span>⬩</span>
-            <span>Creative &amp; Curious</span>
+            <span>Creative Curiosity</span>
           </div>
           <div className="inline-flex gap-1 sm:gap-2">
             <span>⬩</span>

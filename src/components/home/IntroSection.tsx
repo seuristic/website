@@ -1,13 +1,16 @@
 import Anchor from '../custom/Anchor'
+import { LineDivider } from '../layouts/Dividers'
 
 const IntroSection = () => {
   return (
     <>
-      <div className="col-span-1 row-span-3 border-b p-1 lg:border-none">
-        <div className="text-tertiary-foreground flex h-full font-mono text-xs lg:justify-end">
+      <div className="col-span-1 row-span-3 p-1">
+        <span className="text-tertiary-foreground flex h-full font-mono text-xs lg:justify-end">
           introduction
-        </div>
+        </span>
       </div>
+
+      <LineDivider className="lg:hidden" />
 
       <div className="col-span-1 p-1 lg:col-span-2">
         <p className="text-muted-foreground text-justify text-lg">
