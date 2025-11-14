@@ -9,10 +9,7 @@ import { SEO } from '@/components/SEO'
 const Home = () => {
   return (
     <>
-      <SEO
-        title="Home"
-        description="Software Engineer passionate about building creative solutions. Explore my work, photography, and journey in tech."
-      />
+      <SEO />
       <HomeLayout>
         <HeroSection />
         <SectionDivider />

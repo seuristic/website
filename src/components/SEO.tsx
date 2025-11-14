@@ -8,7 +8,7 @@ interface SEOProps {
   type?: string
 }
 
-const defaultTitle = 'Mohammad Shahanwaz | Software Engineer'
+const defaultTitle = 'Mohammad Shahanwaz'
 const defaultDescription =
   'Software Engineer passionate about building creative solutions. Explore my work, photography, and journey in tech.'
 const defaultImage = '/apple-touch-icon.png'
@@ -54,4 +54,3 @@ export const SEO = ({
     </Helmet>
   )
 }
-
