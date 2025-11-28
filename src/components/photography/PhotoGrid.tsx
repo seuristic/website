@@ -18,7 +18,7 @@ type PhotoGridProps = {
 
 const PhotoGrid = ({ photos }: PhotoGridProps) => {
   return (
-    <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-1 lg:grid-cols-3">
+    <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
       {photos.map((photo, index) => (
         <Fragment key={photo.id}>
           <LineDivider
@@ -26,7 +26,7 @@ const PhotoGrid = ({ photos }: PhotoGridProps) => {
               index === 0 && 'hidden',
               index > 0 &&
                 (index % 3 !== 0 || index === photos.length - 1) &&
-                'lg:hidden',
+                'lg:hidden'
             )}
           />
           <div className="col-span-1 p-1">

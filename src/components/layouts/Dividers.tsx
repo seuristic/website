@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 
 export const SectionDivider = () => {
   return (
-    <div className="after:bg-border before:bg-border relative col-span-full h-20 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:-translate-y-1/2 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:-translate-y-1/2" />
+    <div className="after:bg-border before:bg-border col-span-full h-20 before:absolute before:left-0 before:h-px before:w-[100vw] before:-translate-y-1/2 after:absolute after:left-0 after:h-px after:w-[100vw] after:translate-y-[calc(-50%+80px)]" />
   )
 }
 
@@ -14,7 +14,7 @@ export const LineDivider = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        'after:bg-border relative col-span-full after:absolute after:-left-[100vw] after:h-px after:w-[200vw] after:-translate-y-1/2',
+        'after:bg-border col-span-full after:absolute after:left-0 after:h-px after:w-[100vw] after:-translate-y-1/2',
         className
       )}
     />

@@ -8,7 +8,7 @@ import LazyImage from '@/components/LazyImage'
 const HeroSection = () => {
   return (
     <>
-      <div className="relative aspect-square w-full overflow-hidden p-1">
+      <div className="aspect-square w-full p-1">
         <LazyImage
           src={SELF_PICTURE}
           alt="Mohammad Shahanwaz - Profile Picture"

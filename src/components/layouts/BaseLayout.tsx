@@ -9,7 +9,7 @@ type BaseLayoutProps = {
 
 const BaseLayout = ({ children, borderColumns = 1 }: BaseLayoutProps) => {
   return (
-    <main className="overflow-hidden border-y">
+    <main className="relative border-y">
       <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-[var(--gutter-space-sm)_1fr_var(--gutter-space-sm)] justify-center lg:grid-cols-[var(--gutter-space)_1fr_var(--gutter-space)]">
         <div className="gutter-pattern border-x" />
 

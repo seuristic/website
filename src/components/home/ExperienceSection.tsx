@@ -11,7 +11,7 @@ const ExperienceSection = () => {
   return (
     <>
       <div className="col-span-1 row-span-3 p-1">
-        <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
+        <span className="text-tertiary-foreground top-[calc(5rem+4px)] flex font-mono text-xs sm:sticky lg:justify-end">
           experience
         </span>
       </div>

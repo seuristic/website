@@ -58,8 +58,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="border-border bg-background/90 fixed top-0 z-40 w-full border-b p-4 backdrop-blur-md">
-        <div className="flex items-center justify-between">
+      <nav className="border-border bg-background/90 fixed top-0 z-40 h-20 w-full border-b p-4 backdrop-blur-md">
+        <div className="flex h-full items-center justify-between">
           <div className="flex flex-1 justify-start">
             <Link
               to="/"

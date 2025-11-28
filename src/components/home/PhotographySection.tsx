@@ -14,15 +14,15 @@ import { getRandomPhotos } from '@/lib/photos'
 import { ArrowUpRight, MapPin } from 'lucide-react'
 import LazyImage from '@/components/LazyImage'
 
-const PHOTO_ROWS = 2
+const PHOTO_ROWS = 3
 
 const PhotographySection = () => {
   const capturedPhotos = useMemo(() => getRandomPhotos(3 * PHOTO_ROWS - 2), [])
 
   return (
-    <div className="gap-x-gutter-sm lg:gap-x-gutter relative col-span-full grid grid-cols-1 lg:grid-cols-3">
+    <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
       <div className="col-span-1 p-1">
-        <span className="text-tertiary-foreground flex font-mono text-xs lg:justify-end">
+        <span className="text-tertiary-foreground top-[calc(5rem+4px)] flex font-mono text-xs sm:sticky lg:justify-end">
           photography
         </span>
       </div>

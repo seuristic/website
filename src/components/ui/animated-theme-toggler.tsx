@@ -62,7 +62,7 @@ export const AnimatedThemeToggler = ({
       aria-label="Toggle theme"
       {...props}
     >
-      <Theme className="size-6 md:size-5" />
+      <Theme className="size-5.5" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
