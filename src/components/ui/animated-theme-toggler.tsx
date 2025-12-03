@@ -4,7 +4,7 @@ import { flushSync } from 'react-dom'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import { Button } from './button'
-import { Theme } from '../icons'
+import { Theme } from '@/components/custom/icons'
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<'button'> {

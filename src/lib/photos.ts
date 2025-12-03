@@ -11,8 +11,8 @@ export const photoLocations: Record<string, string> = {
   IMG_09: 'Greater Noida, UP',
   IMG_10: 'Greater Noida, UP',
   IMG_11: 'Sarovar, Delhi',
-  IMG_12: 'Rishikesh, UK',
-  IMG_13: 'Rishikesh, UK',
+  IMG_12: 'Fatehpur Sikri, UP',
+  IMG_13: 'Home, Delhi',
   IMG_14: "Humayun's Tomb, Delhi",
   IMG_15: "Humayun's Tomb, Delhi",
   IMG_16: "Humayun's Tomb, Delhi",
@@ -30,7 +30,7 @@ export interface Photo {
 // Dynamically import all images from the photos directory
 const photoModules = import.meta.glob<{ default: string }>(
   '@/assets/images/photos/*.jpg',
-  { eager: true },
+  { eager: true }
 )
 
 // Convert imported modules to Photo objects

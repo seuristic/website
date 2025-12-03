@@ -1,23 +1,23 @@
-import HomeLayout from '@/components/layouts/HomeLayout'
-import { SectionDivider } from '@/components/layouts/Dividers'
-import HeroSection from '@/components/home/HeroSection'
-import IntroSection from '@/components/home/IntroSection'
-import ExperienceSection from '@/components/home/ExperienceSection'
-import PhotographySection from '@/components/home/PhotographySection'
-import { SEO } from '@/components/SEO'
+import HomeLayout from '@/components/custom/layouts/HomeLayout'
+import { SectionDivider } from '@/components/custom/Dividers'
+import Introduction from '@/components/custom/home/Introduction'
+import Experience from '@/components/custom/home/Experience'
+import Gallery from '@/components/custom/home/Gallery'
+import { SEO } from '@/components/custom/SEO'
+import Hero from '@/components/custom/home/Hero'
 
 const Home = () => {
   return (
     <>
       <SEO />
       <HomeLayout>
-        <HeroSection />
+        <Hero />
         <SectionDivider />
-        <IntroSection />
+        <Introduction />
         <SectionDivider />
-        <ExperienceSection />
+        <Experience />
         <SectionDivider />
-        <PhotographySection />
+        <Gallery />
         <SectionDivider />
       </HomeLayout>
     </>

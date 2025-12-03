@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
-import PhotographyLayout from '@/components/layouts/PhotographyLayout'
-import PhotoGrid from '@/components/photography/PhotoGrid'
+import PhotographyLayout from '@/components/custom/layouts/PhotographyLayout'
+import PhotoGrid from '@/components/custom/photography/PhotoGrid'
 import { getAllPhotosShuffled } from '@/lib/photos'
-import { SectionDivider } from '@/components/layouts/Dividers'
-import { SEO } from '@/components/SEO'
+import { SectionDivider } from '@/components/custom/Dividers'
+import { SEO } from '@/components/custom/SEO'
 
 const Photography = () => {
   const capturedPhotos = useMemo(() => getAllPhotosShuffled(), [])

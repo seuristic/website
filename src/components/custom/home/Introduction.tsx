@@ -1,7 +1,7 @@
-import Anchor from '../custom/Anchor'
-import { LineDivider } from '../layouts/Dividers'
+import Anchor from '@/components/custom/Anchor'
+import { LineDivider } from '@/components/custom/Dividers'
 
-const IntroSection = () => {
+const Introduction = () => {
   return (
     <>
       <div className="col-span-1 row-span-3 p-1">
@@ -57,4 +57,4 @@ const IntroSection = () => {
   )
 }
 
-export default IntroSection
+export default Introduction

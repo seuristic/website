@@ -59,7 +59,7 @@ const LazyImage = ({
   }
 
   return (
-    <div className="relative">
+    <div className="relative size-full">
       {!isLoaded && !hasError && (
         <div className="bg-muted absolute inset-0 animate-pulse" />
       )}
@@ -73,7 +73,7 @@ const LazyImage = ({
         src={shouldLoad ? src : placeholder}
         alt={alt}
         className={cn(
-          'inline-block transition-opacity duration-300',
+          'inline-block size-full transition-opacity duration-300',
           isLoaded ? 'opacity-100' : 'opacity-0',
           className
         )}

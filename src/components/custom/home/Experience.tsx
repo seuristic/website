@@ -4,10 +4,10 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { ContentDivider, LineDivider } from '@/components/layouts/Dividers'
+import { ContentDivider, LineDivider } from '@/components/custom/Dividers'
 import { HistoryIcon } from 'lucide-react'
 
-const ExperienceSection = () => {
+const Experience = () => {
   return (
     <>
       <div className="col-span-1 row-span-3 p-1">
@@ -85,4 +85,4 @@ const ExperienceSection = () => {
   )
 }
 
-export default ExperienceSection
+export default Experience

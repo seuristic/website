@@ -1,7 +1,7 @@
 import { Copyright } from 'lucide-react'
-import Anchor from '../custom/Anchor'
+import Anchor from './Anchor'
 
-const FooterSection = () => {
+const Footer = () => {
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full col-start-1 row-span-1 row-start-5 flex min-h-20 flex-col flex-wrap justify-center text-center sm:flex-row sm:justify-between lg:grid lg:grid-cols-3">
       <div className="order-2 col-span-1 grid flex-1 place-items-center p-1 sm:order-1">
@@ -38,4 +38,4 @@ const FooterSection = () => {
   )
 }
 
-export default FooterSection
+export default Footer

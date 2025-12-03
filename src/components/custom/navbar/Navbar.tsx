@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import NavLink from './NavLink'
-import Anchor from '../custom/Anchor'
-import { Separator } from '../ui/separator'
-import { CodeForces, LeetCode, LinkedIn, GitHub, Instagram, X } from '../icons'
+import Anchor from '@/components/custom/Anchor'
+import { Separator } from '@/components/ui/separator'
+import {
+  CodeForces,
+  LeetCode,
+  LinkedIn,
+  GitHub,
+  Instagram,
+  X,
+} from '@/components/custom/icons'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 
 export const socialLinks = [

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
-import { LineDivider } from '@/components/layouts/Dividers'
-import FooterSection from '../home/FooterSection'
+import { LineDivider } from '@/components/custom/Dividers'
+import Footer from '@/components/custom/Footer'
 
 type BaseLayoutProps = {
   children: ReactNode
@@ -27,7 +27,7 @@ const BaseLayout = ({ children, borderColumns = 1 }: BaseLayoutProps) => {
               {children}
             </div>
 
-            <FooterSection />
+            <Footer />
           </div>
         </div>
 
