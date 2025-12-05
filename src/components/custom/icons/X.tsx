@@ -9,15 +9,17 @@ interface XProps {
 const X: React.FC<XProps> = ({ className, size = 24 }) => {
   return (
     <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      className={cn('fill-current p-px', className)}
-      aria-label="X"
+      viewBox="0 0 48 48"
+      className={cn('fill-none', className)}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <title>X</title>
-      <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" />
+      <path
+        d="M36.6526 3.8078H43.3995L28.6594 20.6548L46 43.5797H32.4225L21.7881 29.6759L9.61989 43.5797H2.86886L18.6349 25.56L2 3.8078H15.9222L25.5348 16.5165L36.6526 3.8078ZM34.2846 39.5414H38.0232L13.8908 7.63406H9.87892L34.2846 39.5414Z"
+        fill="currentColor"
+      />
     </svg>
   )
 }

@@ -78,6 +78,7 @@ const Navbar = () => {
 
           <div className="hidden items-center gap-2 md:flex">
             <NavLink to="/photography">Photography</NavLink>
+            <NavLink to="/bookshelf">Bookshelf</NavLink>
           </div>
 
           <div className="flex flex-1 items-center justify-end gap-2">
@@ -91,7 +92,7 @@ const Navbar = () => {
                   aria-label={`Visit ${id} profile`}
                 >
                   <Anchor href={href}>
-                    <Icon className="size-4.5" />
+                    <Icon className="size-5" />
                   </Anchor>
                 </Button>
               ))}
@@ -173,6 +174,14 @@ const Navbar = () => {
                 onClick={closeMobileMenu}
               >
                 Photography
+              </NavLink>
+              <NavLink
+                to="/bookshelf"
+                className="h-fit justify-start rounded-none py-4 text-base"
+                size="lg"
+                onClick={closeMobileMenu}
+              >
+                Bookshelf
               </NavLink>
             </div>
 

@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import { Button } from './button'
 import { Theme } from '@/components/custom/icons'
+import { Contrast, Moon, Sun } from 'lucide-react'
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<'button'> {
@@ -16,7 +17,7 @@ export const AnimatedThemeToggler = ({
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
-  const { toggleTheme: baseToggleTheme } = useTheme()
+  const { toggleTheme: baseToggleTheme, isDarkMode } = useTheme()
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   const toggleTheme = useCallback(async () => {
@@ -62,7 +63,7 @@ export const AnimatedThemeToggler = ({
       aria-label="Toggle theme"
       {...props}
     >
-      <Theme className="size-5.5" />
+      {isDarkMode ? <Sun className="size-5" /> : <Moon className="size-5" />}
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
