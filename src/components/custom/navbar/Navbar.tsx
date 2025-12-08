@@ -13,7 +13,7 @@ import {
   GitHub,
   Instagram,
   X,
-} from '@/components/custom/icons'
+} from '@/components/icons'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 
 export const socialLinks = [

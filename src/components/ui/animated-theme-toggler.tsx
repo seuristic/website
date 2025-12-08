@@ -4,8 +4,7 @@ import { flushSync } from 'react-dom'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import { Button } from './button'
-import { Theme } from '@/components/custom/icons'
-import { Contrast, Moon, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<'button'> {

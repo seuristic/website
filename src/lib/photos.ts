@@ -1,4 +1,6 @@
 // Photo metadata mapping - maps image names to their locations
+import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
+
 export const photoLocations: Record<string, string> = {
   IMG_01: 'JLN Stadium, Delhi',
   IMG_02: 'Greater Noida, UP',
@@ -23,35 +25,69 @@ export const photoLocations: Record<string, string> = {
 export interface Photo {
   id: string
   src: string
+  sources: OptimizedImage['sources']
+  width: number
+  height: number
   alt: string
   location: string
 }
 
 // Dynamically import all images from the photos directory
-const photoModules = import.meta.glob<{ default: string }>(
-  '@/assets/images/photos/*.jpg',
+// Explicitly import optimized variants (imagetools) and raw images (fallback)
+const optimizedPhotoModules = import.meta.glob<{ default: OptimizedImage }>(
+  '../assets/images/photos/*.jpg?w=480;768;1200;1600&format=webp;avif;jpg&as=picture',
+  {
+    import: 'default',
+    eager: true,
+  }
+)
+
+const rawPhotoModules = import.meta.glob<{ default: string }>(
+  '../assets/images/photos/*.jpg',
   { eager: true }
 )
 
 // Convert imported modules to Photo objects
 function getAllPhotos(): Photo[] {
-  return Object.entries(photoModules).map(([path, module]) => {
-    // Extract filename from path (e.g., "IMG_01.jpg" from full path)
-    // Handle both alias paths (@/assets/...) and relative paths
-    const pathParts = path.split('/')
-    const filenameWithExt = pathParts[pathParts.length - 1] || ''
-    const filename = filenameWithExt.replace(/\.jpg$/i, '')
+  return Object.entries(rawPhotoModules)
+    .map(([path, rawModule]) => {
+      // Extract filename from path (e.g., "IMG_01.jpg" from full path)
+      // Handle both alias paths (@/assets/...) and relative paths
+      const pathParts = path.split('/')
+      const filenameWithExt = pathParts[pathParts.length - 1] || ''
+      const filename = filenameWithExt.replace(/\.jpg$/i, '')
 
-    const location =
-      photoLocations[filename] || filename.replace('IMG_', 'Photo ')
+      const location =
+        photoLocations[filename] || filename.replace('IMG_', 'Photo ')
 
-    return {
-      id: filename,
-      src: module.default,
-      alt: location,
-      location: location,
-    }
-  })
+      const optimized =
+        optimizedPhotoModules[
+          path.replace('../assets', '..') as keyof typeof optimizedPhotoModules
+        ]?.default || optimizedPhotoModules[path]?.default
+
+      const { img, sources } = isOptimizedImage(optimized)
+        ? optimized
+        : {
+            img: {
+              src: rawModule.default,
+              w: 0,
+              h: 0,
+              format: 'jpg',
+            },
+            sources: [],
+          }
+
+      return {
+        id: filename,
+        src: img.src,
+        sources,
+        width: img.w,
+        height: img.h,
+        alt: location,
+        location: location,
+      }
+    })
+    .filter((photo): photo is Photo => Boolean(photo))
 }
 
 // Shuffle array using Fisher-Yates algorithm

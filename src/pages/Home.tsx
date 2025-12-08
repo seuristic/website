@@ -1,4 +1,4 @@
-import HomeLayout from '@/components/custom/layouts/HomeLayout'
+import HomeLayout from '@/components/layouts/HomeLayout'
 import { SectionDivider } from '@/components/custom/Dividers'
 import Introduction from '@/components/custom/home/Introduction'
 import Experience from '@/components/custom/home/Experience'

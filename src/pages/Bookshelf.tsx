@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
-import BookFilters from '@/components/custom/books/BookFilters'
-import BookGrid from '@/components/custom/books/BookGrid'
-import BookshelfLayout from '@/components/custom/layouts/BookshelfLayout'
+import BookFilters from '@/components/custom/bookshelf/BookFilters'
+import BookGrid from '@/components/custom/bookshelf/BookGrid'
+import BookshelfLayout from '@/components/layouts/BookshelfLayout'
 import { SectionDivider } from '@/components/custom/Dividers'
 import { SEO } from '@/components/custom/SEO'
 import { getBooks, type BookStatus } from '@/lib/books'
@@ -13,21 +13,22 @@ const Bookshelf = () => {
   const [status, setStatus] = useState<FilterStatus>('all')
 
   const counts = useMemo(() => {
-    return books.reduce<Record<BookStatus, number>>((acc, book) => {
-      acc[book.status] = (acc[book.status] || 0) + 1
-      return acc
-    }, {
-      interested: 0,
-      reading: 0,
-      finished: 0,
-    })
+    return books.reduce<Record<BookStatus, number>>(
+      (acc, book) => {
+        acc[book.status] = (acc[book.status] || 0) + 1
+        return acc
+      },
+      {
+        interested: 0,
+        reading: 0,
+        finished: 0,
+      }
+    )
   }, [books])
 
   const filteredBooks = useMemo(
     () =>
-      status === 'all'
-        ? books
-        : books.filter((book) => book.status === status),
+      status === 'all' ? books : books.filter(book => book.status === status),
     [books, status]
   )
 

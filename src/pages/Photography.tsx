@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import PhotographyLayout from '@/components/custom/layouts/PhotographyLayout'
+import PhotographyLayout from '@/components/layouts/PhotographyLayout'
 import PhotoGrid from '@/components/custom/photography/PhotoGrid'
 import { getAllPhotosShuffled } from '@/lib/photos'
 import { SectionDivider } from '@/components/custom/Dividers'

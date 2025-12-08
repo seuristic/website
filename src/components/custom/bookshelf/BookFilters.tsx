@@ -1,4 +1,3 @@
-import { LineDivider } from '@/components/custom/Dividers'
 import { Button } from '@/components/ui/button'
 import { BOOK_STATUS_OPTIONS, type BookStatus } from '@/lib/books'
 import { cn } from '@/lib/utils'

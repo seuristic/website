@@ -1,16 +1,31 @@
 import Anchor from '@/components/custom/Anchor'
 import { Button } from '@/components/ui/button'
 import { ArrowDownToLine } from 'lucide-react'
-import SELF_PICTURE from '@/assets/images/SELF_PICTURE.webp'
+import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
+import SELF_PICTURE from '@/assets/images/SELF_PICTURE.webp?w=480;768;1200;1600&format=webp;avif;jpg&as=picture'
+import SELF_PICTURE_RAW from '@/assets/images/SELF_PICTURE.webp'
 import { codingLinks } from '@/components/custom/navbar/Navbar'
 import LazyImage from '@/components/custom/LazyImage'
 
 const Hero = () => {
+  const heroImage = isOptimizedImage(SELF_PICTURE)
+    ? (SELF_PICTURE as OptimizedImage)
+    : null
+  const fallbackSrc =
+    typeof SELF_PICTURE_RAW === 'string'
+      ? SELF_PICTURE_RAW
+      : (heroImage?.img.src ?? '')
+
   return (
     <>
       <div className="aspect-square w-full p-1">
         <LazyImage
-          src={SELF_PICTURE}
+          src={heroImage?.img.src ?? fallbackSrc}
+          fallbackSrc={fallbackSrc}
+          sources={heroImage?.sources}
+          width={heroImage?.img.w}
+          height={heroImage?.img.h}
+          sizes="(max-width: 1024px) 100vw, 33vw"
           alt="Mohammad Shahanwaz - Profile Picture"
           className="aspect-square w-full rounded-md border object-cover grayscale transition-[filter] duration-300 hover:grayscale-0"
         />

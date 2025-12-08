@@ -1,6 +1,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -28,11 +29,15 @@ const PhotoCard = ({ photo, as = 'button' }: PhotoCardProps) => {
           <div className="h-full w-full overflow-hidden rounded">
             <LazyImage
               src={photo.src}
+              sources={photo.sources}
+              width={photo.width}
+              height={photo.height}
+              sizes="(max-width: 1024px) 100vw, 33vw"
               alt={photo.alt}
               className="h-full w-full object-cover object-bottom grayscale transition-[filter] duration-300 group-hover:grayscale-0"
             />
           </div>
-          <div className="bg-muted/50 dark:bg-muted/50 flex items-center gap-2 rounded px-3 py-2">
+          <div className="bg-secondary group-hover:bg-border flex items-center gap-2 rounded px-3 py-2 transition-colors">
             <MapPin className="size-4" />
             <span className="text-sm">{photo.location}</span>
           </div>
@@ -45,8 +50,15 @@ const PhotoCard = ({ photo, as = 'button' }: PhotoCardProps) => {
             {photo.location}
           </DialogTitle>
         </DialogHeader>
+        <DialogDescription className="sr-only">
+          Photo taken at {photo.location}
+        </DialogDescription>
         <LazyImage
           src={photo.src}
+          sources={photo.sources}
+          width={photo.width}
+          height={photo.height}
+          sizes="100vw"
           alt={photo.alt}
           className="h-[80vh] w-full rounded-xs object-contain"
         />
