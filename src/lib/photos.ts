@@ -56,9 +56,14 @@ function getAllPhotos(): Photo[] {
       const pathParts = path.split('/')
       const filenameWithExt = pathParts[pathParts.length - 1] || ''
       const filename = filenameWithExt.replace(/\.jpg$/i, '')
+      const filenameKey = filename.toLowerCase()
 
       const location =
-        photoLocations[filename] || filename.replace('img_', 'Photo ')
+        photoLocations[filenameKey] ||
+        // Fall back to a friendly label if no mapping is found
+        (filenameKey.startsWith('img_')
+          ? `Photo ${filenameKey.slice(4)}`
+          : filename)
 
       const optimized =
         optimizedPhotoModules[
@@ -78,7 +83,7 @@ function getAllPhotos(): Photo[] {
           }
 
       return {
-        id: filename,
+        id: filenameKey,
         src: img.src,
         sources,
         width: img.w,
