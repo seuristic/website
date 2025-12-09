@@ -2,18 +2,18 @@ import Anchor from '@/components/custom/Anchor'
 import { Button } from '@/components/ui/button'
 import { ArrowDownToLine } from 'lucide-react'
 import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
-import SELF_PICTURE from '@/assets/images/SELF_PICTURE.webp?w=480;768;1200;1600&format=webp;avif;jpg&as=picture'
-import SELF_PICTURE_RAW from '@/assets/images/SELF_PICTURE.webp'
+import profile_picture from '@/assets/images/profile_picture.webp?w=480;768;1200;1600&format=webp;avif;jpg&as=picture'
+import profile_picture_raw from '@/assets/images/profile_picture.webp'
 import { codingLinks } from '@/components/custom/navbar/Navbar'
 import LazyImage from '@/components/custom/LazyImage'
 
 const Hero = () => {
-  const heroImage = isOptimizedImage(SELF_PICTURE)
-    ? (SELF_PICTURE as OptimizedImage)
+  const heroImage = isOptimizedImage(profile_picture)
+    ? (profile_picture as OptimizedImage)
     : null
   const fallbackSrc =
-    typeof SELF_PICTURE_RAW === 'string'
-      ? SELF_PICTURE_RAW
+    typeof profile_picture_raw === 'string'
+      ? profile_picture_raw
       : (heroImage?.img.src ?? '')
 
   return (

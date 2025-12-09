@@ -9,6 +9,15 @@ type BookFiltersProps = {
   total: number
 }
 
+const statusStyles: Record<BookStatus, string> = {
+  interested:
+    'border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-200',
+  reading:
+    'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-100',
+  finished:
+    'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900/50 dark:bg-emerald-950/30 dark:text-emerald-100',
+}
+
 const filterOptions: { value: BookStatus | 'all'; label: string }[] = [
   { value: 'all', label: 'All' },
   ...BOOK_STATUS_OPTIONS,
@@ -26,14 +35,17 @@ const BookFilters = ({ value, onChange, counts, total }: BookFiltersProps) => {
               variant={value === option.value ? 'secondary' : 'outline'}
               size="sm"
               className={cn(
-                'rounded-full border-dashed px-3',
-                value === option.value && 'border-solid'
+                'rounded-full border px-3',
+                value === option.value ? 'border-solid' : 'border-dashed',
+                option.value !== 'all' &&
+                  value === option.value &&
+                  statusStyles[option.value]
               )}
               onClick={() => onChange(option.value)}
               aria-pressed={value === option.value}
             >
               <span>{option.label}</span>
-              <span className="text-muted-foreground text-xs">
+              <span className="font-mono text-xs">
                 {option.value === 'all' ? total : counts[option.value] || 0}
               </span>
             </Button>

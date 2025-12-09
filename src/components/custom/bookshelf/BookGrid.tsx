@@ -23,7 +23,13 @@ const BookGrid = ({ books }: BookGridProps) => {
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
       {books.map((book, index) => (
         <Fragment key={book.id}>
-          <LineDivider className={cn(index % 3 > 0 && 'hidden')} />
+          <LineDivider
+            className={cn(
+              index > 0 &&
+                (index % 3 !== 0 || index === books.length - 1) &&
+                'lg:hidden'
+            )}
+          />
           <div className={cn('col-span-1 p-1')}>
             <BookCard book={book} />
           </div>

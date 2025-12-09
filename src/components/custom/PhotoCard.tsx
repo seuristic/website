@@ -37,7 +37,7 @@ const PhotoCard = ({ photo, as = 'button' }: PhotoCardProps) => {
               className="h-full w-full object-cover object-bottom grayscale transition-[filter] duration-300 group-hover:grayscale-0"
             />
           </div>
-          <div className="bg-secondary group-hover:bg-border flex items-center gap-2 rounded px-3 py-2 transition-colors">
+          <div className="bg-secondary flex items-center gap-2 rounded px-3 py-2 transition-colors">
             <MapPin className="size-4" />
             <span className="text-sm">{photo.location}</span>
           </div>
@@ -53,15 +53,17 @@ const PhotoCard = ({ photo, as = 'button' }: PhotoCardProps) => {
         <DialogDescription className="sr-only">
           Photo taken at {photo.location}
         </DialogDescription>
-        <LazyImage
-          src={photo.src}
-          sources={photo.sources}
-          width={photo.width}
-          height={photo.height}
-          sizes="100vw"
-          alt={photo.alt}
-          className="h-[80vh] w-full rounded-xs object-contain"
-        />
+        <div className="h-[80vh] w-full border text-center">
+          <LazyImage
+            src={photo.src}
+            sources={photo.sources}
+            width={photo.width}
+            height={photo.height}
+            sizes="100vw"
+            alt={photo.alt}
+            className="object-contain"
+          />
+        </div>
       </DialogContent>
     </Dialog>
   )

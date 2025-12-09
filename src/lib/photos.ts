@@ -2,24 +2,24 @@
 import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
 
 export const photoLocations: Record<string, string> = {
-  IMG_01: 'JLN Stadium, Delhi',
-  IMG_02: 'Greater Noida, UP',
-  IMG_03: 'Greater Noida, UP',
-  IMG_04: 'Sarovar, Delhi',
-  IMG_05: 'Rishikesh, UK',
-  IMG_06: 'Rishikesh, UK',
-  IMG_07: 'Rishikesh, UK',
-  IMG_08: 'JLN Stadium, Delhi',
-  IMG_09: 'Greater Noida, UP',
-  IMG_10: 'Greater Noida, UP',
-  IMG_11: 'Sarovar, Delhi',
-  IMG_12: 'Fatehpur Sikri, UP',
-  IMG_13: 'Home, Delhi',
-  IMG_14: "Humayun's Tomb, Delhi",
-  IMG_15: "Humayun's Tomb, Delhi",
-  IMG_16: "Humayun's Tomb, Delhi",
-  IMG_17: "Humayun's Tomb, Delhi",
-  IMG_18: "Humayun's Tomb, Delhi",
+  img_01: 'JLN Stadium, Delhi',
+  img_02: 'Greater Noida, UP',
+  img_03: 'Greater Noida, UP',
+  img_04: 'Sarovar, Delhi',
+  img_05: 'Rishikesh, UK',
+  img_06: 'Rishikesh, UK',
+  img_07: 'Rishikesh, UK',
+  img_08: 'JLN Stadium, Delhi',
+  img_09: 'Greater Noida, UP',
+  img_10: 'Greater Noida, UP',
+  img_11: 'Sarovar, Delhi',
+  img_12: 'Fatehpur Sikri, UP',
+  img_13: 'Home, Delhi',
+  img_14: "Humayun's Tomb, Delhi",
+  img_15: "Humayun's Tomb, Delhi",
+  img_16: "Humayun's Tomb, Delhi",
+  img_17: "Humayun's Tomb, Delhi",
+  img_18: "Humayun's Tomb, Delhi",
 }
 
 export interface Photo {
@@ -51,14 +51,14 @@ const rawPhotoModules = import.meta.glob<{ default: string }>(
 function getAllPhotos(): Photo[] {
   return Object.entries(rawPhotoModules)
     .map(([path, rawModule]) => {
-      // Extract filename from path (e.g., "IMG_01.jpg" from full path)
+      // Extract filename from path (e.g., "img_01.jpg" from full path)
       // Handle both alias paths (@/assets/...) and relative paths
       const pathParts = path.split('/')
       const filenameWithExt = pathParts[pathParts.length - 1] || ''
       const filename = filenameWithExt.replace(/\.jpg$/i, '')
 
       const location =
-        photoLocations[filename] || filename.replace('IMG_', 'Photo ')
+        photoLocations[filename] || filename.replace('img_', 'Photo ')
 
       const optimized =
         optimizedPhotoModules[
@@ -103,9 +103,9 @@ function shuffleArray<T>(array: T[]): T[] {
 // Get all photos sorted by filename
 export function getAllPhotosSorted(): Photo[] {
   return getAllPhotos().sort((a, b) => {
-    // Extract numbers from IDs like "IMG_01" -> 1
-    const numA = parseInt(a.id.replace('IMG_', '')) || 0
-    const numB = parseInt(b.id.replace('IMG_', '')) || 0
+    // Extract numbers from IDs like "img_01" -> 1
+    const numA = parseInt(a.id.replace('img_', '')) || 0
+    const numB = parseInt(b.id.replace('img_', '')) || 0
     return numA - numB
   })
 }
