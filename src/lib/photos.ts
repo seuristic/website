@@ -2,24 +2,24 @@
 import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
 
 export const photoLocations: Record<string, string> = {
-  img_01: 'JLN Stadium, Delhi',
-  img_02: 'Greater Noida, UP',
-  img_03: 'Greater Noida, UP',
-  img_04: 'Sarovar, Delhi',
-  img_05: 'Rishikesh, UK',
-  img_06: 'Rishikesh, UK',
-  img_07: 'Rishikesh, UK',
-  img_08: 'JLN Stadium, Delhi',
-  img_09: 'Greater Noida, UP',
-  img_10: 'Greater Noida, UP',
-  img_11: 'Sarovar, Delhi',
-  img_12: 'Fatehpur Sikri, UP',
-  img_13: 'Home, Delhi',
-  img_14: "Humayun's Tomb, Delhi",
-  img_15: "Humayun's Tomb, Delhi",
-  img_16: "Humayun's Tomb, Delhi",
-  img_17: "Humayun's Tomb, Delhi",
-  img_18: "Humayun's Tomb, Delhi",
+  delhi_metro: 'Delhi Metro',
+  fatehpur_sikri: 'Fatehpur Sikri, UP',
+  greater_noida: 'Greater Noida, UP',
+  greater_noida2: 'Greater Noida, UP',
+  greater_noida3: 'Greater Noida, UP',
+  greater_noida4: 'Greater Noida, UP',
+  home: 'Home, Delhi',
+  humayun_tomb: "Humayun's Tomb, Delhi",
+  humayun_tomb2: "Humayun's Tomb, Delhi",
+  humayun_tomb3: "Humayun's Tomb, Delhi",
+  humayun_tomb4: "Humayun's Tomb, Delhi",
+  humayun_tomb5: "Humayun's Tomb, Delhi",
+  jln_stadium: 'JLN Stadium, Delhi',
+  rishikesh: 'Rishikesh, UK',
+  rishikesh2: 'Rishikesh, UK',
+  rishikesh3: 'Rishikesh, UK',
+  sarovar: 'Sarovar, Delhi',
+  sarovar2: 'Sarovar, Delhi',
 }
 
 export interface Photo {
@@ -60,10 +60,8 @@ function getAllPhotos(): Photo[] {
 
       const location =
         photoLocations[filenameKey] ||
-        // Fall back to a friendly label if no mapping is found
-        (filenameKey.startsWith('img_')
-          ? `Photo ${filenameKey.slice(4)}`
-          : filename)
+        // Fall back to a friendly, human-readable label
+        filenameKey.replace(/_/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase())
 
       const optimized =
         optimizedPhotoModules[
@@ -107,12 +105,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 // Get all photos sorted by filename
 export function getAllPhotosSorted(): Photo[] {
-  return getAllPhotos().sort((a, b) => {
-    // Extract numbers from IDs like "img_01" -> 1
-    const numA = parseInt(a.id.replace('img_', '')) || 0
-    const numB = parseInt(b.id.replace('img_', '')) || 0
-    return numA - numB
-  })
+  return getAllPhotos().sort((a, b) => a.id.localeCompare(b.id))
 }
 
 // Get all photos shuffled (for photography page)
