@@ -2,8 +2,9 @@ import { useMemo } from 'react'
 import PhotographyLayout from '@/components/layouts/PhotographyLayout'
 import PhotoGrid from '@/components/custom/photography/PhotoGrid'
 import { getAllPhotosShuffled } from '@/lib/photos'
-import { SectionDivider } from '@/components/custom/Dividers'
+import { LineDivider, SectionDivider } from '@/components/custom/Dividers'
 import { SEO } from '@/components/custom/SEO'
+import PageHeader from '@/components/custom/PageHeader'
 
 const Photography = () => {
   const capturedPhotos = useMemo(() => getAllPhotosShuffled(), [])
@@ -16,6 +17,11 @@ const Photography = () => {
         url="/photography"
       />
       <PhotographyLayout>
+        <PageHeader
+          title="Photography"
+          description="A collection of my photography work capturing moments from various locations."
+        />
+        <LineDivider />
         <PhotoGrid photos={capturedPhotos} />
         <SectionDivider />
       </PhotographyLayout>

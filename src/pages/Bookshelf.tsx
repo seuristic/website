@@ -2,8 +2,9 @@ import { useMemo, useState } from 'react'
 import BookFilters from '@/components/custom/bookshelf/BookFilters'
 import BookGrid from '@/components/custom/bookshelf/BookGrid'
 import BookshelfLayout from '@/components/layouts/BookshelfLayout'
-import { SectionDivider } from '@/components/custom/Dividers'
+import { LineDivider, SectionDivider } from '@/components/custom/Dividers'
 import { SEO } from '@/components/custom/SEO'
+import PageHeader from '@/components/custom/PageHeader'
 import { getBooks, type BookStatus } from '@/lib/books'
 
 type FilterStatus = BookStatus | 'all'
@@ -40,6 +41,11 @@ const Bookshelf = () => {
         url="/bookshelf"
       />
       <BookshelfLayout>
+        <PageHeader
+          title="Bookshelf"
+          description="A curated shelf of books I'm eyeing, reading through, or have already finished."
+        />
+        <LineDivider />
         <BookFilters
           value={status}
           onChange={setStatus}

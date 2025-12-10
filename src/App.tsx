@@ -9,6 +9,7 @@ import LoadingFallback from '@/components/custom/LoadingFallback'
 const Home = lazy(() => import('@/pages/Home'))
 const Photography = lazy(() => import('@/pages/Photography'))
 const Bookshelf = lazy(() => import('@/pages/Bookshelf'))
+const Blogs = lazy(() => import('@/pages/Blogs'))
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/photography" element={<Photography />} />
             <Route path="/bookshelf" element={<Bookshelf />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:slug" element={<Blogs />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Suspense>

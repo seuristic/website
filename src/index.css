@@ -271,6 +271,47 @@
   }
 }
 
+/* Code highlighting styles */
+.dark .hljs {
+  background: var(--muted) !important;
+  color: var(--foreground) !important;
+}
+
+.dark .hljs-comment,
+.dark .hljs-quote {
+  color: oklch(0.551 0.027 264.364) !important;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-subst {
+  color: oklch(0.769 0.188 70.08) !important;
+}
+
+.dark .hljs-number,
+.dark .hljs-literal,
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-tag .hljs-attr {
+  color: oklch(0.627 0.265 303.9) !important;
+}
+
+.dark .hljs-string,
+.dark .hljs-doctag {
+  color: oklch(0.696 0.17 162.48) !important;
+}
+
+.dark .hljs-title,
+.dark .hljs-section,
+.dark .hljs-selector-id {
+  color: oklch(0.488 0.243 264.376) !important;
+}
+
+.dark .hljs-type,
+.dark .hljs-class .hljs-title {
+  color: oklch(0.645 0.246 16.439) !important;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

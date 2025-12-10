@@ -79,6 +79,7 @@ const Navbar = () => {
           <div className="hidden items-center gap-2 md:flex">
             <NavLink to="/photography">Photography</NavLink>
             <NavLink to="/bookshelf">Bookshelf</NavLink>
+            <NavLink to="/blogs">Blogs</NavLink>
           </div>
 
           <div className="flex flex-1 items-center justify-end gap-2">
@@ -175,6 +176,14 @@ const Navbar = () => {
                 onClick={closeMobileMenu}
               >
                 Bookshelf
+              </NavLink>
+              <NavLink
+                to="/blogs"
+                className="h-fit justify-start rounded-none py-4 text-base"
+                size="lg"
+                onClick={closeMobileMenu}
+              >
+                Blogs
               </NavLink>
             </div>
 

@@ -27,7 +27,7 @@ const Hero = () => {
           height={heroImage?.img.h}
           sizes="(max-width: 1024px) 100vw, 33vw"
           alt="Mohammad Shahanwaz - Profile Picture"
-          className="aspect-square w-full rounded-md border object-cover grayscale transition-[filter] duration-300 hover:grayscale-0"
+          className="size-full rounded-md border object-cover"
         />
       </div>
       <div className="col-span-1 flex w-full flex-col items-start justify-center gap-2 p-1 lg:col-span-2">
