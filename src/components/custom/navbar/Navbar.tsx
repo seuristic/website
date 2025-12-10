@@ -160,13 +160,6 @@ const Navbar = () => {
           {/* Mobile Navigation Links */}
           <div className="flex-1">
             <div className="flex flex-col gap-2 py-4">
-              {/* <NavLink
-                to="/blogs"
-                onClick={closeMobileMenu}
-                className="h-fit justify-start rounded-none py-4"
-              >
-                Blogs
-              </NavLink> */}
               <NavLink
                 to="/photography"
                 className="h-fit justify-start rounded-none py-4 text-base"
