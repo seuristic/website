@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import BlogLayout from '@/components/layouts/BlogLayout'
-import { LineDivider, SectionDivider } from '@/components/custom/Dividers'
+import { SectionDivider } from '@/components/custom/Dividers'
 import { SEO } from '@/components/custom/SEO'
 import PageHeader from '@/components/custom/PageHeader'
 import BlogGrid from '@/components/custom/blogs/BlogGrid'
