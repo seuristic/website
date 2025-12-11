@@ -21,20 +21,33 @@ const BlogGrid = ({ blogs }: BlogGridProps) => {
 
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
-      {blogs.map((blog, index) => (
-        <Fragment key={blog.id}>
-          <LineDivider
-            className={cn(
-              index > 0 &&
-                (index % 3 !== 0 || index === blogs.length - 1) &&
-                'lg:hidden'
+      {Array.from({ length: Math.max(9, blogs.length) }).map((_, index) => {
+        const blog = index < blogs.length ? blogs[index] : null
+        return (
+          <Fragment key={index}>
+            <LineDivider
+              className={cn(
+                index > Math.max(3, blogs.length) && 'hidden lg:block',
+                index > 0 &&
+                  (index % 3 !== 0 || index === blogs.length - 1) &&
+                  'lg:hidden'
+              )}
+            />
+            {blog ? (
+              <div className={cn('col-span-1 p-1')}>
+                <BlogCard blog={blog} />
+              </div>
+            ) : (
+              <div
+                className={cn(
+                  'col-span-1 min-h-50 p-1',
+                  index > 3 && 'hidden lg:block'
+                )}
+              />
             )}
-          />
-          <div className={cn('col-span-1 p-1')}>
-            <BlogCard blog={blog} />
-          </div>
-        </Fragment>
-      ))}
+          </Fragment>
+        )
+      })}
     </div>
   )
 }

@@ -45,7 +45,6 @@ const Bookshelf = () => {
           title="Bookshelf"
           description="A curated shelf of books I'm eyeing, reading through, or have already finished."
         />
-        <LineDivider />
         <BookFilters
           value={status}
           onChange={setStatus}

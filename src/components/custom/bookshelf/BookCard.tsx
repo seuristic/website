@@ -9,19 +9,17 @@ const BookCard = ({ book }: BookCardProps) => {
   const displayId = book.id.replace(/[-_]/g, ' ')
 
   return (
-    <div className="group relative h-full">
-      <div className="aspect-square overflow-hidden p-6 text-center">
-        <LazyImage
-          src={book.image.src}
-          sources={book.image.sources}
-          width={book.image.width}
-          height={book.image.height}
-          sizes="(max-width: 1024px) 100vw, 33vw"
-          alt={`${displayId} cover`}
-          className="h-full w-fit border object-contain"
-          fallbackSrc={book.image.src}
-        />
-      </div>
+    <div className="group relative aspect-square h-full p-6 text-center lg:min-h-84">
+      <LazyImage
+        src={book.image.src}
+        sources={book.image.sources}
+        width={book.image.width}
+        height={book.image.height}
+        sizes="(max-width: 1024px) 100vw, 33vw"
+        alt={`${displayId} cover`}
+        className="h-full w-fit border object-contain"
+        fallbackSrc={book.image.src}
+      />
     </div>
   )
 }

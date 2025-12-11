@@ -13,7 +13,7 @@ const Introduction = () => {
       <LineDivider className="lg:hidden" />
 
       <div className="col-span-1 p-1 lg:col-span-2">
-        <p className="text-muted-foreground text-justify text-lg">
+        <p className="text-muted-foreground text-justify">
           I'm a software engineer with a deep passion for building meaningful
           and impactful software. I hold a B.Tech degree in Computer Science and
           Engineering from NIT Delhi, where my curiosity for systems,

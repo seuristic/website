@@ -46,7 +46,6 @@ const Blogs = () => {
           title="Blogs"
           description="Thoughts, tutorials, and insights"
         />
-        <LineDivider />
         <BlogGrid blogs={blogs} />
         <SectionDivider />
       </BlogLayout>

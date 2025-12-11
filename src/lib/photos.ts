@@ -61,7 +61,9 @@ function getAllPhotos(): Photo[] {
       const location =
         photoLocations[filenameKey] ||
         // Fall back to a friendly, human-readable label
-        filenameKey.replace(/_/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase())
+        filenameKey
+          .replace(/_/g, ' ')
+          .replace(/\b\w/g, char => char.toUpperCase())
 
       const optimized =
         optimizedPhotoModules[

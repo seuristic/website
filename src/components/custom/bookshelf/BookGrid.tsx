@@ -21,20 +21,33 @@ const BookGrid = ({ books }: BookGridProps) => {
 
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
-      {books.map((book, index) => (
-        <Fragment key={book.id}>
-          <LineDivider
-            className={cn(
-              index > 0 &&
-                (index % 3 !== 0 || index === books.length - 1) &&
-                'lg:hidden'
+      {Array.from({ length: Math.max(9, books.length) }).map((_, index) => {
+        const book = index < books.length ? books[index] : null
+        return (
+          <Fragment key={index}>
+            <LineDivider
+              className={cn(
+                index > Math.max(2, books.length) && 'hidden lg:block',
+                index > 0 &&
+                  (index % 3 !== 0 || index === books.length - 1) &&
+                  'lg:hidden'
+              )}
+            />
+            {book ? (
+              <div className={cn('col-span-1 p-1')}>
+                <BookCard book={book} />
+              </div>
+            ) : (
+              <div
+                className={cn(
+                  'col-span-1 aspect-square min-h-84 p-1',
+                  index > 2 && 'hidden lg:block'
+                )}
+              />
             )}
-          />
-          <div className={cn('col-span-1 p-1')}>
-            <BookCard book={book} />
-          </div>
-        </Fragment>
-      ))}
+          </Fragment>
+        )
+      })}
     </div>
   )
 }

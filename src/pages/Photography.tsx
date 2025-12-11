@@ -19,7 +19,7 @@ const Photography = () => {
       <PhotographyLayout>
         <PageHeader
           title="Photography"
-          description="A collection of my photography work capturing moments from various locations."
+          description="Photos from places I've bothered my camera with."
         />
         <LineDivider />
         <PhotoGrid photos={capturedPhotos} />

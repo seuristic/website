@@ -11,6 +11,7 @@ const Anchor = ({ href, className, children }: AnchorProps) => {
       className={className}
       target="_blank"
       rel="noopener noreferrer"
+      title={href}
     >
       {children}
     </a>

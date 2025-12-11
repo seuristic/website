@@ -11,7 +11,7 @@ const PageHeader = ({ title, description, className }: PageHeaderProps) => {
     <div
       className={cn('bg-background col-span-full p-8 text-center', className)}
     >
-      <h1 className="text-foreground font-serif text-4xl font-bold md:text-5xl">
+      <h1 className="text-foreground font-serif text-4xl font-medium md:text-5xl">
         {title}
       </h1>
       <p className="text-muted-foreground mt-4 text-base md:text-lg">
