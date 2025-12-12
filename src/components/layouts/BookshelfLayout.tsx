@@ -6,7 +6,7 @@ type BookshelfLayoutProps = {
 }
 
 const BookshelfLayout = ({ children }: BookshelfLayoutProps) => {
-  return <BaseLayout borderColumns={2}>{children}</BaseLayout>
+  return <BaseLayout>{children}</BaseLayout>
 }
 
 export default BookshelfLayout

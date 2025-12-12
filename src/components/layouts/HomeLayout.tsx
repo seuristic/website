@@ -6,7 +6,7 @@ type HomeLayoutProps = {
 }
 
 const HomeLayout = ({ children }: HomeLayoutProps) => {
-  return <BaseLayout borderColumns={1}>{children}</BaseLayout>
+  return <BaseLayout>{children}</BaseLayout>
 }
 
 export default HomeLayout

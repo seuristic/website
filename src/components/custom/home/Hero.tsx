@@ -6,6 +6,7 @@ import profile_picture from '@/assets/images/profile_picture.webp?w=480;768;1200
 import profile_picture_raw from '@/assets/images/profile_picture.webp'
 import { codingLinks } from '@/components/custom/navbar/Navbar'
 import LazyImage from '@/components/custom/LazyImage'
+import { ContentLineDivider, LineDivider } from '../Dividers'
 
 const Hero = () => {
   const heroImage = isOptimizedImage(profile_picture)
@@ -18,7 +19,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="aspect-square w-full p-1">
+      <div className="col-span-1 aspect-square w-full p-1">
         <LazyImage
           src={heroImage?.img.src ?? fallbackSrc}
           fallbackSrc={fallbackSrc}
@@ -30,11 +31,19 @@ const Hero = () => {
           className="size-full rounded-md border object-cover"
         />
       </div>
-      <div className="col-span-1 flex w-full flex-col items-start justify-center gap-2 p-1 lg:col-span-2">
-        <h1 className="font-serif text-3xl font-medium sm:text-5xl md:text-6xl xl:text-7xl">
+
+      <LineDivider className="lg:hidden" />
+
+      <div className="bg-background col-span-1 flex w-full flex-col items-start justify-center lg:col-span-2">
+        <ContentLineDivider className="hidden lg:block" />
+
+        <h1 className="w-full p-1 font-serif text-3xl font-medium sm:text-5xl md:text-6xl xl:text-7xl">
           Mohammad Shahanwaz
         </h1>
-        <div className="text-muted-foreground flex w-fit flex-wrap items-center gap-1 text-base sm:gap-2 lg:text-lg">
+
+        <ContentLineDivider />
+
+        <div className="text-muted-foreground flex w-full flex-wrap items-center gap-1 p-1 text-base sm:gap-2 lg:text-lg">
           <span>(vibe) Software Engineer</span>
           <div className="inline-flex gap-1 sm:gap-2">
             <span>⬩</span>
@@ -45,7 +54,10 @@ const Hero = () => {
             <span>Fitness Freak</span>
           </div>
         </div>
-        <div className="mt-2 flex flex-wrap items-center gap-3">
+
+        <ContentLineDivider />
+
+        <div className="flex w-full flex-wrap items-center gap-3 p-1">
           <Button size="lg" asChild className="cursor-pointer">
             <Anchor href="https://resume.shahanwaz.dev">
               <ArrowDownToLine className="size-4" />
@@ -67,6 +79,8 @@ const Hero = () => {
             </Button>
           ))}
         </div>
+
+        <ContentLineDivider className="hidden lg:block" />
       </div>
     </>
   )

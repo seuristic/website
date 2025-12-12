@@ -4,15 +4,15 @@ import { LineDivider } from '@/components/custom/Dividers'
 const Introduction = () => {
   return (
     <>
-      <div className="col-span-1 row-span-3 p-1">
+      <div className="bg-background col-span-1 row-span-3 p-1">
         <span className="text-tertiary-foreground top-[calc(5rem+4px)] flex font-mono text-xs sm:sticky lg:justify-end">
-          introduction
+          intro
         </span>
       </div>
 
       <LineDivider className="lg:hidden" />
 
-      <div className="col-span-1 p-1 lg:col-span-2">
+      <div className="bg-background col-span-1 p-1 lg:col-span-2">
         <p className="text-muted-foreground text-justify">
           I'm a software engineer with a deep passion for building meaningful
           and impactful software. I hold a B.Tech degree in Computer Science and

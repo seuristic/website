@@ -14,7 +14,7 @@ const Gallery = () => {
 
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
-      <div className="col-span-1 p-1">
+      <div className="bg-background col-span-1 p-1">
         <span className="text-tertiary-foreground top-[calc(5rem+4px)] flex font-mono text-xs sm:sticky lg:justify-end">
           gallery
         </span>
@@ -22,19 +22,13 @@ const Gallery = () => {
       {capturedPhotos.map((photo, index) => (
         <Fragment key={photo.id}>
           <LineDivider className={cn(index % 3 !== 2 && 'lg:hidden')} />
-          <div
-            className={cn(
-              'group col-span-1 p-1',
-              index % 3 === 0 && 'lg:border-r',
-              index % 3 === 1 && 'lg:border-l'
-            )}
-          >
+          <div className={cn('group col-span-1 p-1')}>
             <PhotoCard photo={photo} as="div" />
           </div>
         </Fragment>
       ))}
       <LineDivider className="lg:hidden" />
-      <div className="p-1 lg:border-l">
+      <div className="p-1">
         <Link to="/photography">
           <Button
             variant="ghost"

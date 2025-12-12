@@ -6,9 +6,10 @@ import { cn } from '@/lib/utils'
 
 type BlogGridProps = {
   blogs: BlogPost[]
+  containerClassName?: string
 }
 
-const BlogGrid = ({ blogs }: BlogGridProps) => {
+const BlogGrid = ({ blogs, containerClassName }: BlogGridProps) => {
   if (blogs.length === 0) {
     return (
       <div className="col-span-full p-4">
@@ -20,8 +21,15 @@ const BlogGrid = ({ blogs }: BlogGridProps) => {
   }
 
   return (
-    <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
-      {Array.from({ length: Math.max(9, blogs.length) }).map((_, index) => {
+    <div
+      className={cn(
+        'gap-x-gutter-sm lg:gap-x-gutter grid grid-cols-1 lg:grid-cols-3',
+        containerClassName || 'col-span-full'
+      )}
+    >
+      {Array.from({
+        length: containerClassName ? blogs.length : Math.max(9, blogs.length),
+      }).map((_, index) => {
         const blog = index < blogs.length ? blogs[index] : null
         return (
           <Fragment key={index}>

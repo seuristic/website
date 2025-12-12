@@ -3,6 +3,7 @@ import { SectionDivider } from '@/components/custom/Dividers'
 import Introduction from '@/components/custom/home/Introduction'
 import Experience from '@/components/custom/home/Experience'
 import Gallery from '@/components/custom/home/Gallery'
+import Blogs from '@/components/custom/home/Blogs'
 import { SEO } from '@/components/custom/SEO'
 import Hero from '@/components/custom/home/Hero'
 
@@ -18,6 +19,8 @@ const Home = () => {
         <Experience />
         <SectionDivider />
         <Gallery />
+        <SectionDivider />
+        <Blogs />
         <SectionDivider />
       </HomeLayout>
     </>

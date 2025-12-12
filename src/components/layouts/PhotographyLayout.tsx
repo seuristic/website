@@ -6,7 +6,7 @@ type PhotographyLayoutProps = {
 }
 
 const PhotographyLayout = ({ children }: PhotographyLayoutProps) => {
-  return <BaseLayout borderColumns={2}>{children}</BaseLayout>
+  return <BaseLayout>{children}</BaseLayout>
 }
 
 export default PhotographyLayout

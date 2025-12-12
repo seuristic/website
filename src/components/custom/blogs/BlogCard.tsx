@@ -21,12 +21,12 @@ const BlogCard = ({ blog }: BlogCardProps) => {
         {blog.date && (
           <time
             dateTime={blog.date}
-            className="text-muted-foreground mt-auto inline-flex items-center gap-2 font-mono text-sm uppercase"
+            className="text-muted-foreground mt-auto inline-flex items-center gap-2 font-mono text-sm"
           >
             <Calendar className="size-4" />
             {new Date(blog.date).toLocaleDateString('en-US', {
               year: 'numeric',
-              month: 'short',
+              month: 'long',
               day: 'numeric',
             })}
           </time>

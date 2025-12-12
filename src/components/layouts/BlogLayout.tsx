@@ -6,7 +6,7 @@ type BlogLayoutProps = {
 }
 
 const BlogLayout = ({ children }: BlogLayoutProps) => {
-  return <BaseLayout borderColumns={2}>{children}</BaseLayout>
+  return <BaseLayout>{children}</BaseLayout>
 }
 
 export default BlogLayout

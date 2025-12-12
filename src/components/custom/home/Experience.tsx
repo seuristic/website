@@ -58,7 +58,7 @@ const ExperienceEntry = ({ experience, isLast }: ExperienceEntryProps) => {
 
   return (
     <>
-      <div className="col-span-1 space-y-2 p-1 lg:col-span-2">
+      <div className="bg-background col-span-1 space-y-2 p-1 lg:col-span-2">
         <h2 className="font-serif text-3xl">
           <Anchor href={companyUrl} className="inline-flex items-center gap-3">
             <experience.icon className="size-8" />
@@ -100,7 +100,7 @@ const ExperienceEntry = ({ experience, isLast }: ExperienceEntryProps) => {
 const Experience = () => {
   return (
     <>
-      <div className="col-span-1 row-span-3 p-1">
+      <div className="bg-background col-span-1 row-span-3 p-1">
         <span className="text-tertiary-foreground top-[calc(5rem+4px)] flex font-mono text-xs sm:sticky lg:justify-end">
           experience
         </span>

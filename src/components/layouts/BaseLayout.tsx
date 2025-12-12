@@ -4,10 +4,9 @@ import Footer from '@/components/custom/Footer'
 
 type BaseLayoutProps = {
   children: ReactNode
-  borderColumns?: 1 | 2
 }
 
-const BaseLayout = ({ children, borderColumns = 1 }: BaseLayoutProps) => {
+const BaseLayout = ({ children }: BaseLayoutProps) => {
   return (
     <main className="relative border-y">
       <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-[var(--gutter-space-sm)_1fr_var(--gutter-space-sm)] justify-center lg:grid-cols-[var(--gutter-space)_1fr_var(--gutter-space)]">
@@ -15,10 +14,8 @@ const BaseLayout = ({ children, borderColumns = 1 }: BaseLayoutProps) => {
 
         <div>
           <div className="grid grid-cols-[1fr_var(--gutter-space-sm)_1fr_var(--gutter-space-sm)_1fr] lg:grid-cols-[1fr_var(--gutter-space)_1fr_var(--gutter-space)_1fr]">
-            <div className="col-span-1 col-start-2 row-start-1 row-end-6 lg:border-x" />
-            {borderColumns === 2 && (
-              <div className="col-span-1 col-start-4 row-start-1 row-end-6 lg:border-x" />
-            )}
+            <div className="gutter-pattern col-span-1 col-start-2 row-start-1 row-end-6 hidden lg:block lg:border-x" />
+            <div className="gutter-pattern col-span-1 col-start-4 row-start-1 row-end-6 hidden lg:block lg:border-x" />
 
             <div className="col-span-full col-start-1 row-span-1 row-start-1 h-24 lg:h-36" />
             <LineDivider className="col-start-1 row-span-1 row-start-2" />
