@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import PhotographyLayout from '@/components/layouts/PhotographyLayout'
 import PhotoGrid from '@/components/custom/photography/PhotoGrid'
 import { getAllPhotosShuffled } from '@/lib/photos'
-import { LineDivider, SectionDivider } from '@/components/custom/Dividers'
+import { SectionDivider } from '@/components/custom/Dividers'
 import { SEO } from '@/components/custom/SEO'
 import PageHeader from '@/components/custom/PageHeader'
 
