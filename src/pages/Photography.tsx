@@ -21,7 +21,6 @@ const Photography = () => {
           title="Photography"
           description="Photos from places I've bothered my camera with."
         />
-        <LineDivider />
         <PhotoGrid photos={capturedPhotos} />
         <SectionDivider />
       </PhotographyLayout>
