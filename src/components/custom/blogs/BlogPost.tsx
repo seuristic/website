@@ -26,7 +26,7 @@ const BlogPost = ({ blog }: BlogPostProps) => {
           {blog.date && (
             <time
               dateTime={blog.date}
-              className="text-muted-foreground font-mono text-sm"
+              className="text-tertiary-foreground font-mono text-sm"
             >
               {new Date(blog.date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -110,7 +110,7 @@ const BlogPost = ({ blog }: BlogPostProps) => {
                   }
                 const match = /language-(\w+)/.exec(className || '')
                 return !inline && match ? (
-                  <pre className="bg-muted mb-4 overflow-x-auto rounded-md">
+                  <pre className="bg-muted mb-4 overflow-x-auto rounded-md border">
                     <code className={className} {...rest}>
                       {children}
                     </code>
@@ -126,11 +126,7 @@ const BlogPost = ({ blog }: BlogPostProps) => {
               },
               hr: () => <hr className="border-border my-8" />,
               img: ({ src, alt }) => (
-                <img
-                  src={src}
-                  alt={alt}
-                  className="border-border my-4 rounded-md border"
-                />
+                <img src={src} alt={alt} className="my-4 rounded-md border" />
               ),
             }}
           >
