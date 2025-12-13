@@ -167,6 +167,8 @@
   /* Spacings */
   --spacing-gutter: var(--gutter-space);
   --spacing-gutter-sm: var(--gutter-space-sm);
+  --spacing-navbar-height: var(--navbar-height);
+  --spacing-navbar-height-sm: var(--navbar-height-sm);
 }
 
 :root {
@@ -207,9 +209,11 @@
   /* Colors */
   --tertiary-foreground: oklch(75.025% 0.01681 266.275);
 
-  /* Widths */
+  /* Spacings */
   --gutter-space: 2.5rem;
   --gutter-space-sm: 1.5rem;
+  --navbar-height: 5rem;
+  --navbar-height-sm: 4rem;
 }
 
 .dark {
@@ -268,6 +272,10 @@
 @layer utilities {
   .gutter-pattern {
     @apply bg-[image:repeating-linear-gradient(45deg,_var(--border)_0,_var(--border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed;
+  }
+
+  .pseudo-gutter-pattern {
+    @apply after:bg-[image:repeating-linear-gradient(45deg,_var(--border)_0,_var(--border)_1px,_transparent_0,_transparent_50%)] after:bg-[size:10px_10px] after:bg-fixed;
   }
 }
 

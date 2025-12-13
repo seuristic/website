@@ -4,7 +4,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { ContentDivider, LineDivider } from '@/components/custom/Dividers'
+import {
+  ContentDivider,
+  ContentLineDivider,
+  LineDivider,
+} from '@/components/custom/Dividers'
 import { HistoryIcon } from 'lucide-react'
 import Nexla from '@/components/icons/Nexla'
 import BosscoderAcademy from '@/components/icons/BosscoderAcademy'
@@ -58,15 +62,16 @@ const ExperienceEntry = ({ experience, isLast }: ExperienceEntryProps) => {
 
   return (
     <>
-      <div className="bg-background col-span-1 space-y-2 p-1 lg:col-span-2">
-        <h2 className="font-serif text-3xl">
+      <div className="bg-background col-span-1 lg:col-span-2">
+        <h2 className="inline-flex w-full items-center p-1 font-serif text-3xl">
           <Anchor href={companyUrl} className="inline-flex items-center gap-3">
             <experience.icon className="size-8" />
             {company}
           </Anchor>
         </h2>
-        <div className="space-y-2">
-          <div className="flex flex-col items-baseline gap-2 lg:flex-row">
+        <ContentLineDivider />
+        <div className="space-y-2 p-1">
+          <div className="flex flex-wrap items-center justify-between gap-1 md:flex-row">
             {previousRoles ? (
               <div className="flex items-center gap-2 text-lg">
                 <span>{role}</span>
@@ -80,7 +85,7 @@ const ExperienceEntry = ({ experience, isLast }: ExperienceEntryProps) => {
             ) : (
               <span className="text-lg">{role}</span>
             )}
-            <div className="hidden h-0 w-full flex-1 border-b border-dashed lg:block" />
+            {/* <div className="hidden h-0 w-full flex-1 border-b border-dashed lg:block" /> */}
             <span className="text-muted-foreground font-mono text-sm">
               {dateRange}
             </span>

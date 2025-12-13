@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { LineDivider } from '@/components/custom/Dividers'
+import { SectionDivider } from '@/components/custom/Dividers'
 import Footer from '@/components/custom/Footer'
 
 type BaseLayoutProps = {
@@ -17,8 +17,8 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
             <div className="gutter-pattern col-span-1 col-start-2 row-start-1 row-end-6 hidden lg:block lg:border-x" />
             <div className="gutter-pattern col-span-1 col-start-4 row-start-1 row-end-6 hidden lg:block lg:border-x" />
 
-            <div className="col-span-full col-start-1 row-span-1 row-start-1 h-24 lg:h-36" />
-            <LineDivider className="col-start-1 row-span-1 row-start-2" />
+            <div className="col-span-full col-start-1 row-span-1 row-start-1 h-[calc(var(--navbar-height-sm)-2px)] lg:h-[calc(var(--navbar-height)-2px)]" />
+            <SectionDivider className="col-start-1 row-span-1 row-start-2" />
 
             <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full col-start-1 row-start-3 grid grid-cols-1 lg:grid-cols-3">
               {children}

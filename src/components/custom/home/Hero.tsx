@@ -37,7 +37,7 @@ const Hero = () => {
       <div className="bg-background col-span-1 flex w-full flex-col items-start justify-center lg:col-span-2">
         <ContentLineDivider className="hidden lg:block" />
 
-        <h1 className="w-full p-1 font-serif text-3xl font-medium sm:text-5xl md:text-6xl xl:text-7xl">
+        <h1 className="w-full p-1 font-serif text-3xl leading-tight font-medium sm:text-5xl md:text-6xl xl:text-7xl">
           Mohammad Shahanwaz
         </h1>
 
