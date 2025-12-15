@@ -15,6 +15,7 @@ import {
   X,
 } from '@/components/icons'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
+import useFeatureFlag, { BLOGS_FLAG_KEY } from '@/hooks/useFeatureFlag'
 
 export const socialLinks = [
   {
@@ -54,6 +55,7 @@ export const codingLinks = [
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const blogsEnabled = useFeatureFlag(BLOGS_FLAG_KEY, true)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -79,7 +81,7 @@ const Navbar = () => {
           <div className="hidden items-center gap-2 md:flex">
             <NavLink to="/photography">Photography</NavLink>
             <NavLink to="/bookshelf">Bookshelf</NavLink>
-            <NavLink to="/blogs">Blogs</NavLink>
+            {blogsEnabled && <NavLink to="/blogs">Blogs</NavLink>}
           </div>
 
           <div className="flex flex-1 items-center justify-end gap-2">
@@ -177,14 +179,16 @@ const Navbar = () => {
               >
                 Bookshelf
               </NavLink>
-              <NavLink
-                to="/blogs"
-                className="h-fit justify-start rounded-none py-4 text-base"
-                size="lg"
-                onClick={closeMobileMenu}
-              >
-                Blogs
-              </NavLink>
+              {blogsEnabled && (
+                <NavLink
+                  to="/blogs"
+                  className="h-fit justify-start rounded-none py-4 text-base"
+                  size="lg"
+                  onClick={closeMobileMenu}
+                >
+                  Blogs
+                </NavLink>
+              )}
             </div>
 
             {/* Mobile Icon Links */}

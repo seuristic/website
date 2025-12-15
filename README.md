@@ -51,6 +51,9 @@ cp .env.example .env.local
 4. Update `.env.local` with your configuration:
 ```env
 VITE_SITE_URL=http://localhost:3000
+VITE_FLAGSMITH_ENVIRONMENT_ID=your-flagsmith-environment-id
+# Optional: override the API endpoint
+# VITE_FLAGSMITH_API=https://edge.api.flagsmith.com/api/v1/
 ```
 
 ### Development
@@ -107,6 +110,12 @@ src/
 └── main.tsx         # Application entry point
 ```
 
+## Feature Flags
+
+Flagsmith is wired into the app via `src/providers/FlagsmithProvider.tsx`. Add `VITE_FLAGSMITH_ENVIRONMENT_ID` (and optionally `VITE_FLAGSMITH_API` for self-hosted setups) to your environment to enable flag fetching. Components can access feature state with `useFlags` or `useFlagsmith` from `flagsmith/react`.
+
+- Blog pages are gated by the `blogs_enabled` flag. Turn it off in Flagsmith to hide the nav link and block `/blogs` routes.
+
 ## Production Deployment
 
 ### Environment Variables
@@ -114,6 +123,8 @@ src/
 Set the following environment variables in your deployment platform:
 
 - `VITE_SITE_URL` - Your production site URL (e.g., `https://yourdomain.com`)
+- `VITE_FLAGSMITH_ENVIRONMENT_ID` - Your Flagsmith environment ID to enable feature flags
+- `VITE_FLAGSMITH_API` - (Optional) Custom Flagsmith API URL if not using the hosted edge API
 
 ### Build Optimization
 
