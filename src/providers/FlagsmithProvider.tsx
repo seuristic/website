@@ -4,6 +4,7 @@ import { FlagsmithContext, FlagsmithProvider } from 'flagsmith/react'
 
 const environmentId = import.meta.env.VITE_FLAGSMITH_ENVIRONMENT_ID
 const apiUrl = import.meta.env.VITE_FLAGSMITH_API
+const isLocalDev = import.meta.env.DEV
 
 const fallbackFlagsmith = {
   hasFeature: () => true,
@@ -13,7 +14,7 @@ const fallbackFlagsmith = {
 } as unknown as typeof flagsmith
 
 const FlagsmithClientProvider = ({ children }: PropsWithChildren) => {
-  if (!environmentId) {
+  if (!environmentId || isLocalDev) {
     return (
       <FlagsmithContext.Provider value={fallbackFlagsmith}>
         {children}

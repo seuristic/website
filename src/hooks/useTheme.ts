@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import githubLightUrl from 'highlight.js/styles/github.css?url'
+import githubDarkUrl from 'highlight.js/styles/github-dark.css?url'
 
 export const useTheme = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -78,6 +80,22 @@ export const useTheme = () => {
 
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    const id = 'hljs-theme'
+    let link = document.getElementById(id) as HTMLLinkElement | null
+    if (!link) {
+      link = document.createElement('link')
+      link.id = id
+      link.rel = 'stylesheet'
+      document.head.appendChild(link)
+    }
+
+    const nextHref = isDarkMode ? githubDarkUrl : githubLightUrl
+    if (link.getAttribute('href') !== nextHref) {
+      link.setAttribute('href', nextHref)
+    }
+  }, [isDarkMode])
 
   return {
     isDarkMode,

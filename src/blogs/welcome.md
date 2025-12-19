@@ -34,8 +34,9 @@ Markdown supports both ordered and unordered lists:
 
 - First item
 - Second item
-  - Nested item
-  - Another nested item
+  1. Nested item
+     - Another nested item
+  2. Another nested item
 - Third item
 
 **Ordered List:**
@@ -90,13 +91,13 @@ Blockquotes are great for highlighting important quotes or callouts:
 
 Markdown tables are useful for displaying structured data:
 
-| Feature | Markdown Syntax | Example                     |
-| ------- | --------------- | --------------------------- |
-| Bold    | `**text**`      | **Bold text**               |
-| Italic  | `*text*`        | _Italic text_               |
-| Code    | `` `code` ``    | `code`                      |
-| Link    | `[text](url)`   | [Link](https://example.com) |
-| Image   | `![alt](url)`   | ![Image](image.jpg)         |
+| Feature | Markdown Syntax | Example                                                                                                                                                                          |
+| ------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bold    | `**text**`      | **Bold text**                                                                                                                                                                    |
+| Italic  | `*text*`        | _Italic text_                                                                                                                                                                    |
+| Code    | `` `code` ``    | `code`                                                                                                                                                                           |
+| Link    | `[text](url)`   | [Link](https://example.com)                                                                                                                                                      |
+| Image   | `![alt](url)`   | ![Image](https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=) |
 
 ## Links and Images
 
@@ -110,7 +111,7 @@ You can create links in several ways:
 
 Images work similarly:
 
-![Alt text for image](https://via.placeholder.com/400x200 'Image title')
+![Alt text for image](https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE= 'Image title')
 
 ## Horizontal Rules
 

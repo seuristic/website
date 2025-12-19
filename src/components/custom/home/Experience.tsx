@@ -90,7 +90,7 @@ const ExperienceEntry = ({ experience, isLast }: ExperienceEntryProps) => {
               {dateRange}
             </span>
           </div>
-          <ul className="text-muted-foreground list-disc space-y-1 pl-4 lg:text-justify">
+          <ul className="text-muted-foreground list-disc space-y-1 pl-6 lg:text-justify">
             {achievements.map((achievement, index) => (
               <li key={index}>{achievement}</li>
             ))}
