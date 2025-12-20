@@ -1,6 +1,6 @@
 import { Component, type ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
-import { AlertCircle } from 'lucide-react'
+import { AlertCircleIcon } from 'lucide-react'
 
 interface ErrorBoundaryProps {
   children: ReactNode
@@ -44,7 +44,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       return (
         <div className="flex min-h-[calc(100vh-69px)] flex-col items-center justify-center gap-4 p-4">
           <div className="flex flex-col items-center gap-4 text-center">
-            <AlertCircle className="size-12 text-destructive" />
+            <AlertCircleIcon className="text-destructive size-12" />
             <div className="space-y-2">
               <h1 className="font-serif text-2xl font-medium">
                 Something went wrong
@@ -58,7 +58,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               <Button onClick={this.handleReset} variant="outline">
                 Try again
               </Button>
-              <Button onClick={() => window.location.reload()} variant="default">
+              <Button
+                onClick={() => window.location.reload()}
+                variant="default"
+              >
                 Refresh page
               </Button>
             </div>
@@ -72,4 +75,3 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 }
 
 export default ErrorBoundary
-

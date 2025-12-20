@@ -15,7 +15,7 @@ export const ContentDivider = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        'h-gutter-sm lg:h-gutter pseudo-gutter-pattern after:h-gutter-sm lg:after:h-gutter relative col-span-1 w-full after:absolute after:-left-[calc(var(--gutter-space-sm))] after:w-[calc(100%+2*var(--gutter-space-sm))] after:border-y lg:col-span-2 lg:after:-left-[calc(var(--gutter-space))] lg:after:w-[calc(100%+2*var(--gutter-space))]',
+        'h-gutter-sm lg:h-gutter pseudo-gutter-pattern after:h-gutter-sm lg:after:h-gutter relative col-span-full w-full after:absolute after:-left-[calc(var(--gutter-space-sm))] after:w-[calc(100%+2*var(--gutter-space-sm))] after:border-y lg:after:-left-[calc(var(--gutter-space))] lg:after:w-[calc(100%+2*var(--gutter-space))]',
         className
       )}
     />
@@ -37,7 +37,7 @@ export const ContentLineDivider = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        'after:bg-border relative col-span-1 h-px w-full after:absolute after:-left-[calc(var(--gutter-space-sm))] after:h-px after:w-[calc(100%+2*var(--gutter-space-sm))] lg:col-span-2 lg:after:-left-[calc(var(--gutter-space))] lg:after:w-[calc(100%+2*var(--gutter-space))]',
+        'after:bg-border relative col-span-full h-px w-full after:absolute after:-left-[calc(var(--gutter-space-sm))] after:h-px after:w-[calc(100%+2*var(--gutter-space-sm))] lg:after:-left-[calc(var(--gutter-space))] lg:after:w-[calc(100%+2*var(--gutter-space))]',
         className
       )}
     />

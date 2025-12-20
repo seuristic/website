@@ -14,19 +14,21 @@ const Introduction = () => {
 
       <div className="bg-background col-span-1 p-1 lg:col-span-2">
         <p className="text-muted-foreground text-justify">
-          I'm a software engineer with a deep passion for building meaningful
-          and impactful software. I hold a B.Tech degree in Computer Science and
-          Engineering from NIT Delhi, where my curiosity for systems,
-          algorithms, and design translated into a strong technical foundation.
+          I'm a Software Engineer who builds thoughtful, reliable products
+          across frontend, backend, and AI-driven systems. I work with modern
+          web stacks, cloud infrastructure, and applied AI workflows to turn
+          ideas into scalable solutions. I enjoy collaborating on high-impact
+          products, mentoring engineers, and iterating quickly based on real
+          user feedback.
           <br />
           <br />
-          Currently, I am working as a UI Engineer (AI) at{' '}
+          Currently, I work as a UI Engineer (AI) at{' '}
           <Anchor
             href="https://nexla.com"
             className="text-primary underline-offset-4 hover:underline"
           >
             Nexla
-          </Anchor>{' '}
+          </Anchor>
           , where I design and develop user interfaces for{' '}
           <Anchor
             href="https://express.dev"
@@ -34,23 +36,27 @@ const Introduction = () => {
           >
             Express
           </Anchor>
-          , an AI-powered product for building data flows and pipelines. I work
-          with cross-functional teams to ensure smooth integration between
-          frontend and backend systems while creating intuitive, user-focused
-          experiences.
+          , an AI-powered platform for building and managing data flows and
+          pipelines. I work closely with product, backend, and platform teams to
+          bridge complex systems with clean, intuitive interfaces, ensuring
+          reliability, scalability, and a strong user experience across the
+          product.
           <br />
           <br />
-          Previously, I have worked at{' '}
+          Previously, I worked at{' '}
           <Anchor
             href="https://www.bosscoderacademy.com"
             className="text-primary underline-offset-4 hover:underline"
           >
             Bosscoder Academy
           </Anchor>{' '}
-          as a Lead Software Engineer where I had built a platform with a dozen
-          of features including AI mentorship, in-house doubt support chat
-          system, code execution platform, HLS/DASH-based video player etc. from
-          scratch, explored and utilized cloud providers and led technical team.
+          as a Lead Software Engineer, where I helped build a large-scale
+          learning platform from scratch. My work spanned delivering features
+          such as AI-driven mentorship, an in-house doubt support chat system, a
+          code execution platform, and an HLS/DASH-based video player. Alongside
+          hands-on engineering, I took ownership of architectural decisions,
+          explored cloud infrastructure, and led a technical team to ship
+          robust, production-ready systems.
         </p>
       </div>
     </>

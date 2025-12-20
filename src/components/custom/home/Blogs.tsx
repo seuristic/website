@@ -1,9 +1,8 @@
 import { Fragment, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
 import { ContentLineDivider, LineDivider } from '@/components/custom/Dividers'
 import { getBlogPosts } from '@/lib/blogs'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRightIcon } from 'lucide-react'
 import BlogCard from '../blogs/BlogCard'
 import { cn } from '@/lib/utils'
 
@@ -39,15 +38,13 @@ const Blogs = () => {
           )}
         />
         <LineDivider className="lg:hidden" />
-        <div className="p-1 lg:min-h-50">
-          <Link to="/blogs">
-            <Button
-              variant="ghost"
-              className="h-full w-full cursor-pointer rounded-md border"
-            >
-              Read more
-              <ArrowUpRight className="size-4" />
-            </Button>
+        <div className="flex min-h-20 items-center justify-center p-1 lg:min-h-50">
+          <Link
+            to="/blogs"
+            className="text-muted-foreground hover:text-primary inline-flex items-center gap-1 underline-offset-4 transition-colors hover:underline"
+          >
+            Read more
+            <ArrowUpRightIcon className="size-5" />
           </Link>
         </div>
       </div>

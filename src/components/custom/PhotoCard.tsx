@@ -6,7 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { MapPin } from 'lucide-react'
+import { MapPinIcon } from 'lucide-react'
 import type { Photo } from '@/lib/photos'
 import LazyImage from '@/components/custom/LazyImage'
 
@@ -41,7 +41,7 @@ const PhotoCard = ({ photo, as = 'button' }: PhotoCardProps) => {
       <DialogContent className="bg-background max-w-3xl rounded-none sm:max-w-5xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <MapPin className="size-5" />
+            <MapPinIcon className="size-5" />
             {photo.location}
           </DialogTitle>
         </DialogHeader>

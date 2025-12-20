@@ -1,10 +1,9 @@
 import { Fragment, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
-import { LineDivider } from '@/components/custom/Dividers'
+import { ContentDivider } from '@/components/custom/Dividers'
 import { cn } from '@/lib/utils'
 import { getRandomPhotos } from '@/lib/photos'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRightIcon } from 'lucide-react'
 import PhotoCard from '@/components/custom/PhotoCard'
 
 const PHOTO_ROWS = 3
@@ -21,22 +20,20 @@ const Gallery = () => {
       </div>
       {capturedPhotos.map((photo, index) => (
         <Fragment key={photo.id}>
-          <LineDivider className={cn(index % 3 !== 2 && 'lg:hidden')} />
+          <ContentDivider className={cn(index % 3 !== 2 && 'lg:hidden')} />
           <div className={cn('group col-span-1 p-1')}>
             <PhotoCard photo={photo} as="div" />
           </div>
         </Fragment>
       ))}
-      <LineDivider className="lg:hidden" />
-      <div className="p-1">
-        <Link to="/photography">
-          <Button
-            variant="ghost"
-            className="h-full w-full cursor-pointer rounded-md border"
-          >
-            View more
-            <ArrowUpRight className="size-4" />
-          </Button>
+      <ContentDivider className="lg:hidden" />
+      <div className="flex min-h-20 items-center justify-center p-1">
+        <Link
+          to="/photography"
+          className="text-muted-foreground hover:text-primary inline-flex items-center gap-1 underline-offset-4 transition-colors hover:underline"
+        >
+          View more
+          <ArrowUpRightIcon className="size-5" />
         </Link>
       </div>
     </div>

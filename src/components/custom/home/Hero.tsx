@@ -1,6 +1,6 @@
 import Anchor from '@/components/custom/Anchor'
 import { Button } from '@/components/ui/button'
-import { ArrowDownToLine } from 'lucide-react'
+import { ArrowDownToLineIcon } from 'lucide-react'
 import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
 import profile_picture from '@/assets/images/profile_picture.webp?w=480;768;1200;1600&format=webp;avif;jpg&as=picture'
 import profile_picture_raw from '@/assets/images/profile_picture.webp'
@@ -60,7 +60,7 @@ const Hero = () => {
         <div className="flex w-full flex-wrap items-center gap-3 p-1">
           <Button size="lg" asChild className="cursor-pointer">
             <Anchor href="https://resume.shahanwaz.dev">
-              <ArrowDownToLine className="size-4" />
+              <ArrowDownToLineIcon className="size-4" />
               Resume
             </Anchor>
           </Button>

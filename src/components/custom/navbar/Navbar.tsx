@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X as CloseIcon } from 'lucide-react'
+import { MenuIcon, XIcon as CloseIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -7,7 +7,7 @@ import NavLink from './NavLink'
 import Anchor from '@/components/custom/Anchor'
 import { Separator } from '@/components/ui/separator'
 import {
-  CodeForces,
+  // CodeForces,
   LeetCode,
   LinkedIn,
   GitHub,
@@ -46,11 +46,11 @@ export const codingLinks = [
     href: 'https://leetcode.com/u/seuristic/',
     icon: LeetCode,
   },
-  {
-    id: 'codeforces',
-    href: 'https://codeforces.com/profile/seuristic',
-    icon: CodeForces,
-  },
+  // {
+  //   id: 'codeforces',
+  //   href: 'https://codeforces.com/profile/seuristic',
+  //   icon: CodeForces,
+  // },
 ]
 
 const Navbar = () => {
@@ -106,6 +106,7 @@ const Navbar = () => {
                   className="data-[orientation=vertical]:h-6"
                 />
               </div>
+
               <AnimatedThemeToggler />
             </div>
 
@@ -116,7 +117,7 @@ const Navbar = () => {
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >
-              <Menu className="size-6" />
+              <MenuIcon className="size-6" />
             </Button>
           </div>
         </div>

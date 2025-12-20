@@ -4,7 +4,7 @@ import { flushSync } from 'react-dom'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import { Button } from './button'
-import { Moon, Sun } from 'lucide-react'
+import { MoonIcon, SunIcon } from 'lucide-react'
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<'button'> {
@@ -62,7 +62,11 @@ export const AnimatedThemeToggler = ({
       aria-label="Toggle theme"
       {...props}
     >
-      {isDarkMode ? <Sun className="size-5" /> : <Moon className="size-5" />}
+      {isDarkMode ? (
+        <SunIcon className="size-5" />
+      ) : (
+        <MoonIcon className="size-5" />
+      )}
       <span className="sr-only">Toggle theme</span>
     </Button>
   )

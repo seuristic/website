@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { Home, ArrowLeft } from 'lucide-react'
+import { HomeIcon, ArrowLeftIcon } from 'lucide-react'
 
 const PageNotFound = () => {
   return (
@@ -16,12 +16,12 @@ const PageNotFound = () => {
         <div className="flex gap-2">
           <Button asChild>
             <Link to="/">
-              <Home className="mr-2 size-4" />
+              <HomeIcon className="mr-2 size-4" />
               Go home
             </Link>
           </Button>
           <Button variant="outline" onClick={() => window.history.back()}>
-            <ArrowLeft className="mr-2 size-4" />
+            <ArrowLeftIcon className="mr-2 size-4" />
             Go back
           </Button>
         </div>
@@ -31,4 +31,3 @@ const PageNotFound = () => {
 }
 
 export default PageNotFound
-
