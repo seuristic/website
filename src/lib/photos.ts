@@ -15,9 +15,9 @@ export const photoLocations: Record<string, string> = {
   humayun_tomb4: "Humayun's Tomb, Delhi",
   humayun_tomb5: "Humayun's Tomb, Delhi",
   jln_stadium: 'JLN Stadium, Delhi',
-  rishikesh: 'Rishikesh, UK',
-  rishikesh2: 'Rishikesh, UK',
-  rishikesh3: 'Rishikesh, UK',
+  rishikesh: 'Rishikesh, Uttarakhand',
+  rishikesh2: 'Rishikesh, Uttarakhand',
+  rishikesh3: 'Rishikesh, Uttarakhand',
   sarovar: 'Sarovar, Delhi',
   sarovar2: 'Sarovar, Delhi',
 }
@@ -30,7 +30,21 @@ export interface Photo {
   height: number
   alt: string
   location: string
+  pinned: boolean
 }
+
+// Add photo ids here to pin them to the homepage gallery (e.g., 'home', 'rishikesh')
+const pinnedPhotoIds: string[] = [
+  'delhi_metro',
+  'humayun_tomb',
+  'fatehpur_sikri',
+  'rishikesh',
+  'humayun_tomb2',
+  'rishikesh2',
+  'greater_noida2',
+  'home',
+]
+const pinnedPhotoIdSet = new Set(pinnedPhotoIds.map(id => id.toLowerCase()))
 
 // Dynamically import all images from the photos directory
 // Explicitly import optimized variants (imagetools) and raw images (fallback)
@@ -90,19 +104,10 @@ function getAllPhotos(): Photo[] {
         height: img.h,
         alt: location,
         location: location,
+        pinned: pinnedPhotoIdSet.has(filenameKey),
       }
     })
     .filter((photo): photo is Photo => Boolean(photo))
-}
-
-// Shuffle array using Fisher-Yates algorithm
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array]
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
-  }
-  return shuffled
 }
 
 // Get all photos sorted by filename
@@ -110,15 +115,38 @@ export function getAllPhotosSorted(): Photo[] {
   return getAllPhotos().sort((a, b) => a.id.localeCompare(b.id))
 }
 
-// Get all photos shuffled (for photography page)
+// Get all photos in a deterministic order (for photography page)
 export function getAllPhotosShuffled(): Photo[] {
-  const allPhotos = getAllPhotos()
-  return shuffleArray(allPhotos)
+  return getAllPhotosSorted()
 }
 
-// Get random photos (for homepage)
+// Get photos in a deterministic order (for homepage)
 export function getRandomPhotos(count: number = 6): Photo[] {
+  const allPhotos = getAllPhotosSorted()
+  return allPhotos.slice(0, Math.min(count, allPhotos.length))
+}
+
+// Get pinned photos first, then fill the rest with random non-pinned photos.
+export function getPinnedPhotos(count?: number): Photo[] {
   const allPhotos = getAllPhotos()
-  const shuffled = shuffleArray(allPhotos)
-  return shuffled.slice(0, Math.min(count, allPhotos.length))
+  const photosById = new Map(allPhotos.map(photo => [photo.id, photo]))
+
+  const pinnedPhotos = pinnedPhotoIds
+    .map(id => photosById.get(id.toLowerCase()))
+    .filter((photo): photo is Photo => Boolean(photo))
+
+  if (count === undefined) {
+    return pinnedPhotos
+  }
+
+  if (pinnedPhotos.length >= count) {
+    return pinnedPhotos.slice(0, count)
+  }
+
+  const remaining = allPhotos
+    .filter(photo => !pinnedPhotoIdSet.has(photo.id))
+    .sort((a, b) => a.id.localeCompare(b.id))
+  const filler = remaining.slice(0, count - pinnedPhotos.length)
+
+  return [...pinnedPhotos, ...filler]
 }

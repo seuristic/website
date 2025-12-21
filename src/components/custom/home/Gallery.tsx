@@ -2,14 +2,17 @@ import { Fragment, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ContentDivider } from '@/components/custom/Dividers'
 import { cn } from '@/lib/utils'
-import { getRandomPhotos } from '@/lib/photos'
+import { getPinnedPhotos } from '@/lib/photos'
 import { ArrowUpRightIcon } from 'lucide-react'
 import PhotoCard from '@/components/custom/PhotoCard'
 
 const PHOTO_ROWS = 3
 
 const Gallery = () => {
-  const capturedPhotos = useMemo(() => getRandomPhotos(3 * PHOTO_ROWS - 2), [])
+  const capturedPhotos = useMemo(
+    () => getPinnedPhotos(3 * PHOTO_ROWS - 2),
+    []
+  )
 
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">
