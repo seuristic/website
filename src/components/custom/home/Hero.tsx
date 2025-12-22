@@ -1,31 +1,22 @@
 import Anchor from '@/components/custom/Anchor'
 import { Button } from '@/components/ui/button'
 import { ArrowDownToLineIcon } from 'lucide-react'
-import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
-import profile_picture from '@/assets/images/profile_picture.webp?w=480;768;1200;1600&format=webp;avif;jpg&as=picture'
-import profile_picture_raw from '@/assets/images/profile_picture.webp'
+import { getProfilePicture } from '@/lib/photos'
 import { codingLinks } from '@/components/custom/navbar/Navbar'
 import LazyImage from '@/components/custom/LazyImage'
 import { ContentLineDivider, LineDivider } from '../Dividers'
 
 const Hero = () => {
-  const heroImage = isOptimizedImage(profile_picture)
-    ? (profile_picture as OptimizedImage)
-    : null
-  const fallbackSrc =
-    typeof profile_picture_raw === 'string'
-      ? profile_picture_raw
-      : (heroImage?.img.src ?? '')
+  const profilePicture = getProfilePicture()
 
   return (
     <>
       <div className="col-span-1 aspect-square w-full p-1">
         <LazyImage
-          src={heroImage?.img.src ?? fallbackSrc}
-          fallbackSrc={fallbackSrc}
-          sources={heroImage?.sources}
-          width={heroImage?.img.w}
-          height={heroImage?.img.h}
+          src={profilePicture.src}
+          sources={profilePicture.sources}
+          width={profilePicture.width}
+          height={profilePicture.height}
           sizes="(max-width: 1024px) 100vw, 33vw"
           alt="Mohammad Shahanwaz - Profile Picture"
           className="size-full rounded-md border object-cover"

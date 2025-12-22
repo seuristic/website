@@ -9,10 +9,7 @@ import PhotoCard from '@/components/custom/PhotoCard'
 const PHOTO_ROWS = 3
 
 const Gallery = () => {
-  const capturedPhotos = useMemo(
-    () => getPinnedPhotos(3 * PHOTO_ROWS - 2),
-    []
-  )
+  const capturedPhotos = useMemo(() => getPinnedPhotos(3 * PHOTO_ROWS - 2), [])
 
   return (
     <div className="gap-x-gutter-sm lg:gap-x-gutter col-span-full grid grid-cols-1 lg:grid-cols-3">

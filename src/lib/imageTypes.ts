@@ -4,13 +4,15 @@ export type PictureSource = {
   sizes?: string
 }
 
+export type OptimizedSourceMap = Record<string, string>
+
 export type OptimizedImage = {
-  sources: PictureSource[]
+  sources: OptimizedSourceMap
   img: {
     src: string
     w: number
     h: number
-    format: string
+    format?: string
   }
 }
 
@@ -20,7 +22,9 @@ export const isOptimizedImage = (
   if (!value || typeof value !== 'object') return false
   const maybe = value as Partial<OptimizedImage>
   return (
-    Array.isArray(maybe.sources) &&
+    maybe.sources !== null &&
+    typeof maybe.sources === 'object' &&
+    Object.values(maybe.sources).every(val => typeof val === 'string') &&
     typeof maybe.img?.src === 'string' &&
     typeof maybe.img?.w === 'number' &&
     typeof maybe.img?.h === 'number'

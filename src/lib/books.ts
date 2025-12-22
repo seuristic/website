@@ -1,4 +1,8 @@
-import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
+import {
+  isOptimizedImage,
+  type OptimizedImage,
+  type PictureSource,
+} from '@/lib/imageTypes'
 
 export type BookStatus = 'interested' | 'reading' | 'finished'
 
@@ -10,7 +14,7 @@ export const BOOK_STATUS_OPTIONS = [
 
 export type BookImage = {
   src: string
-  sources: OptimizedImage['sources']
+  sources: PictureSource[]
   width?: number
   height?: number
 }
@@ -27,26 +31,28 @@ type BookDefinition = {
   status: BookStatus
 }
 
-const BOOK_IMAGE_QUERY =
-  '?w=480;720;960&format=webp;avif;jpg&as=picture' as const
-
-const optimizedBookModules = import.meta.glob<{ default: OptimizedImage }>(
-  '../assets/images/books/*.jpg?w=480;720;960&format=webp;avif;jpg&as=picture',
+const bookModules = import.meta.glob<OptimizedImage>(
+  '../assets/images/books/*.jpg',
   {
+    query: '?w=480;720;960&format=webp;avif;jpg&as=picture',
     import: 'default',
     eager: true,
   }
 )
 
-const rawBookModules = import.meta.glob<{ default: string }>(
-  '../assets/images/books/*.jpg',
-  { eager: true }
-)
+const normalizeSources = (
+  sources: OptimizedImage['sources']
+): PictureSource[] => {
+  return Object.entries(sources).map(([format, srcset]) => ({
+    type: `image/${format === 'jpg' ? 'jpeg' : format}`,
+    srcset,
+  }))
+}
 
 const bookDefinitions: BookDefinition[] = [
   { file: 'deep_work', id: 'deep-work', status: 'finished' },
   { file: 'atomic_habit', id: 'atomic-habit', status: 'finished' },
-  { file: 'hooked', id: 'hooked', status: 'reading' },
+  { file: 'hooked', id: 'hooked', status: 'finished' },
   {
     file: 'the_subtle_art_of_not_giving_a_fck',
     id: 'the-subtle-art-of-not-giving-a-fck',
@@ -104,41 +110,23 @@ const bookDefinitions: BookDefinition[] = [
   },
 ]
 
-const getBookImage = (file: string): BookImage => {
-  const basePath = `../assets/images/books/${file}.jpg`
-  const optimizedKey =
-    `${basePath}${BOOK_IMAGE_QUERY}` as keyof typeof optimizedBookModules
-  const optimizedModule = optimizedBookModules[optimizedKey]
-  const optimized = optimizedModule?.default
+export const getBooks = () => {
+  return bookDefinitions.map(({ file, id, status }) => {
+    const bookModule = bookModules[`../assets/images/books/${file}.jpg`]
 
-  if (isOptimizedImage(optimized)) {
-    return {
-      src: optimized.img.src,
-      sources: optimized.sources,
-      width: optimized.img.w,
-      height: optimized.img.h,
+    if (!isOptimizedImage(bookModule)) {
+      throw new Error(`Book image not found for file: ${file}`)
     }
-  }
 
-  const rawModule = rawBookModules[basePath as keyof typeof rawBookModules]
-
-  if (rawModule && typeof rawModule.default === 'string') {
     return {
-      src: rawModule.default,
-      sources: [],
+      id,
+      status,
+      image: {
+        src: bookModule.img.src,
+        sources: normalizeSources(bookModule.sources),
+        width: bookModule.img.w,
+        height: bookModule.img.h,
+      },
     }
-  }
-
-  return {
-    src: '',
-    sources: [],
-  }
+  })
 }
-
-const books: Book[] = bookDefinitions.map(book => ({
-  id: book.id,
-  status: book.status,
-  image: getBookImage(book.file),
-}))
-
-export const getBooks = () => books

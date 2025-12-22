@@ -1,5 +1,8 @@
-// Photo metadata mapping - maps image names to their locations
-import { isOptimizedImage, type OptimizedImage } from '@/lib/imageTypes'
+import {
+  isOptimizedImage,
+  type OptimizedImage,
+  type PictureSource,
+} from '@/lib/imageTypes'
 
 export const photoLocations: Record<string, string> = {
   delhi_metro: 'Delhi Metro',
@@ -25,7 +28,7 @@ export const photoLocations: Record<string, string> = {
 export interface Photo {
   id: string
   src: string
-  sources: OptimizedImage['sources']
+  sources: PictureSource[]
   width: number
   height: number
   alt: string
@@ -33,7 +36,13 @@ export interface Photo {
   pinned: boolean
 }
 
-// Add photo ids here to pin them to the homepage gallery (e.g., 'home', 'rishikesh')
+export type ProfileImage = {
+  src: string
+  sources: PictureSource[]
+  width: number
+  height: number
+}
+
 const pinnedPhotoIds: string[] = [
   'delhi_metro',
   'humayun_tomb',
@@ -46,27 +55,36 @@ const pinnedPhotoIds: string[] = [
 ]
 const pinnedPhotoIdSet = new Set(pinnedPhotoIds.map(id => id.toLowerCase()))
 
-// Dynamically import all images from the photos directory
-// Explicitly import optimized variants (imagetools) and raw images (fallback)
-const optimizedPhotoModules = import.meta.glob<{ default: OptimizedImage }>(
-  '../assets/images/photos/*.jpg?w=480;768;1200;1600&format=webp;avif;jpg&as=picture',
+const photoModules = import.meta.glob<OptimizedImage>(
+  '../assets/images/photos/*.jpg',
   {
+    query: '?w=480;768;1200;1600&format=webp;avif;jpg&as=picture',
     import: 'default',
     eager: true,
   }
 )
 
-const rawPhotoModules = import.meta.glob<{ default: string }>(
-  '../assets/images/photos/*.jpg',
-  { eager: true }
+const profilePhotoModules = import.meta.glob<OptimizedImage>(
+  '../assets/images/profile_picture.webp',
+  {
+    query: '?w=480;768;1200;1600&format=webp;avif;jpg&as=picture',
+    import: 'default',
+    eager: true,
+  }
 )
 
-// Convert imported modules to Photo objects
+const normalizeSources = (
+  sources: OptimizedImage['sources']
+): PictureSource[] => {
+  return Object.entries(sources).map(([format, srcset]) => ({
+    type: `image/${format === 'jpg' ? 'jpeg' : format}`,
+    srcset,
+  }))
+}
+
 function getAllPhotos(): Photo[] {
-  return Object.entries(rawPhotoModules)
-    .map(([path, rawModule]) => {
-      // Extract filename from path (e.g., "img_01.jpg" from full path)
-      // Handle both alias paths (@/assets/...) and relative paths
+  return Object.entries(photoModules)
+    .map(([path, module]) => {
       const pathParts = path.split('/')
       const filenameWithExt = pathParts[pathParts.length - 1] || ''
       const filename = filenameWithExt.replace(/\.jpg$/i, '')
@@ -74,34 +92,22 @@ function getAllPhotos(): Photo[] {
 
       const location =
         photoLocations[filenameKey] ||
-        // Fall back to a friendly, human-readable label
         filenameKey
           .replace(/_/g, ' ')
           .replace(/\b\w/g, char => char.toUpperCase())
 
-      const optimized =
-        optimizedPhotoModules[
-          path.replace('../assets', '..') as keyof typeof optimizedPhotoModules
-        ]?.default || optimizedPhotoModules[path]?.default
+      if (!isOptimizedImage(module)) {
+        return null
+      }
 
-      const { img, sources } = isOptimizedImage(optimized)
-        ? optimized
-        : {
-            img: {
-              src: rawModule.default,
-              w: 0,
-              h: 0,
-              format: 'jpg',
-            },
-            sources: [],
-          }
+      const sources = normalizeSources(module.sources)
 
       return {
         id: filenameKey,
-        src: img.src,
+        src: module.img.src,
         sources,
-        width: img.w,
-        height: img.h,
+        width: module.img.w,
+        height: module.img.h,
         alt: location,
         location: location,
         pinned: pinnedPhotoIdSet.has(filenameKey),
@@ -110,23 +116,19 @@ function getAllPhotos(): Photo[] {
     .filter((photo): photo is Photo => Boolean(photo))
 }
 
-// Get all photos sorted by filename
 export function getAllPhotosSorted(): Photo[] {
   return getAllPhotos().sort((a, b) => a.id.localeCompare(b.id))
 }
 
-// Get all photos in a deterministic order (for photography page)
 export function getAllPhotosShuffled(): Photo[] {
   return getAllPhotosSorted()
 }
 
-// Get photos in a deterministic order (for homepage)
 export function getRandomPhotos(count: number = 6): Photo[] {
   const allPhotos = getAllPhotosSorted()
   return allPhotos.slice(0, Math.min(count, allPhotos.length))
 }
 
-// Get pinned photos first, then fill the rest with random non-pinned photos.
 export function getPinnedPhotos(count?: number): Photo[] {
   const allPhotos = getAllPhotos()
   const photosById = new Map(allPhotos.map(photo => [photo.id, photo]))
@@ -149,4 +151,20 @@ export function getPinnedPhotos(count?: number): Photo[] {
   const filler = remaining.slice(0, count - pinnedPhotos.length)
 
   return [...pinnedPhotos, ...filler]
+}
+
+export function getProfilePicture(): ProfileImage {
+  const profileModule =
+    profilePhotoModules['../assets/images/profile_picture.webp']
+
+  if (!isOptimizedImage(profileModule)) {
+    return { src: '', sources: [], width: 0, height: 0 }
+  }
+
+  return {
+    src: profileModule.img.src,
+    sources: normalizeSources(profileModule.sources),
+    width: profileModule.img.w,
+    height: profileModule.img.h,
+  }
 }
