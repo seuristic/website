@@ -9,6 +9,7 @@ interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string
   placeholder?: string
   fallbackSrc?: string
+  grayscale?: boolean
   onLoad?: () => void
   onError?: () => void
 }
@@ -20,6 +21,7 @@ const LazyImage = ({
   sources,
   placeholder,
   fallbackSrc,
+  grayscale = false,
   onLoad,
   onError,
   ...props
@@ -116,6 +118,7 @@ const LazyImage = ({
           className={cn(
             'inline-block size-full transition-opacity duration-300',
             isLoaded ? 'opacity-100' : 'opacity-0',
+            grayscale && 'grayscale transition-[filter] duration-300 hover:grayscale-0',
             className
           )}
           loading="lazy"

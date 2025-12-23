@@ -33,9 +33,10 @@ const PhotoCard = ({ photo, as = 'button' }: PhotoCardProps) => {
             height={photo.height}
             sizes="(max-width: 1024px) 100vw, 33vw"
             alt={photo.alt}
-            className="size-full object-cover transition-all duration-300 group-hover:brightness-75"
+            grayscale={true}
+            className="size-full object-cover"
           />
-          <div className="group-hover:bg-primary/5 absolute inset-0 transition-all duration-100" />
+          <div className="hover:bg-background/25 absolute inset-0 bg-transparent transition-colors duration-300" />
         </TriggerComponent>
       </DialogTrigger>
       <DialogContent className="bg-background max-w-3xl rounded-none sm:max-w-5xl">

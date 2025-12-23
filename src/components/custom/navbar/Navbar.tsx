@@ -20,7 +20,7 @@ import useFeatureFlag, { BLOGS_FLAG_KEY } from '@/hooks/useFeatureFlag'
 export const socialLinks = [
   {
     id: 'linkedin',
-    href: 'https://linkedin.com/in/mshahanwaz',
+    href: 'https://linkedin.com/in/seuristic',
     icon: LinkedIn,
   },
   {

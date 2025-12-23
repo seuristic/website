@@ -7,7 +7,8 @@ const Footer = () => {
       <div className="order-2 col-span-1 grid flex-1 place-items-center p-1 sm:order-1">
         <div className="text-tertiary-foreground flex items-center gap-1 font-mono text-sm">
           <CopyrightIcon className="size-4" />
-          {new Date().getFullYear()}
+          2025
+          {new Date().getFullYear() > 2025 && ` - Present`}
         </div>
       </div>
       <div className="order-1 col-span-1 grid place-items-center p-1 sm:order-2">

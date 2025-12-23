@@ -19,6 +19,7 @@ const Hero = () => {
           height={profilePicture.height}
           sizes="(max-width: 1024px) 100vw, 33vw"
           alt="Mohammad Shahanwaz - Profile Picture"
+          grayscale={true}
           className="size-full rounded-md border object-cover"
         />
       </div>
