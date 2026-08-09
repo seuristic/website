@@ -5,8 +5,9 @@ import { siteConfig } from "@/config/site"
 
 export function SiteFooter() {
   return (
-    /* Sticky so it stays visible while scrolling long pages. */
-    <footer className="sticky bottom-0 bg-background">
+    /* Sits after the page content; the flex column in RootLayout keeps it at the
+       bottom of the viewport when the content is short. */
+    <footer>
       <Container className="flex h-16 items-center justify-between">
         <p className="text-sm text-muted-foreground">
           {siteConfig.name} <span aria-hidden>&middot;</span>{" "}
