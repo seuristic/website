@@ -10,7 +10,6 @@ export function SiteFooter() {
     <footer>
       <Container className="flex h-16 items-center justify-between">
         <p className="text-sm text-muted-foreground">
-          {siteConfig.name} <span aria-hidden>&middot;</span>{" "}
           {new Date().getFullYear()}
         </p>
 

@@ -12,20 +12,25 @@ export function BlogsPage() {
       ) : (
         <ul className="flex flex-col gap-block">
           {posts.map((post) => (
-            <li key={post.slug} className="flex flex-col gap-stack">
+            <li key={post.slug}>
+              {/* The whole entry is the link. Padding bleeds the hover surface
+                  outward via a matching negative margin, so the text keeps the
+                  page's left edge and vertical rhythm. */}
               <Link
                 to={`/blogs/${post.slug}`}
-                className="font-display text-2xl leading-snug underline-offset-4 hover:underline"
+                className="group -m-stack flex flex-col gap-stack rounded-md p-stack hover:bg-accent"
               >
-                {post.title}
+                <h2 className="font-display text-2xl leading-snug underline-offset-4 group-hover:underline">
+                  {post.title}
+                </h2>
+                <p className="text-muted-foreground">{post.excerpt}</p>
+                <time
+                  dateTime={post.date}
+                  className="font-mono text-xs text-muted-foreground"
+                >
+                  {formatDate(post.date)}
+                </time>
               </Link>
-              <p className="text-muted-foreground">{post.excerpt}</p>
-              <time
-                dateTime={post.date}
-                className="font-mono text-xs text-muted-foreground"
-              >
-                {formatDate(post.date)}
-              </time>
             </li>
           ))}
         </ul>
