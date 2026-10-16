@@ -9,7 +9,7 @@ export function SiteHeader() {
   return (
     <header>
       <Container className="flex h-16 items-center justify-between">
-        <Link to="/" className="font-display text-2xl leading-none">
+        <Link to="/" className="font-mono text-base leading-none font-medium">
           {siteConfig.logo}
         </Link>
 

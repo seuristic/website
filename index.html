@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="/favicon-light.svg"
+      type="image/svg+xml"
+    />
     <title>seuristic</title>
     <meta name="description" content="Personal site of Mohammad Shahanwaz." />
 
@@ -14,15 +19,27 @@
       rel="stylesheet"
     />
 
-    <!-- Applies the stored theme before first paint so there is no flash. -->
+    <!-- Applies the stored theme before first paint so there is no flash, and
+         keeps the favicon on the matching variant whenever `.dark` changes. -->
     <script>
       ;(() => {
+        const root = document.documentElement
         const stored = localStorage.getItem("theme")
         const dark =
           stored === "dark" ||
           (stored !== "light" &&
             window.matchMedia("(prefers-color-scheme: dark)").matches)
-        document.documentElement.classList.toggle("dark", dark)
+        root.classList.toggle("dark", dark)
+
+        const favicon = document.getElementById("favicon")
+        const syncFavicon = () => {
+          const theme = root.classList.contains("dark") ? "dark" : "light"
+          favicon.href = `/favicon-${theme}.svg`
+        }
+        syncFavicon()
+        new MutationObserver(syncFavicon).observe(root, {
+          attributeFilter: ["class"],
+        })
       })()
     </script>
   </head>

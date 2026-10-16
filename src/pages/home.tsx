@@ -1,3 +1,4 @@
+import { NexlaIcon } from "@/components/icons/brand-icons"
 import { SocialLinks } from "@/components/social-links"
 import { siteConfig } from "@/config/site"
 
@@ -25,14 +26,15 @@ export function HomePage() {
               href={siteConfig.company.url}
               target="_blank"
               rel="noreferrer"
-              className="text-foreground underline underline-offset-4"
+              className="group inline-flex items-center gap-1 font-medium text-foreground"
             >
+              <NexlaIcon className="h-3 w-auto align-baseline text-nexla" />
               {siteConfig.company.name}
             </a>
           </p>
         </header>
 
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="leading-relaxed text-muted-foreground">
           {siteConfig.about}
         </p>
       </div>

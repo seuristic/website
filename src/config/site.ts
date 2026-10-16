@@ -15,11 +15,11 @@ export const siteConfig = {
   logo: "seuristic",
   name: "Mohammad Shahanwaz",
   /** Swap for your own photo in `public/`. Rendered as an oval, so a portrait crop works best. */
-  avatar: "/avatar.svg",
-  role: "Software Engineer",
+  avatar: "/avatar.jpg",
+  role: "AI Engineer",
   company: { name: "Nexla", url: "https://nexla.com" },
   about:
-    "I build web products end to end — mostly TypeScript, React and the boring infrastructure that keeps them running. I care about interfaces that stay out of the way, code that reads well a year later, and shipping things people actually use.",
+    "Building Express, which turns a prompt into ready-to-use tools for AI agents. I like shipping quickly, learning from real users, and helping other engineers grow. When away from the keyboard, you'll find me behind a camera, in a book, or at the gym.",
 
   /** Repo shown in the footer. */
   repo: "https://github.com/seuristic/website",

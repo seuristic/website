@@ -10,7 +10,7 @@ export function SocialLinks({
     <ul className={cn("flex items-center gap-stack", className)} {...props}>
       {siteConfig.socials.map(({ label, href, icon: Icon }) => (
         <li key={label}>
-          <Button variant="outline" size="icon" asChild>
+          <Button variant="ghost" size="icon" asChild>
             <a
               href={href}
               target="_blank"
