@@ -15,7 +15,7 @@ export function HomePage() {
             alt={siteConfig.name}
             width={112}
             height={112}
-            className="mb-stack size-28 rounded-full border object-cover"
+            className="mb-stack size-28 rounded-full border border-muted-foreground/10 object-cover p-1"
           />
           <h1 className="font-display text-5xl leading-tight sm:text-6xl">
             {siteConfig.name}

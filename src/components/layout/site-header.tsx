@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
   return (
-    <header>
-      <Container className="flex h-16 items-center justify-between">
+    <header className="border-b border-muted-foreground/10">
+      <Container className="flex h-16 items-center justify-between border-muted-foreground/10 md:border-x">
         <Link to="/" className="font-mono text-base leading-none font-medium">
           {siteConfig.logo}
         </Link>
