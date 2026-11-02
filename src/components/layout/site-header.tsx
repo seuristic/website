@@ -9,7 +9,7 @@ export function SiteHeader() {
   return (
     <header className="border-b border-muted-foreground/10">
       <Container className="flex h-16 items-center justify-between border-muted-foreground/10 md:border-x">
-        <Link to="/" className="font-mono text-base leading-none font-medium">
+        <Link to="/" className="font-display text-base leading-none">
           {siteConfig.logo}
         </Link>
 

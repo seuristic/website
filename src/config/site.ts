@@ -40,7 +40,7 @@ export const siteConfig = {
   /** JetBrains Mono coding ligatures. Flip to false to turn them off. */
   monoLigatures: true,
 
-  /** Inter character variants (cv01/03/04/06/08/09/10/11 + ss08), listed in src/index.css. */
+  /** Geist stylistic sets (ss02/05/06), listed in src/index.css. */
   sansAlternates: true,
 }
 

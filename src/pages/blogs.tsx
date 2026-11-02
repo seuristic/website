@@ -18,9 +18,9 @@ export function BlogsPage() {
                   page's left edge and vertical rhythm. */}
               <Link
                 to={`/blogs/${post.slug}`}
-                className="group -m-stack flex flex-col gap-stack rounded-md p-stack hover:bg-accent"
+                className="-m-stack flex flex-col gap-stack rounded-md p-stack hover:bg-accent"
               >
-                <h2 className="font-display text-2xl leading-snug underline-offset-4 group-hover:underline">
+                <h2 className="font-display text-2xl leading-snug">
                   {post.title}
                 </h2>
                 <p className="text-muted-foreground">{post.excerpt}</p>

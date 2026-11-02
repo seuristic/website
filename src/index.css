@@ -1,15 +1,33 @@
 @import "tailwindcss";
-/* Upstream Inter (not the Google Fonts build, which strips every cvXX/ssXX feature). */
-@import "inter-ui/inter-variable-latin.css";
 @plugin "@tailwindcss/typography";
+
+/* Official Geist release (github.com/vercel/geist-font, OFL), not the Google
+   Fonts build, which strips every ssXX feature. */
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./assets/fonts/geist/geist-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./assets/fonts/geist/geist-italic-variable.woff2") format("woff2");
+}
 
 /* Dark mode is driven by a `.dark` class on <html> (see index.html + ThemeProvider). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* ---- Fonts ------------------------------------------------------------ */
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-sans: "InterVariable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist Pixel", ui-monospace, monospace;
+  /* Geist Pixel ships every shape on one `ELSH` axis; 25 is Circle. */
+  --font-display--font-variation-settings: "ELSH" 25;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* ---- Spacing scale ----------------------------------------------------
@@ -58,11 +76,10 @@
     --mono-features: "calt" 1;
     --mono-variant: common-ligatures contextual;
 
-    /* Inter character variants, in the order documented at rsms.me/inter/#features.
-       Needs the upstream `inter-ui` build imported above. */
-    --sans-features:
-      "cv01" 1, "cv03" 1, "cv09" 1, "cv04" 1, "cv10" 1, "cv06" 1, "cv11" 1,
-      "cv08" 1, "ss08" 1;
+    /* Geist stylistic sets mirroring the old Inter character variants:
+       ss02 single-storey a (Inter cv11), ss05 serifed I (cv08), ss06 G with
+       spur (cv10). Needs the self-hosted build above. */
+    --sans-features: "ss02" 1, "ss05" 1, "ss06" 1;
 
     --ring-width: 2px;
   }
@@ -129,5 +146,6 @@
 /* Body headings match the page title: display face, its single 400 weight. */
 .prose :is(h1, h2, h3, h4) {
   font-family: var(--font-display);
+  font-variation-settings: var(--font-display--font-variation-settings);
   font-weight: 400;
 }
