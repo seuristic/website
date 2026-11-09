@@ -1,39 +1,39 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 /* Official Geist and Geist Mono release (github.com/vercel/geist-font, OFL),
    not the Google Fonts builds, which strip every ssXX feature. */
 @font-face {
-  font-family: "Geist";
+  font-family: 'Geist';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("./assets/fonts/geist/geist-variable.woff2") format("woff2");
+  src: url('./assets/fonts/geist/geist-variable.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Geist";
+  font-family: 'Geist';
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url("./assets/fonts/geist/geist-italic-variable.woff2") format("woff2");
+  src: url('./assets/fonts/geist/geist-italic-variable.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Geist Mono";
+  font-family: 'Geist Mono';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("./assets/fonts/geist/geist-mono-variable.woff2") format("woff2");
+  src: url('./assets/fonts/geist/geist-mono-variable.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Geist Mono";
+  font-family: 'Geist Mono';
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url("./assets/fonts/geist/geist-mono-italic-variable.woff2")
-    format("woff2");
+  src: url('./assets/fonts/geist/geist-mono-italic-variable.woff2')
+    format('woff2');
 }
 
 /* Official Bricolage Grotesque release (github.com/ateliertriay/bricolage, OFL),
@@ -41,13 +41,13 @@
    half the glyphs. One file covers all three axes: optical size (applied
    automatically from font-size), weight and width. */
 @font-face {
-  font-family: "Bricolage Grotesque";
+  font-family: 'Bricolage Grotesque';
   font-style: normal;
   font-weight: 200 800;
   font-stretch: 75% 100%;
   font-display: swap;
-  src: url("./assets/fonts/bricolage/bricolage-grotesque-variable.woff2")
-    format("woff2");
+  src: url('./assets/fonts/bricolage/bricolage-grotesque-variable.woff2')
+    format('woff2');
 }
 
 /* Dark mode is driven by a `.dark` class on <html> (see index.html + ThemeProvider). */
@@ -55,11 +55,11 @@
 
 @theme {
   /* ---- Fonts ------------------------------------------------------------ */
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   /* Geist Pixel, used only through the font-pixel-* utilities below. */
-  --font-pixel: "Geist Pixel", ui-monospace, monospace;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-pixel: 'Geist Pixel', ui-monospace, monospace;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* ---- Spacing scale ----------------------------------------------------
      Every gap in the UI comes from one of these so spacing stays consistent.
@@ -103,23 +103,23 @@
    switch shape per element, e.g. `font-pixel-circle`. */
 @utility font-pixel-square {
   font-family: var(--font-pixel);
-  font-variation-settings: "ELSH" 1;
+  font-variation-settings: 'ELSH' 1;
 }
 @utility font-pixel-circle {
   font-family: var(--font-pixel);
-  font-variation-settings: "ELSH" 20;
+  font-variation-settings: 'ELSH' 20;
 }
 @utility font-pixel-grid {
   font-family: var(--font-pixel);
-  font-variation-settings: "ELSH" 40;
+  font-variation-settings: 'ELSH' 40;
 }
 @utility font-pixel-triangle {
   font-family: var(--font-pixel);
-  font-variation-settings: "ELSH" 60;
+  font-variation-settings: 'ELSH' 60;
 }
 @utility font-pixel-line {
   font-family: var(--font-pixel);
-  font-variation-settings: "ELSH" 80;
+  font-variation-settings: 'ELSH' 80;
 }
 
 @layer base {
@@ -127,12 +127,12 @@
     /* Geist Mono coding ligatures (-> → arrow, != → ≠, <= → ≤, …). They live
        in ss11, not calt/liga, and need the self-hosted build above. Toggled
        from src/config/site.ts. */
-    --mono-features: "ss11" 1;
+    --mono-features: 'ss11' 1;
 
     /* Geist stylistic sets mirroring the old Inter character variants:
        ss02 single-storey a (Inter cv11), ss05 serifed I (cv08), ss06 G with
        spur (cv10). Needs the self-hosted build above. */
-    --sans-features: "ss02" 1, "ss05" 1, "ss06" 1;
+    --sans-features: 'ss02' 1, 'ss05' 1, 'ss06' 1;
 
     --ring-width: 2px;
   }
@@ -179,7 +179,7 @@
   --tw-prose-body: var(--color-muted-foreground);
   --tw-prose-headings: var(--color-foreground);
   --tw-prose-lead: var(--color-muted-foreground);
-  --tw-prose-links: var(--color-foreground);
+  --tw-prose-links: var(--color-muted-foreground);
   --tw-prose-bold: var(--color-foreground);
   --tw-prose-counters: var(--color-muted-foreground);
   --tw-prose-bullets: var(--color-border);
@@ -198,4 +198,14 @@
 .prose :is(h1, h2, h3, h4) {
   font-family: var(--font-display);
   font-weight: 400;
+}
+
+/* Links read as body text until hovered, then lift to the foreground colour. */
+.prose a {
+  text-underline-offset: 4px;
+  transition: color 150ms;
+}
+
+.prose a:hover {
+  color: var(--color-foreground);
 }

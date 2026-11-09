@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { RootLayout } from "@/components/layout/root-layout"
-import { BlogPostPage } from "@/pages/blog-post"
-import { BlogsPage } from "@/pages/blogs"
-import { HomePage } from "@/pages/home"
+import { RootLayout } from '@/components/layout/root-layout'
+import { BlogPostPage } from '@/pages/blog-post'
+import { BlogsPage } from '@/pages/blogs'
+import { HomePage } from '@/pages/home'
 
 export default function App() {
   return (

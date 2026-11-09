@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
-import { posts, type Post } from "@/lib/blog"
+import { posts, type Post } from '@/lib/blog'
 
-const yearOf = (post: Post) => post.date.slice(0, 4) || "Undated"
+const yearOf = (post: Post) => post.date.slice(0, 4) || 'Undated'
 
 /* Posts are already newest first, so years come out newest first too. */
 const years = [...new Set(posts.map(yearOf))]

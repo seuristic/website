@@ -1,9 +1,9 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink } from 'react-router-dom'
 
-import { Container } from "@/components/layout/container"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
+import { Container } from '@/components/layout/container'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { siteConfig } from '@/config/site'
+import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
   return (
@@ -23,8 +23,8 @@ export function SiteHeader() {
               to={item.href}
               className={({ isActive }) =>
                 cn(
-                  "px-2 py-1 text-sm text-muted-foreground hover:text-foreground",
-                  isActive && "text-foreground",
+                  'px-2 py-1 text-sm text-muted-foreground hover:text-foreground',
+                  isActive && 'text-foreground',
                 )
               }
             >

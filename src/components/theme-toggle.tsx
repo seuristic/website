@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { useTheme } from "@/hooks/use-theme"
+import { Button } from '@/components/ui/button'
+import { useTheme } from '@/hooks/use-theme'
 
 /** Phosphor "circle-half-tilt". Same glyph in both themes; `currentColor` lets it follow the text colour. */
 function CircleHalfTiltIcon() {
@@ -24,7 +24,7 @@ export function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       className="group/toggle"
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
       <CircleHalfTiltIcon />
     </Button>

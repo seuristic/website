@@ -17,17 +17,30 @@ npm run dev   # http://localhost:3000
 
 ## Writing a post
 
-Drop a markdown file in `src/content/blog/`. The filename is the slug, and the frontmatter is three keys:
+Each post is a folder in `src/content/blog/` holding an `index.md` and any images it uses. The folder name is the slug:
+
+```
+src/content/blog/
+  hello-world/
+    index.md
+    cover.png
+```
+
+The frontmatter is three keys:
 
 ```md
 ---
-title: "Hello World!"
-date: "2025-12-25"
-excerpt: "One line shown in the list."
+title: 'Hello World!'
+date: '2025-12-25'
+excerpt: 'One line shown in the list.'
 ---
 ```
 
 `src/lib/blog.ts` picks it up at build time via `import.meta.glob` — no index to update.
+
+Reference images relatively, `![A description](./cover.png)`. Subfolders work too (`./images/cover.png`). Vite fingerprints them in the build, so they cache well. Absolute (`/avatar.jpg`, served from `public/`) and remote URLs pass through unchanged.
+
+Add `draft: true` to the frontmatter to keep a post in `npm run dev` only. Production builds leave it out, so it's safe to commit and push, but its files are still readable in the public repo.
 
 ## Conventions
 

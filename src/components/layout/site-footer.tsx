@@ -1,7 +1,7 @@
-import { ArrowUpRight, Dot } from "lucide-react"
+import { ArrowUpRight, Dot } from 'lucide-react'
 
-import { Container } from "@/components/layout/container"
-import { siteConfig } from "@/config/site"
+import { Container } from '@/components/layout/container'
+import { siteConfig } from '@/config/site'
 
 export function SiteFooter() {
   return (

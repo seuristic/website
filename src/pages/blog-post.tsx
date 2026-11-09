@@ -1,6 +1,6 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams } from 'react-router-dom'
 
-import { formatDate, getPost } from "@/lib/blog"
+import { formatDate, getPost } from '@/lib/blog'
 
 export function BlogPostPage() {
   const post = getPost(useParams().slug)

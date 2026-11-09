@@ -1,6 +1,6 @@
-import { NexlaIcon } from "@/components/icons/brand-icons"
-import { SocialLinks } from "@/components/social-links"
-import { siteConfig } from "@/config/site"
+import { NexlaIcon } from '@/components/icons/brand-icons'
+import { SocialLinks } from '@/components/social-links'
+import { siteConfig } from '@/config/site'
 
 export function HomePage() {
   return (
@@ -21,7 +21,7 @@ export function HomePage() {
             {siteConfig.name}
           </h1>
           <p className="text-muted-foreground">
-            {siteConfig.role} at{" "}
+            {siteConfig.role} at{' '}
             <a
               href={siteConfig.company.url}
               target="_blank"

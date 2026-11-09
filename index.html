@@ -24,21 +24,21 @@
     <script>
       ;(() => {
         const root = document.documentElement
-        const stored = localStorage.getItem("theme")
+        const stored = localStorage.getItem('theme')
         const dark =
-          stored === "dark" ||
-          (stored !== "light" &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        root.classList.toggle("dark", dark)
+          stored === 'dark' ||
+          (stored !== 'light' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        root.classList.toggle('dark', dark)
 
-        const favicon = document.getElementById("favicon")
+        const favicon = document.getElementById('favicon')
         const syncFavicon = () => {
-          const theme = root.classList.contains("dark") ? "dark" : "light"
+          const theme = root.classList.contains('dark') ? 'dark' : 'light'
           favicon.href = `/favicon-${theme}.svg`
         }
         syncFavicon()
         new MutationObserver(syncFavicon).observe(root, {
-          attributeFilter: ["class"],
+          attributeFilter: ['class'],
         })
       })()
     </script>
