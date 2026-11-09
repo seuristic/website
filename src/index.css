@@ -19,14 +19,28 @@
   src: url("./assets/fonts/geist/geist-italic-variable.woff2") format("woff2");
 }
 
+/* Official Bricolage Grotesque release (github.com/ateliertriay/bricolage, OFL),
+   not the Google Fonts build, which drops case, onum/lnum, sups/subs and over
+   half the glyphs. One file covers all three axes: optical size (applied
+   automatically from font-size), weight and width. */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url("./assets/fonts/bricolage/bricolage-grotesque-variable.woff2")
+    format("woff2");
+}
+
 /* Dark mode is driven by a `.dark` class on <html> (see index.html + ThemeProvider). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* ---- Fonts ------------------------------------------------------------ */
-  --font-display: "Geist Pixel", ui-monospace, monospace;
-  /* Geist Pixel ships every shape on one `ELSH` axis; 25 is Circle. */
-  --font-display--font-variation-settings: "ELSH" 25;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  /* Geist Pixel, used only through the font-pixel-* utilities below. */
+  --font-pixel: "Geist Pixel", ui-monospace, monospace;
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
@@ -65,6 +79,30 @@
     --color-accent-foreground: oklch(0.985 0 0);
     --color-ring: oklch(0.552 0.014 285.9);
   }
+}
+
+/* Geist Pixel shapes. Values are the font's own named instances (its fvar
+   table); anything in between morphs from one shape to the next. Use these to
+   switch shape per element, e.g. `font-pixel-circle`. */
+@utility font-pixel-square {
+  font-family: var(--font-pixel);
+  font-variation-settings: "ELSH" 1;
+}
+@utility font-pixel-circle {
+  font-family: var(--font-pixel);
+  font-variation-settings: "ELSH" 20;
+}
+@utility font-pixel-grid {
+  font-family: var(--font-pixel);
+  font-variation-settings: "ELSH" 40;
+}
+@utility font-pixel-triangle {
+  font-family: var(--font-pixel);
+  font-variation-settings: "ELSH" 60;
+}
+@utility font-pixel-line {
+  font-family: var(--font-pixel);
+  font-variation-settings: "ELSH" 80;
 }
 
 @layer base {
@@ -143,9 +181,8 @@
   --tw-prose-td-borders: var(--color-border);
 }
 
-/* Body headings match the page title: display face, its single 400 weight. */
+/* Body headings match the page title: display face at its regular weight. */
 .prose :is(h1, h2, h3, h4) {
   font-family: var(--font-display);
-  font-variation-settings: var(--font-display--font-variation-settings);
   font-weight: 400;
 }

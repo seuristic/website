@@ -1,0 +1,11 @@
+// Zed tasks: run with `task: spawn` (cmd-shift-p) or alt-shift-t.
+[
+  {
+    "label": "dev server",
+    "command": "npm run dev",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]
