@@ -37,7 +37,7 @@ export const siteConfig = {
     { label: "Email", href: "mailto:mohdshahanwaz55@gmail.com", icon: Mail },
   ] satisfies SocialLink[],
 
-  /** JetBrains Mono coding ligatures. Flip to false to turn them off. */
+  /** Geist Mono coding ligatures (ss11). Flip to false to turn them off. */
   monoLigatures: true,
 
   /** Geist stylistic sets (ss02/05/06), listed in src/index.css. */

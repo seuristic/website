@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Official Geist release (github.com/vercel/geist-font, OFL), not the Google
-   Fonts build, which strips every ssXX feature. */
+/* Official Geist and Geist Mono release (github.com/vercel/geist-font, OFL),
+   not the Google Fonts builds, which strip every ssXX feature. */
 @font-face {
   font-family: "Geist";
   font-style: normal;
@@ -17,6 +17,23 @@
   font-weight: 100 900;
   font-display: swap;
   src: url("./assets/fonts/geist/geist-italic-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./assets/fonts/geist/geist-mono-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./assets/fonts/geist/geist-mono-italic-variable.woff2")
+    format("woff2");
 }
 
 /* Official Bricolage Grotesque release (github.com/ateliertriay/bricolage, OFL),
@@ -42,7 +59,7 @@
   /* Geist Pixel, used only through the font-pixel-* utilities below. */
   --font-pixel: "Geist Pixel", ui-monospace, monospace;
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* ---- Spacing scale ----------------------------------------------------
      Every gap in the UI comes from one of these so spacing stays consistent.
@@ -107,12 +124,10 @@
 
 @layer base {
   :root {
-    /* JetBrains Mono coding ligatures. The Google Fonts build only ships `calt`
-       (which is where its ligatures live) — liga/dlig/ssXX are stripped, so
-       listing them here would be dead config. Self-host from the upstream
-       release if you want the stylistic sets. Toggled from src/config/site.ts. */
-    --mono-features: "calt" 1;
-    --mono-variant: common-ligatures contextual;
+    /* Geist Mono coding ligatures (-> → arrow, != → ≠, <= → ≤, …). They live
+       in ss11, not calt/liga, and need the self-hosted build above. Toggled
+       from src/config/site.ts. */
+    --mono-features: "ss11" 1;
 
     /* Geist stylistic sets mirroring the old Inter character variants:
        ss02 single-storey a (Inter cv11), ss05 serifed I (cv08), ss06 G with
@@ -125,7 +140,6 @@
   /* Escape hatches set on <html> from src/config/site.ts. */
   .mono-ligatures-off {
     --mono-features: normal;
-    --mono-variant: none;
   }
 
   .sans-alternates-off {
@@ -139,7 +153,6 @@
   .font-mono {
     font-family: var(--font-mono);
     font-feature-settings: var(--mono-features);
-    font-variant-ligatures: var(--mono-variant);
   }
 
   * {

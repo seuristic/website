@@ -20,12 +20,16 @@ export function BlogPostPage() {
     <article className="flex flex-col gap-section">
       <header className="flex flex-col gap-stack">
         <h1 className="font-display text-4xl leading-tight">{post.title}</h1>
-        <time
-          dateTime={post.date}
-          className="font-mono text-xs text-muted-foreground"
-        >
-          {formatDate(post.date)}
-        </time>
+        {/* The rule takes the rest of the row and sits on the date's midline. */}
+        <div className="flex items-center gap-stack">
+          <time
+            dateTime={post.date}
+            className="font-mono text-sm text-muted-foreground"
+          >
+            {formatDate(post.date)}
+          </time>
+          <span aria-hidden className="h-px flex-1 bg-muted-foreground/10" />
+        </div>
       </header>
 
       {/* Markdown comes from this repo's own `src/content/blog/`, not user input. */}
