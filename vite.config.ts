@@ -26,6 +26,14 @@ const dropDrafts = (): Plugin => ({
 
 export default defineConfig({
   plugins: [dropDrafts(), react(), tailwindcss()],
+  /* Footer version and deploy time. Vercel builds on every deploy, so build
+     time is deploy time. */
+  define: {
+    'import.meta.env.APP_VERSION': JSON.stringify(
+      JSON.parse(readFileSync('package.json', 'utf8')).version,
+    ),
+    'import.meta.env.BUILD_TIME': JSON.stringify(new Date().toISOString()),
+  },
   server: { port: 3000 },
   resolve: {
     alias: { '@': path.resolve(import.meta.dirname, './src') },

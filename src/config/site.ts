@@ -19,10 +19,14 @@ export const siteConfig = {
   role: 'AI Engineer',
   company: { name: 'Nexla', url: 'https://nexla.com' },
   about:
-    "Building Express, which turns a prompt into ready-to-use tools for AI agents. I like shipping quickly, learning from real users, and helping other engineers grow. When away from the keyboard, you'll find me behind a camera, in a book, or at the gym.",
+    'I’m a software engineer focused on building intelligent, user-centric software products. My work spans across AI, full-stack engineering and scalable frontend architecture. Beyond engineering, I enjoy reading, photography, and fitness. I love documenting ideas, sharing what I learn, and finding inspiration in both technology and the world around me.',
 
   /** Repo shown in the footer. */
   repo: 'https://github.com/seuristic/website',
+
+  /** Your clock in the footer. `en-IN` makes the short zone name read `IST`
+      rather than `GMT+5:30`. */
+  clock: { locale: 'en-IN', timeZone: 'Asia/Kolkata' },
 
   nav: [{ label: 'Blogs', href: '/blogs' }] satisfies NavItem[],
 
@@ -37,7 +41,7 @@ export const siteConfig = {
     { label: 'Email', href: 'mailto:mohdshahanwaz55@gmail.com', icon: Mail },
   ] satisfies SocialLink[],
 
-  /** Geist Mono coding ligatures (ss11). Flip to false to turn them off. */
+  /** JetBrains Mono coding ligatures. Flip to false to turn them off. */
   monoLigatures: true,
 
   /** Geist stylistic sets (ss02/05/06), listed in src/index.css. */

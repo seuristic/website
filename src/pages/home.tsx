@@ -20,13 +20,13 @@ export function HomePage() {
           <h1 className="font-display text-4xl sm:text-5xl">
             {siteConfig.name}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             {siteConfig.role} at{' '}
             <a
               href={siteConfig.company.url}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-1 font-medium text-foreground"
+              className="group inline-flex items-center gap-1 font-sans font-medium text-foreground"
             >
               <NexlaIcon className="h-3 w-auto align-baseline text-nexla" />
               {siteConfig.company.name}

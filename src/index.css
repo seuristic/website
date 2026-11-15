@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-/* Official Geist and Geist Mono release (github.com/vercel/geist-font, OFL),
-   not the Google Fonts builds, which strip every ssXX feature. */
+/* Official Geist release (github.com/vercel/geist-font, OFL), not the Google
+   Fonts build, which strips every ssXX feature. */
 @font-face {
   font-family: 'Geist';
   font-style: normal;
@@ -19,20 +19,24 @@
   src: url('./assets/fonts/geist/geist-italic-variable.woff2') format('woff2');
 }
 
+/* Official JetBrains Mono release (github.com/JetBrains/JetBrainsMono, OFL),
+   variable TTFs converted to woff2. The Google Fonts build strips its coding
+   ligatures. */
 @font-face {
-  font-family: 'Geist Mono';
+  font-family: 'JetBrains Mono';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 100 800;
   font-display: swap;
-  src: url('./assets/fonts/geist/geist-mono-variable.woff2') format('woff2');
+  src: url('./assets/fonts/jetbrains-mono/jetbrains-mono-variable.woff2')
+    format('woff2');
 }
 
 @font-face {
-  font-family: 'Geist Mono';
+  font-family: 'JetBrains Mono';
   font-style: italic;
-  font-weight: 100 900;
+  font-weight: 100 800;
   font-display: swap;
-  src: url('./assets/fonts/geist/geist-mono-italic-variable.woff2')
+  src: url('./assets/fonts/jetbrains-mono/jetbrains-mono-italic-variable.woff2')
     format('woff2');
 }
 
@@ -59,7 +63,7 @@
   /* Geist Pixel, used only through the font-pixel-* utilities below. */
   --font-pixel: 'Geist Pixel', ui-monospace, monospace;
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* ---- Spacing scale ----------------------------------------------------
      Every gap in the UI comes from one of these so spacing stays consistent.
@@ -75,14 +79,14 @@
   --color-nexla: #6154ff; /* nexla-ui palette `--color-primary-500` */
 
   /* ---- Colors (light) --------------------------------------------------- */
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.21 0.006 285.9);
-  --color-muted: oklch(0.967 0.001 286.4);
-  --color-muted-foreground: oklch(0.552 0.014 285.9);
-  --color-border: oklch(0.92 0.004 286.3);
-  --color-accent: oklch(0.967 0.001 286.4);
-  --color-accent-foreground: oklch(0.21 0.006 285.9);
-  --color-ring: oklch(0.705 0.015 286.1);
+  --color-background: oklch(0.985 0.006 85);
+  --color-foreground: oklch(0.22 0.012 60);
+  --color-muted: oklch(0.955 0.008 85);
+  --color-muted-foreground: oklch(0.52 0.016 70);
+  --color-border: oklch(0.91 0.01 85);
+  --color-accent: oklch(0.955 0.008 85);
+  --color-accent-foreground: oklch(0.22 0.012 60);
+  --color-ring: oklch(0.7 0.02 75);
 }
 
 @layer theme {
@@ -124,10 +128,10 @@
 
 @layer base {
   :root {
-    /* Geist Mono coding ligatures (-> → arrow, != → ≠, <= → ≤, …). They live
-       in ss11, not calt/liga, and need the self-hosted build above. Toggled
-       from src/config/site.ts. */
-    --mono-features: 'ss11' 1;
+    /* JetBrains Mono coding ligatures live in `calt`; they need the
+       self-hosted build above. Toggled from src/config/site.ts. */
+    --mono-features: 'calt' 1;
+    --mono-variant: common-ligatures contextual;
 
     /* Geist stylistic sets mirroring the old Inter character variants:
        ss02 single-storey a (Inter cv11), ss05 serifed I (cv08), ss06 G with
@@ -140,6 +144,7 @@
   /* Escape hatches set on <html> from src/config/site.ts. */
   .mono-ligatures-off {
     --mono-features: normal;
+    --mono-variant: none;
   }
 
   .sans-alternates-off {
@@ -153,6 +158,7 @@
   .font-mono {
     font-family: var(--font-mono);
     font-feature-settings: var(--mono-features);
+    font-variant-ligatures: var(--mono-variant);
   }
 
   * {
