@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GitCommitHorizontal, Slash } from 'lucide-react'
+import { GitCommitHorizontal } from 'lucide-react'
 
 import { Container } from '@/components/layout/container'
 import { siteConfig } from '@/config/site'
