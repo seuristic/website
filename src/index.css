@@ -135,8 +135,9 @@
 
     /* Geist stylistic sets mirroring the old Inter character variants:
        ss02 single-storey a (Inter cv11), ss05 serifed I (cv08), ss06 G with
-       spur (cv10). Needs the self-hosted build above. */
-    --sans-features: 'ss02' 1, 'ss05' 1, 'ss06' 1;
+       spur (cv10), plus ss03 straight l (no tail). Needs the self-hosted
+       build above. */
+    --sans-features: 'ss02' 1, 'ss03' 1, 'ss05' 1, 'ss06' 1;
 
     --ring-width: 2px;
   }

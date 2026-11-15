@@ -44,7 +44,7 @@ export const siteConfig = {
   /** JetBrains Mono coding ligatures. Flip to false to turn them off. */
   monoLigatures: true,
 
-  /** Geist stylistic sets (ss02/05/06), listed in src/index.css. */
+  /** Geist stylistic sets (ss02/03/05/06), listed in src/index.css. */
   sansAlternates: true,
 }
 
