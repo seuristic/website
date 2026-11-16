@@ -1,20 +1,12 @@
-import { Link, useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 
 import { formatDate, getPost } from '@/lib/blog'
 
 export function BlogPostPage() {
   const post = getPost(useParams().slug)
 
-  if (!post) {
-    return (
-      <section className="flex flex-col gap-block">
-        <h1 className="font-display text-4xl leading-tight">Not found</h1>
-        <Link to="/blogs" className="underline underline-offset-4">
-          Back to blogs
-        </Link>
-      </section>
-    )
-  }
+  // Unknown slug → the bare 404 page, which lives outside the layout.
+  if (!post) return <Navigate to="/404" replace />
 
   return (
     <article className="flex flex-col gap-section">
