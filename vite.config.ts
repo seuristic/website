@@ -34,7 +34,8 @@ export default defineConfig({
     ),
     'import.meta.env.BUILD_TIME': JSON.stringify(new Date().toISOString()),
   },
-  server: { port: 3000 },
+  // host: true also serves on the LAN (http://<laptop-ip>:3000) for phone testing.
+  server: { port: 3000, host: true },
   resolve: {
     alias: { '@': path.resolve(import.meta.dirname, './src') },
   },
