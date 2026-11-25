@@ -1,6 +1,7 @@
 ---
 title: 'Design System'
 date: '2026-11-09'
+updated: '2026-11-25'
 excerpt: 'Curated list of my favourite fonts, color palettes, UI libraries and more.'
 ---
 
@@ -16,6 +17,7 @@ For the most of my time when I design, I had been stuck with the Inter font beca
 2. Instrument Serif
 3. Inter Display
 4. OGG
+5. Fraunces
 
 ### Monospace
 
@@ -26,6 +28,10 @@ For the most of my time when I design, I had been stuck with the Inter font beca
 
 1. Geist Sans
 2. Inter
+
+### Serif
+
+1. Lora
 
 ## Colors
 
