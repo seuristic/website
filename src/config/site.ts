@@ -19,7 +19,7 @@ export const siteConfig = {
   role: 'AI Engineer',
   company: { name: 'Nexla', url: 'https://nexla.com' },
   about:
-    'I’m a software engineer focused on building intelligent, user-centric software products. My work spans across AI, full-stack engineering and scalable frontend architecture. Beyond engineering, I enjoy reading, photography, and fitness. I love documenting ideas, sharing what I learn, and finding inspiration in both technology and the world around me.',
+    'I’m a software engineer based in India, focused on building user-centric software products. My work spans AI, full-stack engineering, and frontend architecture. Beyond engineering, I enjoy reading, taking photos, and working out. I love documenting ideas, sharing what I learn, and finding inspiration in both technology and the world around me.',
 
   /** Repo shown in the footer. */
   repo: 'https://github.com/seuristic/website',

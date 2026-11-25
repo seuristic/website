@@ -71,12 +71,10 @@
   --spacing-stack: 0.75rem; /* between tightly related elements  */
   --spacing-block: 1.5rem; /* between blocks inside a section    */
   --spacing-section: 4rem; /* between page sections              */
-  --spacing-gutter: 1.5rem; /* page horizontal padding           */
+  --spacing-rail: 0.75rem; /* hatched padding strip inside each side rule */
+  --spacing-inset: 1.25rem; /* gap from a rail to the content          */
   --spacing-optical: 8rem; /* bottom pad that lifts centred content off the
                               geometric centre — the lift is half of this */
-
-  /* ---- Brand colours (same in both themes) ------------------------------ */
-  --color-nexla: #6154ff; /* nexla-ui palette `--color-primary-500` */
 
   /* ---- Colors (light) --------------------------------------------------- */
   --color-background: oklch(0.985 0.006 85);
@@ -87,6 +85,26 @@
   --color-accent: oklch(0.955 0.008 85);
   --color-accent-foreground: oklch(0.22 0.012 60);
   --color-ring: oklch(0.7 0.02 75);
+  /* Link text: shadcn's violet theme primary (Tailwind violet-600), 5.6:1 on paper. */
+  --color-link: oklch(0.541 0.281 293.009);
+
+  /* Blueprint layer, mixed from muted-foreground so both themes follow it:
+     grid = every 1px structural line, hatch = shaded regions, tick = ruler. */
+  --color-grid: color-mix(
+    in oklab,
+    var(--color-muted-foreground) 16%,
+    transparent
+  );
+  --color-hatch: color-mix(
+    in oklab,
+    var(--color-muted-foreground) 12%,
+    transparent
+  );
+  --color-tick: color-mix(
+    in oklab,
+    var(--color-muted-foreground) 40%,
+    transparent
+  );
 }
 
 @layer theme {
@@ -99,12 +117,97 @@
     --color-accent: oklch(0.27 0.006 286);
     --color-accent-foreground: oklch(0.985 0 0);
     --color-ring: oklch(0.552 0.014 285.9);
+    /* Lighter violet (Tailwind violet-400), 6.8:1 on the dark ground. */
+    --color-link: oklch(0.702 0.183 293.541);
   }
 }
 
 /* Geist Pixel shapes. Values are the font's own named instances (its fvar
    table); anything in between morphs from one shape to the next. Use these to
    switch shape per element, e.g. `font-pixel-circle`. */
+/* ---- Blueprint grid -----------------------------------------------------
+   The page column: 1px outer rules, and a hatched rail inside each one that
+   exposes the column's padding. Header, main and footer all use it, so the
+   rails run unbroken top to bottom. */
+@utility frame {
+  position: relative;
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-3xl);
+  padding-inline: calc(var(--spacing-rail) + var(--spacing-inset));
+  border-inline: 1px solid var(--color-grid);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    width: var(--spacing-rail);
+    background-image: var(--hatch);
+    pointer-events: none;
+  }
+  &::before {
+    left: 0;
+    border-right: 1px solid var(--color-grid);
+  }
+  &::after {
+    right: 0;
+    border-left: 1px solid var(--color-grid);
+  }
+}
+
+/* A spacing region made visible: hatched, rail to rail, with rules that run
+   the full viewport width (the layout root clips the overflow). */
+@utility band {
+  position: relative;
+  margin-inline: calc(-1 * var(--spacing-inset));
+  height: var(--spacing-section);
+  background-image: var(--hatch);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    translate: -50% 0;
+    background: var(--color-grid);
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+}
+
+/* Shading for any other structural area (e.g. the avatar's bounding box). */
+@utility hatch {
+  background-image: var(--hatch);
+}
+
+/* Measurement strip: a tick every 8px, a long tick every 64px. */
+@utility ruler {
+  margin-inline: calc(-1 * var(--spacing-inset));
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      var(--color-tick) 0 1px,
+      transparent 1px 8px
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--color-tick) 0 1px,
+      transparent 1px 64px
+    );
+  background-size:
+    100% 40%,
+    100% 100%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
 @utility font-pixel-square {
   font-family: var(--font-pixel);
   font-variation-settings: 'ELSH' 1;
@@ -140,6 +243,13 @@
     --sans-features: 'ss02' 1, 'ss03' 1, 'ss05' 1, 'ss06' 1;
 
     --ring-width: 2px;
+
+    /* 45° hatching for padding rails and spacing bands. */
+    --hatch: repeating-linear-gradient(
+      -45deg,
+      var(--color-hatch) 0 1px,
+      transparent 1px 7px
+    );
   }
 
   /* Escape hatches set on <html> from src/config/site.ts. */
@@ -186,7 +296,7 @@
   --tw-prose-body: var(--color-muted-foreground);
   --tw-prose-headings: var(--color-foreground);
   --tw-prose-lead: var(--color-muted-foreground);
-  --tw-prose-links: var(--color-muted-foreground);
+  --tw-prose-links: var(--color-link);
   --tw-prose-bold: var(--color-foreground);
   --tw-prose-counters: var(--color-muted-foreground);
   --tw-prose-bullets: var(--color-border);
@@ -207,12 +317,26 @@
   font-weight: 400;
 }
 
-/* Links read as body text until hovered, then lift to the foreground colour. */
+/* The one style for every inline text link (blog prose, home page, footer):
+   link-violet text with a faint violet underline (35% opacity); on hover the
+   underline turns solid. Nav items, icon buttons and post cards are controls,
+   not text links, and keep their own hover states. */
+.link,
 .prose a {
+  color: var(--color-link);
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(
+    in oklab,
+    var(--color-link) 35%,
+    transparent
+  );
   text-underline-offset: 4px;
-  transition: color 150ms;
+  transition:
+    color 150ms,
+    text-decoration-color 150ms;
 }
 
+.link:hover,
 .prose a:hover {
-  color: var(--color-foreground);
+  text-decoration-color: currentColor;
 }

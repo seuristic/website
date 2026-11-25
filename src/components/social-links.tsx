@@ -7,10 +7,21 @@ export function SocialLinks({
   ...props
 }: React.ComponentProps<'ul'>) {
   return (
-    <ul className={cn('flex items-center gap-stack', className)} {...props}>
+    <ul
+      className={cn(
+        'flex w-fit divide-x divide-grid border border-grid',
+        className,
+      )}
+      {...props}
+    >
       {siteConfig.socials.map(({ label, href, icon: Icon }) => (
         <li key={label}>
-          <Button variant="ghost" size="icon" asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-10 rounded-none"
+            asChild
+          >
             <a
               href={href}
               target="_blank"

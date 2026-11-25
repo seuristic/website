@@ -2,7 +2,7 @@ import { marked } from 'marked'
 
 /**
  * Each post is a folder in `src/content/blog/`: `<slug>/index.md` with `title`,
- * `date` and `excerpt` frontmatter, plus any images beside it, referenced
+ * `date` and `excerpt` frontmatter (optional `updated`, a later YYYY-MM-DD), plus any images beside it, referenced
  * relatively (`![alt](./diagram.png)`). The folder name becomes the slug.
  * `draft: true` keeps a post to `npm run dev`; it is left out of production
  * builds (but the files are still public in the repo).
@@ -11,6 +11,7 @@ export type Post = {
   slug: string
   title: string
   date: string
+  updated?: string
   excerpt: string
   draft: boolean
   html: string
@@ -55,6 +56,7 @@ export const posts: Post[] = Object.entries(files)
       slug: dir.split('/').at(-2)!,
       title: meta.title ?? 'Untitled',
       date: meta.date ?? '',
+      updated: meta.updated,
       excerpt: meta.excerpt ?? '',
       draft: meta.draft === 'true',
       html: marked.parse(body, {
@@ -83,3 +85,19 @@ export const formatDate = (date: string) =>
     month: 'long',
     day: 'numeric',
   })
+
+const DAY = 86_400_000
+const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
+
+/** "today", "yesterday", "3 days ago", "2 weeks ago", "last month"… Runs in the
+ *  browser at render time, so it never goes stale; counts whole calendar days
+ *  from the reader's local today to the UTC frontmatter date. */
+export const timeAgo = (date: string, now = new Date()) => {
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())
+  const days = Math.round((Date.parse(date) - today) / DAY)
+  const abs = Math.abs(days)
+  if (abs < 7) return rtf.format(days, 'day')
+  if (abs < 30) return rtf.format(Math.round(days / 7), 'week')
+  if (abs < 365) return rtf.format(Math.round(days / 30), 'month')
+  return rtf.format(Math.round(days / 365), 'year')
+}

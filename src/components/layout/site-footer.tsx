@@ -39,8 +39,8 @@ export function SiteFooter() {
   return (
     /* Sits after the page content; the flex column in RootLayout keeps it at the
        bottom of the viewport when the content is short. */
-    <footer className="border-t border-muted-foreground/10">
-      <Container className="flex h-16 items-center justify-between border-muted-foreground/10 font-mono text-sm text-muted-foreground/70 md:border-x">
+    <footer className="border-t border-grid">
+      <Container className="flex h-16 items-stretch justify-between font-mono text-sm text-muted-foreground/70">
         <p className="flex items-center gap-2">
           <time dateTime={now.toISOString()}>
             {part('hour')}
@@ -61,7 +61,7 @@ export function SiteFooter() {
           target="_blank"
           rel="noreferrer"
           title={`Deployed ${deployedAt}`}
-          className="inline-flex items-center gap-1.5 underline-offset-4 hover:text-foreground hover:underline"
+          className="link -mr-inset inline-flex items-center gap-1.5 border-l border-grid px-inset"
         >
           <GitCommitHorizontal aria-hidden className="size-4" />v
           {import.meta.env.APP_VERSION}

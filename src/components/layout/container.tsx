@@ -1,14 +1,10 @@
 import { cn } from '@/lib/utils'
 
-/** The single horizontal rhythm for the whole site — header, main and footer all use it. */
+/** The page column (see `frame` in index.css): header, main and footer all use
+ *  it, so its rules and hatched padding rails line up the whole way down. */
 export function Container({
   className,
   ...props
 }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      className={cn('mx-auto w-full max-w-3xl px-gutter', className)}
-      {...props}
-    />
-  )
+  return <div className={cn('frame', className)} {...props} />
 }

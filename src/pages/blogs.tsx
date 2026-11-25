@@ -9,38 +9,40 @@ const years = [...new Set(posts.map(yearOf))]
 
 export function BlogsPage() {
   return (
-    <section className="flex flex-col gap-section">
+    <section className="flex flex-col">
       <h1 className="font-display text-4xl leading-tight">Blogs</h1>
 
       {posts.length === 0 ? (
-        <p className="text-muted-foreground">Nothing published yet.</p>
+        <>
+          <div aria-hidden className="band my-block" />
+          <p className="text-muted-foreground">Nothing published yet.</p>
+        </>
       ) : (
-        <div className="flex flex-col gap-section">
+        /* A hatched band opens the list and separates each year. Under it,
+           the year row and its posts stack flush, divided only by 1px rules
+           that run rail to rail. */
+        <div className="mt-block flex flex-col">
           {years.map((year) => (
-            <section key={year} className="flex flex-col gap-block">
-              {/* Year tag, ruled like the date on a post page. */}
-              <div className="flex items-center gap-stack">
-                <h2 className="font-mono text-xs text-muted-foreground">
-                  {year}
-                </h2>
-                <span
-                  aria-hidden
-                  className="h-px flex-1 bg-muted-foreground/10"
-                />
-              </div>
+            <section key={year} className="flex flex-col">
+              {/* -mt-px lays the band's top rule over the previous row's. */}
+              <div aria-hidden className="band -mt-px" />
+              <h2 className="-mx-inset border-b border-grid px-inset py-stack font-mono text-xs text-muted-foreground">
+                {year}
+              </h2>
 
-              <ul className="flex flex-col gap-block">
+              <ul className="flex flex-col">
                 {posts
                   .filter((post) => yearOf(post) === year)
                   .map((post) => (
-                    <li key={post.slug}>
-                      {/* The whole entry is the link. Padding bleeds the
-                          hover surface outward via a matching negative
-                          margin, so the text keeps the page's left edge and
-                          vertical rhythm. */}
+                    <li
+                      key={post.slug}
+                      className="-mx-inset border-b border-grid"
+                    >
+                      {/* The whole row is the link; its hover shading runs
+                          rail to rail while the text keeps the column edge. */}
                       <Link
                         to={`/blogs/${post.slug}`}
-                        className="-m-stack block rounded-md p-stack hover:bg-accent"
+                        className="block px-inset py-block hover:bg-accent"
                       >
                         <h3 className="font-display text-2xl leading-snug">
                           {post.title}
