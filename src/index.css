@@ -77,16 +77,19 @@
                               geometric centre — the lift is half of this */
 
   /* ---- Colors (light) --------------------------------------------------- */
-  --color-background: oklch(0.985 0.006 85);
-  --color-foreground: oklch(0.22 0.012 60);
-  --color-muted: oklch(0.955 0.008 85);
-  --color-muted-foreground: oklch(0.52 0.016 70);
-  --color-border: oklch(0.91 0.01 85);
-  --color-accent: oklch(0.955 0.008 85);
-  --color-accent-foreground: oklch(0.22 0.012 60);
-  --color-ring: oklch(0.7 0.02 75);
-  /* Link text: shadcn's violet theme primary (Tailwind violet-600), 5.6:1 on paper. */
-  --color-link: oklch(0.541 0.281 293.009);
+  /* Palette (colorhunt): #2C3333 charcoal, #395B64 deep teal, #A5C9CA pale
+     teal, #E7F6F2 mint. Shades in between fill the remaining tokens. */
+  --color-background: #f1f9f7; /* mint, lifted toward white */
+  --color-foreground: #2c3333; /* charcoal, 12.1:1 on background */
+  --color-muted: #e7f6f2; /* mint */
+  --color-muted-foreground: #395b64; /* deep teal, 6.9:1 */
+  --color-border: #cfe3e3; /* pale teal, lightened */
+  --color-accent: #e7f6f2;
+  --color-accent-foreground: #2c3333;
+  --color-ring: #6e9599; /* mid teal, 3:1 for focus outlines */
+  /* Link text: a saturated teal from the palette's family (Tailwind teal-700),
+     5.1:1 on background; reads apart from the greyer deep-teal body text. */
+  --color-link: #0f766e;
 
   /* Blueprint layer, mixed from muted-foreground so both themes follow it:
      grid = every 1px structural line, hatch = shaded regions, tick = ruler. */
@@ -109,16 +112,16 @@
 
 @layer theme {
   .dark {
-    --color-background: oklch(0.16 0.004 285.8);
-    --color-foreground: oklch(0.985 0 0);
-    --color-muted: oklch(0.27 0.006 286);
-    --color-muted-foreground: oklch(0.712 0.013 286.1);
-    --color-border: oklch(0.32 0.006 286);
-    --color-accent: oklch(0.27 0.006 286);
-    --color-accent-foreground: oklch(0.985 0 0);
-    --color-ring: oklch(0.552 0.014 285.9);
-    /* Lighter violet (Tailwind violet-400), 6.8:1 on the dark ground. */
-    --color-link: oklch(0.702 0.183 293.541);
+    --color-background: #252b2b; /* charcoal, deepened */
+    --color-foreground: #e7f6f2; /* mint, 12.9:1 */
+    --color-muted: #2c3333; /* charcoal */
+    --color-muted-foreground: #a5c9ca; /* pale teal, 8.1:1 */
+    --color-border: #3a4a4c; /* charcoal toward deep teal */
+    --color-accent: #2c3333;
+    --color-accent-foreground: #e7f6f2;
+    --color-ring: #6e9599; /* mid teal, 4.4:1 */
+    /* Bright teal (Tailwind teal-400), 7.7:1 on the dark ground. */
+    --color-link: #2dd4bf;
   }
 }
 
@@ -318,7 +321,7 @@
 }
 
 /* The one style for every inline text link (blog prose, home page, footer):
-   link-violet text with a faint violet underline (35% opacity); on hover the
+   link-teal text with a faint teal underline (35% opacity); on hover the
    underline turns solid. Nav items, icon buttons and post cards are controls,
    not text links, and keep their own hover states. */
 .link,
